@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Player;
 using UnityEngine;
 
 public class GameManager : MonoBehaviour {
@@ -32,6 +33,13 @@ public class GameManager : MonoBehaviour {
     public void ActionCompleted(){
         if (onActionCompleted != null) {
             onActionCompleted();
+        }
+    }
+    
+    public event Action<Item> onPickUpItem;
+    public void PickUpItem(Item item){
+        if (onPickUpItem != null) {
+            onPickUpItem(item);
         }
     }
 }

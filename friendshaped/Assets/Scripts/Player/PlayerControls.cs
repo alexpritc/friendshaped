@@ -81,6 +81,33 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                     ""isPartOfComposite"": false
                 }
             ]
+        },
+        {
+            ""name"": ""inventory"",
+            ""id"": ""6e2851ba-2339-42ac-adf9-8da17b2c0204"",
+            ""actions"": [
+                {
+                    ""name"": ""pickUpItem"",
+                    ""type"": ""Button"",
+                    ""id"": ""79604d2d-6cd2-42fe-9517-aa16c23b21bf"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
+                }
+            ],
+            ""bindings"": [
+                {
+                    ""name"": """",
+                    ""id"": ""be5fe192-781c-45de-9e16-51ca87f9725c"",
+                    ""path"": ""<Keyboard>/space"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""pickUpItem"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                }
+            ]
         }
     ],
     ""controlSchemes"": []
@@ -89,6 +116,9 @@ public class @PlayerControls : IInputActionCollection, IDisposable
         m_movement = asset.FindActionMap("movement", throwIfNotFound: true);
         m_movement_walkLeft = m_movement.FindAction("walkLeft", throwIfNotFound: true);
         m_movement_walkRight = m_movement.FindAction("walkRight", throwIfNotFound: true);
+        // inventory
+        m_inventory = asset.FindActionMap("inventory", throwIfNotFound: true);
+        m_inventory_pickUpItem = m_inventory.FindAction("pickUpItem", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -175,9 +205,46 @@ public class @PlayerControls : IInputActionCollection, IDisposable
         }
     }
     public MovementActions @movement => new MovementActions(this);
+
+    // inventory
+    private readonly InputActionMap m_inventory;
+    private IInventoryActions m_InventoryActionsCallbackInterface;
+    private readonly InputAction m_inventory_pickUpItem;
+    public struct InventoryActions
+    {
+        private @PlayerControls m_Wrapper;
+        public InventoryActions(@PlayerControls wrapper) { m_Wrapper = wrapper; }
+        public InputAction @pickUpItem => m_Wrapper.m_inventory_pickUpItem;
+        public InputActionMap Get() { return m_Wrapper.m_inventory; }
+        public void Enable() { Get().Enable(); }
+        public void Disable() { Get().Disable(); }
+        public bool enabled => Get().enabled;
+        public static implicit operator InputActionMap(InventoryActions set) { return set.Get(); }
+        public void SetCallbacks(IInventoryActions instance)
+        {
+            if (m_Wrapper.m_InventoryActionsCallbackInterface != null)
+            {
+                @pickUpItem.started -= m_Wrapper.m_InventoryActionsCallbackInterface.OnPickUpItem;
+                @pickUpItem.performed -= m_Wrapper.m_InventoryActionsCallbackInterface.OnPickUpItem;
+                @pickUpItem.canceled -= m_Wrapper.m_InventoryActionsCallbackInterface.OnPickUpItem;
+            }
+            m_Wrapper.m_InventoryActionsCallbackInterface = instance;
+            if (instance != null)
+            {
+                @pickUpItem.started += instance.OnPickUpItem;
+                @pickUpItem.performed += instance.OnPickUpItem;
+                @pickUpItem.canceled += instance.OnPickUpItem;
+            }
+        }
+    }
+    public InventoryActions @inventory => new InventoryActions(this);
     public interface IMovementActions
     {
         void OnWalkLeft(InputAction.CallbackContext context);
         void OnWalkRight(InputAction.CallbackContext context);
+    }
+    public interface IInventoryActions
+    {
+        void OnPickUpItem(InputAction.CallbackContext context);
     }
 }
