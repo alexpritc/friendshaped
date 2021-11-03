@@ -68,6 +68,33 @@
                     "isPartOfComposite": false
                 }
             ]
+        },
+        {
+            "name": "inventory",
+            "id": "6e2851ba-2339-42ac-adf9-8da17b2c0204",
+            "actions": [
+                {
+                    "name": "pickUpItem",
+                    "type": "Button",
+                    "id": "79604d2d-6cd2-42fe-9517-aa16c23b21bf",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "be5fe192-781c-45de-9e16-51ca87f9725c",
+                    "path": "<Keyboard>/space",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "pickUpItem",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
         }
     ],
     "controlSchemes": []

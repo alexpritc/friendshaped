@@ -1,10 +1,7 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.InputSystem;
 
-    public class PlayerMovement : MonoBehaviour {
+namespace Player {
+    public class PlayerManager : MonoBehaviour {
         
         public enum MovementStates { NONE, WALKING}
         
@@ -14,6 +11,8 @@ using UnityEngine.InputSystem;
 
         private bool isMovingLeft;
         private bool isMovingRight;
+
+        [SerializeField] private Item newItem;
     
         // Start is called before the first frame update
         void Awake() {
@@ -22,8 +21,11 @@ using UnityEngine.InputSystem;
             // Input callbacks
             controls.movement.walkLeft.started += ctx => isMovingLeft = true;
             controls.movement.walkRight.started += ctx => isMovingRight = true;
+            
             controls.movement.walkLeft.canceled += ctx => isMovingLeft = false;
             controls.movement.walkRight.canceled += ctx => isMovingRight = false;
+
+            controls.inventory.pickUpItem.performed += ctx => PickUpItem();
         }
 
         private void Update() {
@@ -50,12 +52,21 @@ using UnityEngine.InputSystem;
             transform.position += new Vector3(x, 0f, 0f);
         }
 
+        void PickUpItem() {
+            if (newItem == null) return;
+            GameManager.Instance.PickUpItem(newItem);
+            GameManager.Instance.MakeItemCarryOver(newItem);
+            newItem = null;
+            GameManager.Instance.ActionCompleted();
+        }
+
         // Required for the input system.
         void OnEnable() {
-            controls.movement.Enable();
+            controls.Enable();
         }
 
         void OnDisable() {
-            controls.movement.Disable();
+            controls.Disable();
         }
-    }   
+    }
+}   
