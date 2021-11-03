@@ -57,7 +57,6 @@ namespace Player {
             GameManager.Instance.PickUpItem(newItem);
             GameManager.Instance.MakeItemCarryOver(newItem);
             newItem = null;
-            GameManager.Instance.ActionCompleted();
         }
 
         // Required for the input system.
