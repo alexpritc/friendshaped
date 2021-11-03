@@ -31,4 +31,10 @@ public class LoopManager : MonoBehaviour {
             OnAllActionsComplete();
         }
     }
+
+    private void OnDestroy() {
+        GameManager.Instance.onLoopComplete -= OnLoopComplete;
+        GameManager.Instance.onAllActionsComplete -= OnAllActionsComplete;
+        GameManager.Instance.onActionCompleted -= OnActionCompleted;
+    }
 }
