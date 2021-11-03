@@ -42,4 +42,11 @@ public class GameManager : MonoBehaviour {
             onPickUpItem(item);
         }
     }
+    
+    public event Action<Item> onMakeItemCarryOver;
+    public void MakeItemCarryOver(Item item){
+        if (onMakeItemCarryOver != null) {
+            onMakeItemCarryOver(item);
+        }
+    }
 }

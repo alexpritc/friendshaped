@@ -274,7 +274,6 @@ GameObject:
   - component: {fileID: 872308934}
   - component: {fileID: 872308933}
   - component: {fileID: 872308936}
-  - component: {fileID: 872308937}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -295,7 +294,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerState: 0
-  newItem: {fileID: 34517349}
+  newItem: {fileID: 0}
 --- !u!212 &872308934
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -375,18 +374,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   heldItems: []
   carryOverItem: {fileID: 0}
---- !u!114 &872308937
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 872308932}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f6cfd3102216f9e4e9037d89086efcd0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &940879575
 GameObject:
   m_ObjectHideFlags: 0
