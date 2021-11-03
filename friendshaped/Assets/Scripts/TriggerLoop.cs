@@ -6,6 +6,8 @@ using UnityEngine;
 public class TriggerLoop : MonoBehaviour {
 
     void Start() {
-        GameManager.Instance.LoopComplete();
+        GameManager.Instance.ActionCompleted();
+        GameManager.Instance.ActionCompleted();
+        GameManager.Instance.ActionCompleted();
     }
 }

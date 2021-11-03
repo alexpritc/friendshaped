@@ -20,4 +20,18 @@ public class GameManager : MonoBehaviour {
             onLoopComplete();
         }
     }
+    
+    public event Action onAllActionsComplete;
+    public void AllActionsComplete(){
+        if (onAllActionsComplete != null) {
+            onAllActionsComplete();
+        }
+    }
+    
+    public event Action onActionCompleted;
+    public void ActionCompleted(){
+        if (onActionCompleted != null) {
+            onActionCompleted();
+        }
+    }
 }
