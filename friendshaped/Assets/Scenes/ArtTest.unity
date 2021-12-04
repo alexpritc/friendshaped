@@ -1222,7 +1222,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 339390337}
         m_TargetAssemblyTypeName: Map.FogManager, Assembly-CSharp
-        m_MethodName: CheckFog
+        m_MethodName: ToggleFog
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

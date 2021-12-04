@@ -8,6 +8,19 @@ namespace Map {
         // Changes which room is visible
         public void ToggleFog(Room roomA, Room roomB) {
 
+            if (roomA.IsRevealed && !roomB.IsRevealed) {
+                
+                roomB.RevealRoom();
+                roomA.HideRoom();
+            }
+            else {
+                roomA.RevealRoom();
+                roomB.HideRoom();
+            }
+        }
+        
+        public void ToggleFog() {
+
             if (roomOne.IsRevealed && !roomTwo.IsRevealed) {
                 
                 roomTwo.RevealRoom();
