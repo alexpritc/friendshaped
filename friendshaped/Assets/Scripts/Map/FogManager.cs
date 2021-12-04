@@ -6,7 +6,7 @@ namespace Map {
         [SerializeField] private Room roomTwo;
     
         // Changes which room is visible
-        public void CheckFog() {
+        public void ToggleFog(Room roomA, Room roomB) {
 
             if (roomOne.IsRevealed && !roomTwo.IsRevealed) {
                 
