@@ -7,9 +7,11 @@ using UnityEngine;
         [SerializeField] private Transform target;
         private Vector3 targetPosition;
 
+        [SerializeField] [Range(1f, 10f)] private float speedModifier;
+
         // Update is called once per frame
         void Update() {
             targetPosition = new Vector3(target.position.x, transform.position.y, transform.position.z);
-            transform.position = Vector3.MoveTowards(transform.position, targetPosition, 0.005f);
+            transform.position = Vector3.MoveTowards(transform.position, targetPosition, 0.005f * speedModifier);
         }
     }   
