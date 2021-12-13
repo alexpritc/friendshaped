@@ -8,12 +8,15 @@ namespace Player {
         [SerializeField] private MovementStates playerState;
         private PlayerControls controls;
         private float speed;
+        [SerializeField] [Range(1f,2.5f)] private float speedModifier;
 
         private bool isMovingLeft;
         private bool isMovingRight;
 
         [SerializeField] private Item newItem;
-    
+
+        public MovementStates PlayerState { get => playerState; set => playerState = value;}
+
         // Start is called before the first frame update
         void Awake() {
             controls = new PlayerControls();
@@ -33,15 +36,15 @@ namespace Player {
             switch (isMovingLeft, isMovingRight) {
                 case (true,false):
                     playerState = MovementStates.WALKING; 
-                    speed = -0.01f;
+                    speed = -0.01f * speedModifier;
                     break;
                 case (false,true):
                     playerState = MovementStates.WALKING; 
-                    speed = 0.01f;
+                    speed = 0.01f * speedModifier;
                     break;
                 default:
                     playerState = MovementStates.NONE; 
-                    speed = 0f;
+                    speed = 0f * speedModifier;
                     break;
             }
             

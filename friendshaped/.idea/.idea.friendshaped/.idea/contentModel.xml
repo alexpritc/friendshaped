@@ -17,6 +17,11 @@
             <e p="LoopManager.cs" t="Include" />
             <e p="TriggerLoop.cs" t="Include" />
           </e>
+          <e p="Map" t="Include">
+            <e p="Door.cs" t="Include" />
+            <e p="FogManager.cs" t="Include" />
+            <e p="Room.cs" t="Include" />
+          </e>
           <e p="Player" t="Include">
             <e p="Inventory.cs" t="Include" />
             <e p="Item.cs" t="Include" />
