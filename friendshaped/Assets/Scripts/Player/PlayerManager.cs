@@ -20,6 +20,8 @@ namespace Player {
         private Rigidbody2D rb2D;
         private Vector2 velocity;
 
+        private bool hasMoved = false;
+
         // Start is called before the first frame update
         void Awake() {
             rb2D = GetComponent<Rigidbody2D>();
@@ -53,6 +55,12 @@ namespace Player {
             }
 
             rb2D.MovePosition(rb2D.position + velocity * Time.fixedDeltaTime);
+
+            if (!hasMoved && playerState == MovementStates.WALKING)
+            {
+                hasMoved = !hasMoved;
+                GameManager.Instance.NextPrompt();
+            }
         }
 
         void PickUpItem() {
