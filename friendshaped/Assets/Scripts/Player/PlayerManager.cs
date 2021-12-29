@@ -1,9 +1,9 @@
 using UnityEngine;
 
 namespace Player {
+
+    public enum MovementStates { NONE, WALKING }
     public class PlayerManager : MonoBehaviour {
-        
-        public enum MovementStates { NONE, WALKING}
         
         [SerializeField] private MovementStates playerState;
         private PlayerControls controls;

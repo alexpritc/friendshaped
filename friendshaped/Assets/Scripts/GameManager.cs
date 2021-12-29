@@ -5,6 +5,7 @@ using Player;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public enum PromptKeys { A, D, E, Right, Left }
 [System.Serializable]
@@ -33,6 +34,17 @@ public class GameManager : MonoBehaviour {
     [SerializeField]
     private GameObject player;
 
+    [SerializeField]
+    private Slider loopUI;
+    private float timer;
+    [SerializeField]
+    private float timeModifier = 2f;
+
+    [Header("Objectives")]
+    private bool foundMurderer;
+    private bool foundWeapon;
+    private bool foundLocation;
+
     void Awake() {
         if(instance != null) {
             Destroy(instance.gameObject);
@@ -40,6 +52,25 @@ public class GameManager : MonoBehaviour {
         instance = this;
 
         CreatePrompt(player.transform.position + new Vector3(1, 2, 0), "Move", PromptKeys.A, PromptKeys.D);
+    }
+
+    private void Update()
+    {
+        //if (player.GetComponent<PlayerManager>().PlayerState == MovementStates.WALKING)
+        //{
+            timer += Time.deltaTime * timeModifier;
+            loopUI.value = timer;
+
+            if (timer >= loopUI.maxValue)
+            {
+                OnLoopComplete();
+            }
+        //}
+    }
+
+    private void OnLoopComplete()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 
     public void NextPrompt()

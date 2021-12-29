@@ -17,7 +17,9 @@ public class DialogueManager : MonoBehaviour {
     // UI Prefabs
     [SerializeField]
     private Text textPrefab = null;
-    [SerializeField]
+	[SerializeField]
+	private GameObject textBoxPrefab = null;
+	[SerializeField]
     private Button buttonPrefab = null;
 	
     void Awake () {
@@ -80,7 +82,10 @@ public class DialogueManager : MonoBehaviour {
 	void CreateContentView (string text) {
 		Text storyText = Instantiate (textPrefab) as Text;
 		storyText.text = text;
-		storyText.transform.SetParent (canvas.transform, false);
+
+		GameObject textbox = Instantiate(textBoxPrefab) as GameObject;
+		textbox.transform.SetParent(canvas.transform, false);
+		storyText.transform.SetParent (textbox.transform, false);
 	}
 
 	// Creates a button showing the choice text
