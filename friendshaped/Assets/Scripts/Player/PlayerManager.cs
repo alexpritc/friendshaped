@@ -13,8 +13,6 @@ namespace Player {
         private bool isMovingLeft;
         private bool isMovingRight;
 
-        [SerializeField] private Item newItem;
-
         public MovementStates PlayerState { get => playerState; set => playerState = value;}
 
         private Rigidbody2D rb2D;
@@ -33,8 +31,6 @@ namespace Player {
             
             controls.movement.walkLeft.canceled += ctx => isMovingLeft = false;
             controls.movement.walkRight.canceled += ctx => isMovingRight = false;
-
-            controls.inventory.pickUpItem.performed += ctx => PickUpItem();
         }
 
         private void FixedUpdate() {
@@ -61,13 +57,6 @@ namespace Player {
                 hasMoved = !hasMoved;
                 GameManager.Instance.NextPrompt();
             }
-        }
-
-        void PickUpItem() {
-            if (newItem == null) return;
-            GameManager.Instance.PickUpItem(newItem);
-            GameManager.Instance.MakeItemCarryOver(newItem);
-            newItem = null;
         }
 
         // Required for the input system.

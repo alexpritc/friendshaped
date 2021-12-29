@@ -3,68 +3,80 @@ using System.Collections.Generic;
 using UnityEngine;
 using Map;
 
-public class Interactions : MonoBehaviour
+namespace Player
 {
-    PlayerControls controls;
-
-    bool canInteract;
-
-    private GameObject interactWith;
-
-    void Awake()
+    public class Interactions : MonoBehaviour
     {
-        controls = new PlayerControls();
-        controls.interactions.interact.performed += ctx => Interact();
-    }
+        PlayerControls controls;
 
-    private void Interact()
-    {
-        if (canInteract)
+        bool canInteract;
+
+        private GameObject interactWith;
+
+        void Awake()
         {
-            switch (interactWith.tag)
+            controls = new PlayerControls();
+            controls.interactions.interact.performed += ctx => Interact();
+        }
+
+        private void Interact()
+        {
+            if (canInteract)
             {
-                case "Door":
-                    interactWith.GetComponent<Door>().UseDoor();
-                    break;
-                case "NPC":
-                    // Start dialogue
-                    break;
+                switch (interactWith.tag)
+                {
+                    case "Door":
+                        interactWith.GetComponent<Door>().UseDoor();
+                        break;
+                    case "NPC":
+                        // Start dialogue
+                        break;
+                    case "Item":
+                        GameManager.Instance.PickUpItem(interactWith.GetComponent<Item>());
+                        Destroy(interactWith);
+                        // Start interaction
+                        break;
+                }
             }
         }
-    }
 
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        canInteract = true;
-
-        interactWith = collision.gameObject;
-
-        if (collision.tag == "Door")
+        private void OnTriggerEnter2D(Collider2D collision)
         {
-            GameManager.Instance.CreatePrompt(transform.position + new Vector3(1, 2, 0), "Use Door", PromptKeys.E);
+            canInteract = true;
+
+            interactWith = collision.gameObject;
+
+            if (collision.tag == "Door")
+            {
+                GameManager.Instance.CreatePrompt(transform.position + new Vector3(1, 2, 0), "Use Door", PromptKeys.E);
+            }
+            else if (collision.tag == "NPC")
+            {
+                GameManager.Instance.CreatePrompt(transform.position + new Vector3(1, 2, 0), "Talk", PromptKeys.E);
+            }
+            else if (collision.tag == "Item")
+            {
+                GameManager.Instance.CreatePrompt(transform.position + new Vector3(1, 2, 0), "Inspect", PromptKeys.E);
+            }
         }
-        else if (collision.tag == "NPC")
+
+        private void OnTriggerExit2D(Collider2D collision)
         {
-            GameManager.Instance.CreatePrompt(transform.position + new Vector3(1, 2, 0), "Talk", PromptKeys.E);
+            GameManager.Instance.RemovePrompt();
+            canInteract = false;
+            interactWith = null;
         }
-    }
-
-    private void OnTriggerExit2D(Collider2D collision)
-    {
-        GameManager.Instance.RemovePrompt();
-        canInteract = false;
-        interactWith = null;
-    }
 
 
-    // Required for the input system.
-    void OnEnable()
-    {
-        controls.Enable();
-    }
+        // Required for the input system.
+        void OnEnable()
+        {
+            controls.Enable();
+        }
 
-    void OnDisable()
-    {
-        controls.Disable();
+        void OnDisable()
+        {
+            controls.Disable();
+        }
     }
 }
