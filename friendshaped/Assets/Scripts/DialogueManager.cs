@@ -14,14 +14,15 @@ public class DialogueManager : MonoBehaviour {
     [SerializeField]
     private Canvas canvas = null;
 
-    // UI Prefabs
-    [SerializeField]
+	// UI Prefabs
+	[SerializeField]
     private Text textPrefab = null;
 	[SerializeField]
 	private GameObject textBoxPrefab = null;
 	[SerializeField]
     private Button buttonPrefab = null;
-	
+
+	private bool speakerRight;
     void Awake () {
 		// Remove the default message
 		RemoveChildren();
@@ -85,7 +86,9 @@ public class DialogueManager : MonoBehaviour {
 
 		GameObject textbox = Instantiate(textBoxPrefab) as GameObject;
 		textbox.transform.SetParent(canvas.transform, false);
-		storyText.transform.SetParent (textbox.transform, false);
+
+		textbox.GetComponentInChildren<Text>().text = storyText.text;
+		//storyText.transform.SetParent (textbox.transform, false);
 	}
 
 	// Creates a button showing the choice text
@@ -109,7 +112,10 @@ public class DialogueManager : MonoBehaviour {
 	void RemoveChildren () {
 		int childCount = canvas.transform.childCount;
 		for (int i = childCount - 1; i >= 0; --i) {
-			GameObject.Destroy (canvas.transform.GetChild (i).gameObject);
+			if (!canvas.transform.GetChild(i).name.Contains("Canvas"))
+			{
+				GameObject.Destroy(canvas.transform.GetChild(i).gameObject);
+			}
 		}
 	}
 }
