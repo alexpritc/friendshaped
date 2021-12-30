@@ -14,6 +14,12 @@ public class DialogueManager : MonoBehaviour {
     [SerializeField]
     private Canvas canvas = null;
 
+	[Header("Textboxes")]
+	[SerializeField] private GameObject messageA;
+	[SerializeField] private GameObject messageB;
+	[SerializeField] private GameObject messageC;
+	[SerializeField] private GameObject messageD;
+
 	// UI Prefabs
 	[SerializeField]
     private Text textPrefab = null;
