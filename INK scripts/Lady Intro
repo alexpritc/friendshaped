@@ -1,0 +1,83 @@
+===LadyDescription
+Lady Mortimer is an elderly lady and quite the character. 
+She wears a gold bird cage as a head ornament (which she insists isn't a hat) so she can be close to her dearest pet conure at all times.
+
+->LadyIntro
+
+===LadyIntro
+
+ * [Ask Lady Mortimer what she was doing last night]
+ -> LadyWhatHappened
+ * [Ask her who she suspects]
+ -> LadyWhodunnit
+  + [Walk Away]
+ -> Start
+ * ->
+-> Start
+
+===LadyWhatHappened
+Good morning, Lady Mortimer. 
+May I call you Mort for short?
+
+You may certainly not!
+
+Fair enough. 
+Can you describe to me what happened last night?
+
+I suppose. 
+I was trying to enjoy a quiet drink with my dear friend Mr Lionel. 
+
+I don't think I've met Mr Lionel, is he another passenger?
+
+Well of course you've met him, he's right here! (she guestures to the conure on her head)
+
+...Of course. 
+Sorry. 
+Do go on. 
+
+Anyway. 
+We were trying to have a quiet drink but the dining cart was awfully loud. 
+Everyone on this train has terrible manners on this train, you know.
+We were about to leave anyway when that dreadful Inspector spilled a drink near me!
+I avoided it, of course
+But gave him a telling off nonetheless. 
+
+I'm sure you did. 
+
+Quite. 
+Once he ran off I also retired to my bed chambers. 
+Mr Lionel was quite shaken up by the whole ordeal so I had to tend to him. 
+
+Are you feeling better now, Mr Lionel?
+
+...He's a bird. 
+He can't talk. 
+
+Of course, apologies. 
+
+...imbecile...
+->LadyIntro
+===LadyWhodunnit
+I get the sense you're a well travelled woman, Lady Mortimer. 
+
+I've seen some things in my time, yes. 
+
+Who do you think could have murdered that poor man?
+
+Oh I dread to think of it!
+A woman mustn't think of such horrible things!
+
+I'm sorry I aske-
+
+No! 
+It's too late, I'm devastated!
+
+(she wipes away a tear that isn't there)
+
+To talk of death this way, it's so crude!
+Some people have no respect for life. 
+We have to go. 
+We don't have time for such vulgar conversation. 
+
+My apologies, Lady Mortimer. 
+->LadyIntro

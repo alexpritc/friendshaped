@@ -1,0 +1,154 @@
+===StewardDescription
+The Steward is a young man who clearly isn't too enthused with his job but can't afford to get fired. 
+He isn't very good at controlling his facial expressions so wears a face mask to keep them hidden and avoid trouble. 
+
+->StewardIntro
+
+===StewardIntro
+
+ * [Ask the Steward what they were doing last night]
+ -> StewardWhatHappened
+ * [Ask him who he suspects]
+ -> StewardWhodunnit
+  + [Walk Away]
+ -> Start
+ * ->
+-> Start
+===StewardWhatHappened
+Good morning Mr Steward sir!
+
+...Good Morning?
+
+Working hard or hardly working, amiright?
+
+...there's been a murder. 
+Why are you being like this?
+
+Yes.
+Well.
+That's why I'm here!
+
+Hm?
+
+Can you explain what you were up to last night?
+
+Sure.
+Well as I'm sure you remember most of the passengers were taking drinks in the dining cart last night. 
+I don't do bar work,
+I'm more of a 'here when you need me' type guy.
+So I was resting in the staff quarters for most of the night. 
+
+ * [Ask if he was sat there the whole night]
+ -> StewardSatThere
+ * [Ask if he's covering for someone]
+ -> StewardCoverUp
+ 
+ ===StewardSatThere
+You were just sat there, waiting to be called upon, the whole night?
+
+(he shrugged)
+No one needed my services, I guess. 
+No one even passed by the door apart from Lady Mortimer when she went to bed. 
+
+Fair enough I guess. 
+Thanks for your help.
+
+->StewardIntro
+
+===StewardCoverUp
+This all sounds awfully bland. 
+
+Yeah, and?
+That's the job. 
+It's not exactly thrilling. 
+
+I don't know, Steward. 
+It sounds to me like I'm not getting the full story.
+
+What are you suggesting?!
+
+Did you see something?
+Are you covering for the murderer?!
+
+WHAT?
+NO!
+..Fine.
+I haven't been completely honest.
+
+I knew it!
+
+-but it's nothing like that!
+It's just...
+Sometimes...
+When none of the passengers need me...
+
+SPIT IT OUT man
+
+I TAKE NAPS IN THE STAFF ROOM OKAY!
+
+Oh buddy.
+
+Yeah. 
+I'm not proud. 
+I wasn't even asleep for long this time though!
+I was woken up around 11.30, I was barely out for 20 minutes!
+
+That's more than enough time for you to miss something!
+What woke you up?
+
+There were birds screeching on top of the train. 
+Must have been going through a flock of them or something?
+I don't know anything about birds but they were bloody loud. 
+
+Not a fun way to wake upon
+But you kinda deserved it.
+
+Yeah I know. 
+...
+Please don't tell anyone I nap. 
+
+No promises.
+
+
+->StewardIntro
+===StewardWhodunnit
+So you must have a pretty good take on everyone on this train, right?
+
+I guess?
+
+If you had to pick someone, who would you suspect murdered the poor man?
+
+I don't know the passengers that well!
+I know who takes tea before bed, not who has a homicidal streak!
+
+Well that's less useful. 
+Do you have any suggestions?
+
+Hm. 
+Well. 
+No one walked past my door after Lady Mortimer went to bed
+And the stowaway was found dead in the dining cart
+So I'd assume it was someone who sleeps in the rear of the train?
+Perhaps Sands, he seems awfully interested in this whole thing. 
+
+// SANDS IS SUS UNLOCKED
+
+Good idea, Steward!
+
+Thanks?
+
+One more thing...
+
+Yes?
+
+Who takes tea before bed?
+
+Oh. 
+Lady Mortimer. 
+She says she needs it to fall asleep. 
+
+Fair enough. 
+Ladies do like tea. 
+
+
+->StewardIntro

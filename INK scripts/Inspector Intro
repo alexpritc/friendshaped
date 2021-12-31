@@ -1,0 +1,110 @@
+===SandsDescription
+Inspector Sands is a middle aged gentlemen, a P.I (and a hack one at that). 
+He wears a brown trench coat and carries a magnifying glass everywhere he goes, like he belongs in a cartoon.
+->SandsIntro
+
+===SandsIntro
+
+ * [Ask Sands what he was doing last night]
+ -> SandsWhatHappened
+ * [Ask him who he suspects]
+ -> SandsWhodunnit
+ + [Walk Away]
+ -> Start
+ * ->
+-> Start
+
+===SandsWhatHappened
+So, Inspector. 
+What were you doing last night?
+
+I was... 
+indulging...
+at the bar with everyone else.
+I remember having a rousing debate with you about the proper pronunciation of 'scone'
+
+Ah yes, Inspector, I remember that well.
+I guess we're all entitled to our opinions...
+(even if they are wrong)...
+
+Yes quite.
+Anyway 
+At some point Docor squashed passed me on his way back to his bedchambers...
+Which made me spill my drink on Lady Mortimer
+
+Yikes
+
+Yep.
+She was not best pleased so I escaped away to my own bed shortly afterwards.
+
+That sounds like a smart move.
+
+Yes, I thought so.
+I've seen a lot in my time 
+But that woman is something else
+
+->SandsIntro
+
+===SandsWhodunnit
+So I hear you are something of a detective yourself, Sands?
+
+You heard right! 
+I'm a professional don't you know 
+And I'm very discreet
+
+I'm sure!
+So what do you make of all of this?
+Who do you think committed this crime?
+
+I was wondering when you'd ask me!
+You learn a lot in this line of work
+Namely:
+It's always the spouse. 
+
+...but the body found was a stowaway?
+
+Exactly!
+So there must be a SECOND STOWAWAY! 
+A marital murder!
+Case closed. 
+
+* ['That's a ridiculous idea.']
+ -> SandsWhodunnitRidiculous
+ * [Agree with him.]
+ -> SandsWhodunnitAgree
+
+===SandsWhodunnitRidiculous
+Hm. 
+Isn't that a bit of a stretch, Inspector?
+
+hsdafgdsa
+You wanted my expert opinion!
+How dare you question me!
+
+I'm just sayi-
+
+No!
+For all we know it was probably you!
+Why else would you try and discredit a professional like myself??
+I've got my eye on you lad.
+
+I'm not a lad I'm a robot. 
+
+You're an idiot, that's what you are.
+You don't want to be my enemy.
+Trust me. 
+->SandsIntro
+
+===SandsWhodunnitAgree
+Ah of course!
+What a splendid theory, Sands!
+
+Thank you, lass!
+This is my job after all!
+
+I'm not a lass I'm a robot. 
+
+You're a damn genius, that's what you are!
+I have your back, no matter what. 
+We detectives gotta stick together, eh?
+->SandsIntro
