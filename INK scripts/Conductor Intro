@@ -1,0 +1,110 @@
+===ConductorDescription
+The Conductor is a middle-aged woman who is very proud of this train. 
+She thinks she is a sea captain, and although you haven't seen her since boarding the train, other passengers say she wears an old sailors hat on her head. 
+You talk to her through a rusty intercom.
+
+->ConductorIntro
+
+===ConductorIntro
+
+ * [Ask the Conductor what she was doing last night]
+ -> ConductorWhatHappened
+ * [Ask her who she suspects]
+ -> ConductorWhodunnit
+  + [Walk Away]
+ -> Start
+ * ->
+-> Start
+
+===ConductorWhatHappened
+Hello? 
+Is this thing on?
+
+-Bzzt-
+Roger! 
+This is the Conductor, at your service!
+How can I help you?
+
+Hello Mrs Conductor Lady!
+
+Oh please, no need for the formalities!
+Call me Captain!
+
+...Like, a boat captain?
+
+Exactly!
+Now what do you want, skipper?
+I'm pretty busy up here!
+
+I wanted to ask you what happened last night as you remember it?
+
+Of course!
+Well, naturally, I was stuck in here the whole night
+(I always miss out on the parties)
+But I heard you guests had a...
+Shindig?
+Is that what the kids call it these days?
+
+Shindig is good. 
+Or soiree.
+Both very hip.
+
+Right!
+Well all I know is the booze supplies took quite a hit
+Always brings out the worst in people, it seems.
+
+That matches up with what I remember. 
+So you were really stuck in there the whole time?
+
+I'm afraid so, skipper
+Just the two of us 
+
+Two of you?
+
+Oh yes!
+Turnip!
+My wife's cat often joins me on my shifts.
+He's a bit of a blighter but a jolly good first mate nonetheless.
+
+Are cats allowed on fancy cross-country trains?
+
+...Yes.
+->ConductorIntro
+===ConductorWhodunnit
+As the head of this fine locomotive-
+
+She's more than fine she is superb!
+
+She is indeed!
+Well, do you have any idea who may have done this?
+
+I'm afraid not
+Being holed up in here I haven't seen much of the action.
+But rest assured they will be dealt with when we arrive!
+You have my word.
+
+I appreciate that.
+{not StewardWhodunnit:
+-> ConductorSuggestSteward
+-else: 
+->ConductorWhodunnitEnd
+}
+=ConductorSuggestSteward
+One more thing -
+You should talk to someone more involved. 
+Maybe the Steward.
+
+Hm?
+
+Yes, he's a good lad.
+A bit odd, Perhaps
+But I trust him wholeheartedly.
+->ConductorWhodunnitEnd
+=ConductorWhodunnitEnd
+
+Thank you for all your help.
+
+No problemo, skipper.
+
+->ConductorIntro
+

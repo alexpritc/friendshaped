@@ -1,6 +1,8 @@
 INCLUDE Lady Intro
-INCLUDE Steward Intro 
-INCLUDE Inspector Intro 
+INCLUDE Steward Intro
+INCLUDE Inspector Intro
+INCLUDE Conductor Intro
+
 
 // who to talk to
 ->Start
@@ -18,6 +20,10 @@ Who do you want to talk to?
 ->StewardDescription
 +{StewardDescription} [The Steward]
 ->StewardIntro
+*{not ConductorDescription} [The Conductor]
+-> ConductorDescription
++{ConductorDescription} [The Conductor]
+-> ConductorIntro
 *->
 -> END
 
