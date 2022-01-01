@@ -10,6 +10,8 @@ She wears a gold bird cage as a head ornament (which she insists isn't a hat) so
  -> LadyWhatHappened
  * [Ask her who she suspects]
  -> LadyWhodunnit
+ *{SandsWhodunnit.SECONDSTOWAWAY} [Ask about the second stowaway theory]
+ -> LadySecondStowaway
   + [Walk Away]
  -> Start
  * ->
@@ -72,7 +74,7 @@ I'm sorry I aske-
 No! 
 It's too late, I'm devastated!
 
-(she wipes away a tear that isn't there)
+(she wipes away a tear)
 
 To talk of death this way, it's so crude!
 Some people have no respect for life. 
@@ -80,4 +82,30 @@ We have to go.
 We don't have time for such vulgar conversation. 
 
 My apologies, Lady Mortimer. 
+->LadyIntro
+
+===LadySecondStowaway
+What do you make of the detectives theory?
+That there is a second stowaway on board
+And they committed the murder?
+
+Sands thought of that?
+...I guess it makes a certain amount of sense.
+
+What makes you say that?
+
+Well the staff on these trains change so frequently
+
+Oh really?
+
+Oh yes, it seems the Conductor struggles to keep her people in check...
+So it wouldn't be too hard for one of them to sneak someone on board. 
+Unnoticed. 
+
+Interesting point
+I'll keep that in mind.
+
+You do that.
+
+
 ->LadyIntro

@@ -10,6 +10,8 @@ He isn't very good at controlling his facial expressions so wears a face mask to
  -> StewardWhatHappened
  * [Ask him who he suspects]
  -> StewardWhodunnit
+  *{SandsWhodunnit.SECONDSTOWAWAY} [Ask about the second stowaway theory]
+  -> StewardSecondStowaway
   + [Walk Away]
  -> Start
  * ->
@@ -150,5 +152,27 @@ She says she needs it to fall asleep.
 Fair enough. 
 Ladies do like tea. 
 
+
+->StewardIntro
+
+===StewardSecondStowaway
+Do you think a second stowaway could have committed the murder?
+
+Hm.
+I doubt it.
+It's a small train, I can't imagine multiple people would go unnoticed. 
+...but to be fair, I didn't think there would be one stowaway in the first place
+...until that body showed up.
+
+It is a bit of a plot twist, eh?
+
+Yeah.
+I feel for the Conductor 
+- she normally runs such a tight ship.
+She can't be feeling good about having not noticed a stowaway
+
+Let alone a murdered stowaway.
+
+Exactly. 
 
 ->StewardIntro

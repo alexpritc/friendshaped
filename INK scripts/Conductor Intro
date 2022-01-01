@@ -11,6 +11,8 @@ You talk to her through a rusty intercom.
  -> ConductorWhatHappened
  * [Ask her who she suspects]
  -> ConductorWhodunnit
+  *{SandsWhodunnit.SECONDSTOWAWAY} [Ask about the second stowaway theory]
+  -> ConductorSecondStowaway
   + [Walk Away]
  -> Start
  * ->
@@ -108,3 +110,38 @@ No problemo, skipper.
 
 ->ConductorIntro
 
+===ConductorSecondStowaway
+Have you heard the Inspector's latest theory?
+
+Why no, I haven't!
+People often forget to update me on these things. 
+Please, tell me!
+
+*'He thinks maybe a second stowaway is on board, and they committed the murder?'
+->ConductorSecondStowawayNice
+*'He reckons you've let a murderer sneak on board.'
+->ConductorSecondStowawayRude
+
+=ConductorSecondStowawayNice
+I guess that could have happened?
+I have no clue, I'm afraid.
+Sorry I couldn't be of more help. 
+->ConductorIntro
+
+=ConductorSecondStowawayRude
+How dare you suggest that?
+
+I didn't suggest it, the inspec-
+
+I run a tight ship here, Skipper!
+Nothing goes on without me knowing!
+
+(No-one said you didn't know about it)
+Of course not.
+Sorry for bringing it up. 
+
+You'd better be sorry!
+Look, I have to go now -
+Turnip needs some comforting
+He doesn't care for accusations either. 
+->ConductorIntro

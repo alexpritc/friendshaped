@@ -10,6 +10,8 @@ He wears a venetion mask and his heavy cloak smells of potent chemicals.
  -> StoctorWhatHappened
  * [Ask him who he suspects]
  -> StoctorWhodunnit
+  *{SandsWhodunnit.SECONDSTOWAWAY} [Ask about the second stowaway theory]
+  ->StoctorSecondStowaway
   + [Walk Away]
  -> Start
  * ->
@@ -75,4 +77,35 @@ Well, you are the expert, I suppose.
 I think I'll continue to treat this as suspicious circumstances, though.
 
 
+->StoctorIntro
+
+===StoctorSecondStowaway
+//if Doctor
+So Doctor - 
+What do think about the theory of a second stowaway?
+
+What an ...interesting concept. 
+
+It was the Inspector's idea.
+
+Of course it was. 
+Well.
+I suppose it could be possible?
+
+Really?!
+I'm surprised an educated man such as youself would consider it
+Maybe the theory does hold some weight?
+
+Perhaps.
+If one person
+- a criminal, at that -
+could sneak on board, why not more?
+It could be a whole family operation!
+
+You think?
+
+A single stowaway would surely be discovered without someone to watch their back.
+Only an idiot would try and sneak onto a fancy train like this without backup.
+
+//if stowaway
 ->StoctorIntro
