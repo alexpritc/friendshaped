@@ -1,0 +1,78 @@
+===StoctorDescription
+The Doctor is a quiet fellow who tends to blend into the background.
+He wears a venetion mask and his heavy cloak smells of potent chemicals.
+
+->StoctorIntro
+
+===StoctorIntro
+
+ * [Ask the Doctor what he was doing last night]
+ -> StoctorWhatHappened
+ * [Ask him who he suspects]
+ -> StoctorWhodunnit
+  + [Walk Away]
+ -> Start
+ * ->
+-> Start
+===StoctorWhatHappened
+Hello doctor!
+
+(he nods solomnly)
+
+Right.
+Can I ask you a few questions?
+
+...
+
+What were you doing last night?
+
+I was in the dining cart having some drinks. 
+
+With the rest of us?
+
+Exactly!
+But I got tired of everyone.
+So I went to bed at 10pm.
+
+Fair enough. 
+I do hope I didn't contribute to your early departure?
+
+What do you mean?
+
+You know... 
+I said your mask made you look like the Lady's bird?
+
+Oh that!
+Yes I'm afraid that didn't help.
+
+Oops.
+
+Don't worry about it.
+You're forgiven.
+
+Thank you, Doctor.
+->StoctorIntro
+===StoctorWhodunnit
+
+So Doctor, do you have any suspicions as to who the culprit is?
+Any medical insight, perhaps, based on the body?
+
+Well, you can never really be sure. 
+Not at this stage.
+For all we know, it may have not even been a murder!
+
+Oh really?
+I thought we were pretty sure!
+
+Oh yes.
+You see it all in the medical world.
+For all we know, he had a medical issue which took him away unexpectedly. 
+Things present in misleading ways.
+
+(Hm. Isn't a bullet wound pretty obvious though?)
+
+Well, you are the expert, I suppose. 
+I think I'll continue to treat this as suspicious circumstances, though.
+
+
+->StoctorIntro

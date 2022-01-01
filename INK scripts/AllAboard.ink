@@ -2,6 +2,8 @@ INCLUDE Lady Intro
 INCLUDE Steward Intro
 INCLUDE Inspector Intro
 INCLUDE Conductor Intro
+INCLUDE Stoctor Intro
+
 
 
 // who to talk to
@@ -24,6 +26,10 @@ Who do you want to talk to?
 -> ConductorDescription
 +{ConductorDescription} [The Conductor]
 -> ConductorIntro
+*{not StoctorDescription} [The Doctor]
+->StoctorDescription
++{StoctorDescription} [The Doctor]
+->StoctorIntro
 *->
 -> END
 
