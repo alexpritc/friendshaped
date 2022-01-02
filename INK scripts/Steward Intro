@@ -18,6 +18,8 @@ He isn't very good at controlling his facial expressions so wears a face mask to
   -> StewardSecondStowaway
   * {StoctorSomeoneUp.ABody} [Ask about the stowaway pretending to be the doctor]
   ->StewardStoctor
+  * {LadyStoctor} [Tell the Steward that Lady Mortimer suspects the Conductor]
+  ->StewardConductorSus
   + [Walk Away]
  -> Start
  * ->
@@ -275,4 +277,37 @@ I'm just not going to think about it.
 It's fine. 
 I'm fine. 
 
+->StewardIntro
+
+===StewardConductorSus
+The Lady thinks that the Conductor is suspicious. #Player
+What do you reckon?
+
+Nah I don't think she would have anything to do with something like this. #Steward
+She's a good person
+And a good boss.
+She wouldn't hurt a fly.
+
+*[Ask how long they've worked together]
+->History  
+*[Suggest he's covering for the Conductor]
+->Covering
+
+=History
+You speak highly of her. #Player
+How long have you worked together?
+
+Almost a year now, I think?#Steward
+She has her quirks, for sure.
+She has her... secrets
+But I've always enjoyed working with her
+She makes it fun, ya'know?
+->StewardIntro
+=Covering
+Are you maybe... #Player
+Covering for the conductor?
+
+What a ridiculous suggestion! #Steward
+This job doesn't pay well enough to buy my silence!!
+Certainly not on something serious like this!
 ->StewardIntro

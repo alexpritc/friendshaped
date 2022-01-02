@@ -19,6 +19,8 @@ You talk to her through a rusty intercom.
    ->ConductorSomeoneUp
    * {StoctorSomeoneUp.ABody} [Ask about the stowaway pretending to be the doctor]
    ->ConductorStoctor
+    * {LadyStoctor} [Tell her someone suspects her]
+    ->ConductorSus
   + [Walk Away]
  -> Start
  * ->
@@ -214,4 +216,82 @@ They were found stealing.
 I would never knowingly let a thief on board my train.
 This job is my life,
 I wouldn't risk my career for something like that.
+->ConductorIntro
+
+===ConductorSus
+Hello again, Captain. #Player
+
+Howdy, Skipper! #Conductor
+Got any updates for us?
+
+{not ConductorStoctor.HappenOften:
+-> Accusation
+-else: 
+->BendTheRules
+}
+
+=Accusation
+Some people are suggesting that you've had something to do with this #Player
+
+WHAT?! #Conductor
+WHO??
+
+The Lady... #Player
+She thinks you helped the stowaway sneak on board
+And then remain hidden
+After the murder
+
+That woman is so quick to judge!#Conductor
+I get the feeling she's eager to blame anything on 'the staff'...
+Thanks for letting me know, Skipper
+->ConductorIntro
+
+=BendTheRules
+Well...#Player
+You know you said you've...
+Bent the rules before?
+
+...Yes? #Conductor
+
+...Have you snuck someone on board before?#Player
+
+...Yes. #Conductor
+
+...Did you sneak someone on board for this journey?#Player
+
+...Maybe. #Conductor
+But not the stowaway!
+No-one nefarious!!
+
+Who is it?#Player
+
+...Come say hello then.#Conductor
+...
+(MEOW)
+
+...Is that a cat? #Player
+
+Yep. #Conductor
+This is Turnip. 
+He's my wife's cat
+When she's at work he rides with me
+
+Ooooh #Player
+
+Yeah.#Conductor
+It's not technically allowed
+ESPECIALLY not when the Lady has Mr. Lionel with her
+But he's not hurting anyone when he's hidden in here. 
+
+That's fair enough.#Player
+Sorry I doubted you.
+Give him a boop from me
+
+You can boop him youself when we arrive #Conductor
+
+YAY! #Player
+Thanks Captain
+->ConductorIntro
+
+
 ->ConductorIntro

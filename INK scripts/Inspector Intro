@@ -15,6 +15,8 @@ He wears a brown trench coat and carries a magnifying glass everywhere he goes, 
  ->SandsSomeonesUp
  * {StoctorSomeoneUp.ABody} [Ask about the stowaway pretending to be the doctor]
  ->SandsStoctor
+  * {LadyStoctor} [Tell Sands that Lady Mortimer suspects the Conductor]
+  ->SandsConductorSus
  + [Walk Away]
  -> Start
  * ->
@@ -184,5 +186,17 @@ There's something not right about that woman... #Inspector
 I think she's hiding something...
 
 //LADY IS SUS UNLOCKED
+
+->SandsIntro
+
+===SandsConductorSus
+ Did you hear the Lady thinks the Conductor is suspicious?#Player
+ 
+ The Conductor? #Inspector
+ Nah im pretty sure she needs to drive the train. 
+ I mean, its not like she can just leave the engine alone, especially on a complicated journey like this! 
+ 
+ (This is a non-stop journey...)#Player
+ (Maybe she did have something to do with this?)
 
 ->SandsIntro

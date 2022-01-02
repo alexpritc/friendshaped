@@ -17,6 +17,8 @@ He wears a venetion mask and his heavy cloak smells of potent chemicals.
   ->StoctorSecondStowaway
   * {StewardWhatHappenedAgain.SeeAnything} [Ask about the person the Steward saw]
   ->StoctorSomeoneUp
+   * {LadyStoctor} [Tell the Doctor that Lady Mortimer suspects the Conductor]
+  ->StoctorConductorSus
   + [Walk Away]
  -> Start
  * ->
@@ -200,4 +202,30 @@ Soz
 //STOCTOR REVEALED
 ->StoctorIntro
 
+->StoctorIntro
+
+===StoctorConductorSus
+=Doctor
+The Lady thinks the Conductor is suspicious. #Player
+What do you think?
+
+Well, wasn't she in the engine room? #Stoctor
+I doubt someone could sneak around this train unnoticed...
+->StoctorIntro
+=Stowaway
+The Lady thinks the Conductor is suspicious. #Player
+What do you think?
+
+Well...#Stoctor
+From... 
+...personal experience...
+There are lots of ways to move around this train unnoticed
+Or she certainly knows the train well enough.
+
+What valuable insight!#Player
+
+But I don't think she had anything to do with this #Stoctor
+She doesn't seem like a bad egg
+The staff all speak highly of her,
+always a good sign. 
 ->StoctorIntro
