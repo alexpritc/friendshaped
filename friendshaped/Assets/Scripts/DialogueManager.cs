@@ -4,6 +4,7 @@ using System;
 using Ink.Runtime;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 
 // This is a super bare bones example of how to play and display a ink story in Unity.
 public class DialogueManager : MonoBehaviour {
@@ -17,6 +18,8 @@ public class DialogueManager : MonoBehaviour {
     private Canvas dialogueCanvas = null;
 	[SerializeField]
 	private Canvas choiceCanvas = null;
+	[SerializeField]
+	private Canvas commentaryCanvas = null;
 
 	// UI Prefabs
 	[SerializeField]
@@ -25,12 +28,17 @@ public class DialogueManager : MonoBehaviour {
 	private GameObject textBoxPrefab = null;
 	[SerializeField]
     private Button buttonPrefab = null;
+	[SerializeField]
+	private TextMeshProUGUI commentaryTextPrefab = null;
 
 	[SerializeField] float waitTime = 2f;
 
-	private Animator currentAnim;
+	private Animator currentAnim = null;
 
 	List<GameObject> currentDialogueBoxes;
+
+	private bool isCommentary;
+	private bool isPlayerTalking;
 
 	void Awake () {
 
@@ -46,6 +54,7 @@ public class DialogueManager : MonoBehaviour {
 	void StartStory () {
 		story = new Story (inkJSONAsset.text);
         if(OnCreateStory != null) OnCreateStory(story);
+
 		RefreshView();
 	}
 	
@@ -56,6 +65,7 @@ public class DialogueManager : MonoBehaviour {
 		// Remove all the UI on screen
 		RemoveChildren(dialogueCanvas);
 		RemoveChildren(choiceCanvas);
+		RemoveChildren(commentaryCanvas);
 
 		// Read all the content until we can't continue any more
 		StartCoroutine(DisplayNextDialogue());
@@ -76,8 +86,24 @@ public class DialogueManager : MonoBehaviour {
 			string text = story.Continue();
 			// This removes any white space from the text.
 			text = text.Trim();
+
 			// Display the text on screen!
-			CreateContentView(text);
+
+			if (story.currentTags.Count != 0)
+			{
+				isCommentary = story.currentTags.Contains("Commentary") ? true : false;
+				isPlayerTalking = story.currentTags.Contains("Player") ? true : false;
+			}
+
+			if (isCommentary)
+			{
+				// TODO: If is commentary, spawn in own place below buttons.
+				DisplayCommentary(text);
+			}
+			else
+			{
+				CreateContentView(text);
+			}
 
 
 			// TODO: Add player input (mouse click to skip to next)
@@ -88,12 +114,22 @@ public class DialogueManager : MonoBehaviour {
 			else
 			{
 				// If there's no more dialogue, don't bother waiting to display the buttons.
-				yield return new WaitUntil(() => GetClipName(currentAnim) == "ConstantDialogue");
+				yield return new WaitUntil(() => GetClipName(currentAnim) == "ConstantDialogue" || GetClipName(currentAnim) == "ConstantCommentaryText");
 			}
 		}
 
 		// Display all the choices, if there are any!
 		DisplayNextChoices();
+	}
+
+	void DisplayCommentary(string text)
+	{
+		TextMeshProUGUI storyText = Instantiate(commentaryTextPrefab) as TextMeshProUGUI;
+		storyText.text = text;
+
+		storyText.transform.SetParent(commentaryCanvas.transform, false);
+
+		currentAnim = storyText.GetComponent<Animator>();
 	}
 
 	void DisplayNextChoices()
@@ -131,6 +167,7 @@ public class DialogueManager : MonoBehaviour {
 
 	// Creates a textbox showing the the line of text
 	void CreateContentView (string text) {
+
 		Text storyText = Instantiate (textPrefab) as Text;
 		storyText.text = text;
 
@@ -139,7 +176,7 @@ public class DialogueManager : MonoBehaviour {
 
 		//textbox.GetComponentInChildren<Text>().text = storyText.text;
 		storyText.transform.SetParent (textbox.transform, false);
-
+		
 		// Add to array
 		AddToDialogueArray(ref textbox);
 
@@ -170,7 +207,8 @@ public class DialogueManager : MonoBehaviour {
 		}
 
 		// TODO: Add x value depending on who is talking
-		go.transform.localPosition = new Vector3(0, -50, 0); ;
+		float x = isPlayerTalking ? -100f : 100f;
+		go.transform.localPosition = new Vector3(x, -50, 0); ;
 	}
 
 	// Creates a button showing the choice text
