@@ -2,6 +2,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using System;
 using Ink.Runtime;
+using System.Collections;
 
 // This is a super bare bones example of how to play and display a ink story in Unity.
 public class DialogueManager : MonoBehaviour {
@@ -24,7 +25,8 @@ public class DialogueManager : MonoBehaviour {
 	[SerializeField]
     private Button buttonPrefab = null;
 
-	private bool speakerRight;
+	[SerializeField] float waitTime = 2.25f;
+
     void Awake () {
 		// Remove the default message
 		RemoveChildren(dialogueCanvas);
@@ -46,46 +48,65 @@ public class DialogueManager : MonoBehaviour {
 		// Remove all the UI on screen
 		RemoveChildren(dialogueCanvas);
 		RemoveChildren(choiceCanvas);
-		
-		// TODO: modify this section to display text boxes individually or speed up through clicks
 
 		// Read all the content until we can't continue any more
-		while (story.canContinue) {
-			// Continue gets the next line of the story
-			string text = story.Continue ();
-			// This removes any white space from the text.
-			text = text.Trim();
-			// Display the text on screen!
-			CreateContentView(text);
-		}
-
-
-		// TODO: wait till all story has been revealed until buttons are
-		
-		// Display all the choices, if there are any!
-		if(story.currentChoices.Count > 0) {
-			for (int i = 0; i < story.currentChoices.Count; i++) {
-				Choice choice = story.currentChoices [i];
-				Button button = CreateChoiceView (choice.text.Trim ());
-				// Tell the button what to do when we press it
-				button.onClick.AddListener (delegate {
-					OnClickChoiceButton (choice);
-				});
-			}
-		}
-		// If we've read all the content and there's no choices, the story is finished!
-		else {
-			Button choice = CreateChoiceView("End of story.\nRestart?");
-			choice.onClick.AddListener(delegate{
-				StartStory();
-			});
-		}
+		StartCoroutine(DisplayNextDialogue());
 	}
 
 	// When we click the choice button, tell the story to choose that choice!
 	void OnClickChoiceButton (Choice choice) {
 		story.ChooseChoiceIndex (choice.index);
 		RefreshView();
+	}
+
+	IEnumerator DisplayNextDialogue()
+	{
+		// Read all the content until we can't continue any more
+		while (story.canContinue)
+		{
+			// Continue gets the next line of the story
+			string text = story.Continue();
+			// This removes any white space from the text.
+			text = text.Trim();
+			// Display the text on screen!
+			CreateContentView(text);
+
+			if (story.canContinue)
+			{
+				yield return new WaitForSeconds(waitTime);
+			}
+			else
+			{
+				yield return null;
+			}
+		}
+
+		// Display all the choices, if there are any!
+		DisplayNextChoices();
+	}
+
+	void DisplayNextChoices()
+	{
+		if (story.currentChoices.Count > 0)
+		{
+			for (int i = 0; i < story.currentChoices.Count; i++)
+			{
+				Choice choice = story.currentChoices[i];
+				Button button = CreateChoiceView(choice.text.Trim());
+				// Tell the button what to do when we press it
+				button.onClick.AddListener(delegate {
+					OnClickChoiceButton(choice);
+				});
+			}
+		}
+		// If we've read all the content and there's no choices, the story is finished!
+		else
+		{
+			Button choice = CreateChoiceView("End of story.\nRestart?");
+			choice.onClick.AddListener(delegate {
+				StartStory();
+			});
+		}
 	}
 
 	// Creates a textbox showing the the line of text
