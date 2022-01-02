@@ -18,6 +18,8 @@ She wears a gold bird cage as a head ornament (which she insists isn't a hat) so
  -> LadySomeonesUp
  * {StoctorSomeoneUp.ABody} [Ask about the stowaway pretending to be the doctor]
  ->LadyStoctor
+ *{SandsStoctor}[Tell her Sands thinks she's suspicious]
+ ->LadySus
   + [Walk Away]
  -> Start
  * ->
@@ -127,7 +129,7 @@ Oh no, dear. #Lady
 I need my sleep. 
 I spent a while comforting Mr Lionel
 He refused to settle down last night!
-And when he eventually calmed down I was out like a light. 
+And when he eventually calmed down around 3am I was out like a light. 
 ->LadyIntro
 
 
@@ -163,4 +165,42 @@ She's either a lunatic who talks to herself...
 Or she's been hiding someone...
 
 //CONDUCTOR SUS UNLOCKED
+->LadyIntro
+
+===LadySus
+Lady Mortimer, the Inspector thinks you are hiding something #Player
+Care to comment?
+
+Oh that old buffoon thinks I'm suspicious?#Lady
+I wouldn't take his word for it dear 
+He talks the talk but I hear he's been out of work for a long time
+He's not exactly in demand these days 
+
+*[Ask her for a detailed account of last night]
+->LastNight
+*[Agree that Sands is talking rubbish]
+->SandsRubbish
+=LastNight
+Can you clarify exactly what you did last night after you went to bed?#Player
+
+I'VE TOLD YOU ALREADY!#Lady
+Mr Lionel was being restless
+He wouldn't stop squawking until about 2 in the morning!
+...Not that I mind looking after a dear friend, of course.
+
+Of course not. #Player
+So you just stayed in and looked after him?
+
+Yes! #Lady
+For hours!
+Now please let us be or he'll be just as bad tonight. 
+->LadyIntro
+=SandsRubbish
+You're right, Lady Mortimer #Player
+I don't know why I would consider anything that man suggested
+
+Finally, some sense!#Lady
+I was beginning to think everyone on this train had lost their minds
+Why, just last night the staff forgot to bring me my night-time tea!
+This institution is going to the dogs, I tell you
 ->LadyIntro

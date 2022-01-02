@@ -21,6 +21,8 @@ You talk to her through a rusty intercom.
    ->ConductorStoctor
     * {LadyStoctor} [Tell her someone suspects her]
     ->ConductorSus
+    *{SandsStoctor}[Tell her that Sands thinks the Lady is hiding something]
+    ->ConductorLadySus
   + [Walk Away]
  -> Start
  * ->
@@ -292,6 +294,53 @@ You can boop him youself when we arrive #Conductor
 YAY! #Player
 Thanks Captain
 ->ConductorIntro
+
+===ConductorLadySus
+The Inspector thinks Lady Mortimer is hiding anything. #Player
+I don't suppose you have any intel on her?
+
+Ooh I actually do this time!#Conductor
+Since her cabin is the closest to the engine room I can hear things sometimes
+Mainly that dang bird
+
+{ConductorSus.BendTheRules:
+It drives poor Turnip here insane!
+I'm half tempted to let him loose so he can silence that thing...
+}
+
+{LadySomeonesUp || LadySus.LastNight:
+That could actually be very useful! #Player
+Lady Mortimer claims she was in her room all night
+And Mr Lionel was screeching constantly until the early hours. 
+Does that match up with what you heard?
+
+Oh yes that bird was a nightmare last night! #Conductor
+Far worse than usual!
+...Apart from a 40 minute window, now you mention it
+
+Really?!#Player
+
+Yes!#Conductor
+He was non-stop until around 11.20 when he suddenly...
+stopped. 
+It was about 40 minutes of absolute bliss!
+I was hoping the old thing had finally croaked
+
+The bird or the bitch?#Player
+
+Oh shush you.#Conductor
+The bird. 
+But it started up again just before midnight.
+She must have taken it for a stroll through the cabin or something.
+
+-else:
+Did you hear anything unusual from her cabin last night?#Player
+
+Nothing of note, I'm afraid.#Conductor
+Not much gets through the walls, just that bloomin birdbrain.
+}
+
+
 
 
 ->ConductorIntro
