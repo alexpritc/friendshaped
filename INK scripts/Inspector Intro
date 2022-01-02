@@ -9,6 +9,8 @@ He wears a brown trench coat and carries a magnifying glass everywhere he goes, 
  -> SandsWhatHappened
  * [Ask him who he suspects]
  -> SandsWhodunnit
+ * {StewardWhatHappenedAgain.SeeAnything} [Ask about the person the Steward saw moving something]
+ ->SandsSomeonesUp
  + [Walk Away]
  -> Start
  * ->
@@ -108,4 +110,39 @@ I'm not a lass I'm a robot.
 You're a damn genius, that's what you are!
 I have your back, no matter what. 
 We detectives gotta stick together, eh?
+->SandsIntro
+===SandsSomeonesUp
+Someone was seen late last night
+After everyone had gone to bed 
+Walking from the rear cart to past the staff quarters and back again.
+
+Oh really?
+How intriguing!
+
+Yes.
+And they seemed to be...
+Dragging something. 
+
+Curious!
+But why do you bring this up?
+
+Well, Inspector.
+I suspect they may have been dragging...
+THE BODY! 
+Which would suggest the murder took place in the rear sleeping carriage. 
+
+But that's where I sleep!
+
+...
+
+Proposterous suggestion!
+You are saying the murder took place in the same carriage I was in?
+I would have been able to stop it!
+
+Even if you were asleep?
+
+CRIME NEVER SLEEPS AND NEITHER DO I!
+...and if I did sleep I wouldn't sleep through that!
+
+
 ->SandsIntro

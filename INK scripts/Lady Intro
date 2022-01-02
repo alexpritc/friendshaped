@@ -12,6 +12,8 @@ She wears a gold bird cage as a head ornament (which she insists isn't a hat) so
  -> LadyWhodunnit
  *{SandsWhodunnit.SECONDSTOWAWAY} [Ask about the second stowaway theory]
  -> LadySecondStowaway
+ * {StewardWhatHappenedAgain.SeeAnything} [Ask about the person the Steward saw]
+ -> LadySomeonesUp
   + [Walk Away]
  -> Start
  * ->
@@ -106,6 +108,20 @@ Interesting point
 I'll keep that in mind.
 
 You do that.
+->LadyIntro
 
+===LadySomeonesUp
+The Steward says someone was up late last night. 
+After everyone else went to bed. 
 
+Oh really?
+
+Yes.
+Were you up at all past midnight, Ma'am?
+
+Oh no, dear. 
+I need my sleep. 
+I spent a while comforting Mr Lionel
+He refused to settle down last night!
+And when he eventually calmed down I was out like a light. 
 ->LadyIntro

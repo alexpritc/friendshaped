@@ -8,6 +8,8 @@ He isn't very good at controlling his facial expressions so wears a face mask to
 
  * [Ask the Steward what they were doing last night]
  -> StewardWhatHappened
+ * {StewardCoverUp} [Ask him what happened last night again]
+ -> StewardWhatHappenedAgain
  * [Ask him who he suspects]
  -> StewardWhodunnit
   *{SandsWhodunnit.SECONDSTOWAWAY} [Ask about the second stowaway theory]
@@ -50,7 +52,6 @@ You were just sat there, waiting to be called upon, the whole night?
 
 (he shrugged)
 No one needed my services, I guess. 
-No one even passed by the door apart from Lady Mortimer when she went to bed. 
 
 Fair enough I guess. 
 Thanks for your help.
@@ -111,8 +112,83 @@ Please don't tell anyone I nap.
 
 No promises.
 
-
 ->StewardIntro
+===StewardWhatHappenedAgain
+So Steward,
+Now I know your...
+sleepy secret...
+Is there anything else you want to tell me?
+
+Like what?
+Didn't we already do this?
+
+*'Did you do anything else last night?'
+->DoAnything
+*'Did you see anyone else last night?'
+->SeeAnything
+
+=DoAnything
+Are you sure you're telling me everything?
+I won't be mad
+(but I might be disappointed)
+
+I've told you everything I did last night!
+I was in the staff room 
+Had a shameful nap 
+Woke up and continued to keep an eye out for guests!
+
+Nothing else?
+
+No!
+This doesn't seem like a good use of your time,
+Asking me the same questions over and over!
+->StewardIntro
+
+=SeeAnything
+Let me think...
+Lady Mortimer walked by at about... 20 past ten?
+
+And you were still awake at that time?
+
+Yes!
+I must've drifted off not long after that though...
+
+Until you were woken up by the bird noises?
+
+Exactly!
+That was at about half 11.
+Then nothing happened for a while
+
+But you didn't fall asleep again?
+
+...I don't think so?
+No?
+I'm pretty sure I didn't...
+Either way,
+I didn't see anyone else until gone midnight. 
+Maybe 12.30?
+
+Who did you see?
+
+I couldn't make them out 
+But they came from the rear sleeping cart 
+Walked past the door dragging something
+And then went back in the direction they came 
+
+AND YOU DIDN'T THINK TO LOOK INTO IT?!
+
+I'm here if passengers request me!
+I don't go out of my way to see if they need help dragging their things around the train!
+Why does it matter?
+
+BECAUSE IT MIGHT HAVE BEEN THE BODY!!
+
+Oh. 
+Ew. 
+
+//SOMEONE IS UP AFTER BED PROMPT UNLOCKED
+->StewardIntro
+
 ===StewardWhodunnit
 So you must have a pretty good take on everyone on this train, right?
 
