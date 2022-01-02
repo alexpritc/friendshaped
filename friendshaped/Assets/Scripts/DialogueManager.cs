@@ -196,12 +196,12 @@ public class DialogueManager : MonoBehaviour {
 			for (int i = 0; i < temp.Count; ++i)
 			{
 				// TODO: Make this a smoother transition i.e swipe up or fade in/fade out
-				temp[i].transform.localPosition += new Vector3(0, 50f, 0);
+				temp[i].transform.localPosition += new Vector3(0, 40f, 0);
 			}
 		}
 
-		// Only allow 4 textboxes on screen at once.
-		if (temp.Count >= 5)
+		// Only allow x textboxes on screen at once.
+		if (temp.Count >= 7)
 		{
 			Destroy(currentDialogueBoxes[0]);
 			currentDialogueBoxes.RemoveAt(0);
