@@ -84,6 +84,7 @@ public class DialogueManager : MonoBehaviour {
 	// When we click the choice button, tell the story to choose that choice!
 	void OnClickChoiceButton (Choice choice) {
 		story.ChooseChoiceIndex (choice.index);
+
 		RefreshView();
 	}
 
@@ -164,7 +165,12 @@ public class DialogueManager : MonoBehaviour {
 		//Fetch the current Animation clip information for the base layer
 		AnimatorClipInfo[] m_CurrentClipInfo = m_Animator.GetCurrentAnimatorClipInfo(0);
 		//Access the Animation clip name
-		return  m_CurrentClipInfo[0].clip.name;
+
+		if (m_CurrentClipInfo.Length >= 1)
+		{
+			return m_CurrentClipInfo[0].clip.name;
+		}
+		return "";
 	}
 
 	// Creates a textbox showing the the line of text
@@ -202,33 +208,40 @@ public class DialogueManager : MonoBehaviour {
 		}
 		
 		// Only allow x textboxes on screen at once.
-		if (currentDialogueBoxes.Count >= 7)
+		if (currentDialogueBoxes.Count >= 6)
 		{
-			// TODO: Play exit animation first
-
 			StartCoroutine(FadeTextBox(currentDialogueBoxes[0]));
 		}
 	}
 
 	IEnumerator FadeTextBox(GameObject textbox)
 	{
-		Animator textboxAnim = textbox.GetComponent<Animator>();
-		textboxAnim.Play("DialogueFade");
+		Animator parentAnim = textbox.GetComponent<Animator>();
+		parentAnim.Play("FadeOut");
 
-		Animator textAnim = null;
+		bool hasChildren = false;
+
+		Animator childAnim = null;
 		foreach (Transform child in textbox.transform)
 		{
-			textAnim = child.GetComponent<Animator>();
+			childAnim = child.GetComponent<Animator>();
+			hasChildren = true;
+			childAnim.Play("FadeOut");
 		}
-		
-		textAnim.Play("DialogueTextFade");
-		
-		yield return new WaitUntil(() => GetClipName(textboxAnim) == "DialogueFadeConstant" && GetClipName(textAnim) == "DialogueTextFadeConstant");
-		
+
+		if (hasChildren)
+		{
+			yield return new WaitUntil(() => GetClipName(parentAnim) == "FadeOutConstant" && GetClipName(childAnim) == "FadeOutConstant");
+		}
+		else
+		{
+			yield return new WaitUntil(() => GetClipName(parentAnim) == "FadeOutConstant");	
+		}
+
 		Destroy(currentDialogueBoxes[0]);
 		currentDialogueBoxes.RemoveAt(0);
 	}
-		IEnumerator MoveTextBox(GameObject go)
+	IEnumerator MoveTextBox(GameObject go)
 	{
 		for (int i = 0; i < 10; i++)
 		{
@@ -265,20 +278,22 @@ public class DialogueManager : MonoBehaviour {
 	void RemoveChildren(Canvas canvas)
 	{
 		int childCount = canvas.transform.childCount;
+		
 		for (int i = childCount - 1; i >= 0; --i)
 		{
 			if (!canvas.transform.GetChild(i).name.Contains("Canvas"))
 			{
-				GameObject.Destroy(canvas.transform.GetChild(i).gameObject);
+				Destroy(canvas.transform.GetChild(i).gameObject);
 			}
 		}
 
 		currentDialogueBoxes.Clear();
 	}
-
+	
 	void SkipDialogue()
 	{
 		StopAllCoroutines();
+		//StopCoroutine(DisplayNextDialogue());
 		StartCoroutine(DisplayNextDialogue());
 	}
 
