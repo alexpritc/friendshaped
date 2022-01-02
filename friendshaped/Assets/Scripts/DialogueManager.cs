@@ -125,8 +125,9 @@ public class DialogueManager : MonoBehaviour {
 			}
 		}
 
-		if (!story.canContinue)
+		if (!story.canContinue && !clickedButton)
 		{
+			clickedButton = true;
 			DisplayNextChoices();
 		}
 	}
@@ -187,42 +188,43 @@ public class DialogueManager : MonoBehaviour {
 	void AddToDialogueArray(ref GameObject go)
 	{
 		currentDialogueBoxes.Add(go);
-		List<GameObject> temp = currentDialogueBoxes;
-
+		
+		float x = isPlayerTalking ? -100f : 100f;
+		go.transform.localPosition = new Vector3(x, -100, 0); ;
+		
 		// If not already empty
-		if (temp.Count > 0)
+		if (currentDialogueBoxes.Count > 0)
 		{
 			// Add dialogue box and 0,0 and move all other boxes up
-			for (int i = 0; i < temp.Count; ++i)
+			for (int i = 0; i < currentDialogueBoxes.Count; ++i)
 			{
-				// TODO: Make this a smoother transition i.e swipe up or fade in/fade out
-				// Coroutine to change pos 
-				/*
-				 * IEnumerator Fade()
-				{
-					Color c = renderer.material.color;
-					for (float alpha = 1f; alpha >= 0; alpha -= 0.1f)
-					{
-						c.a = alpha;
-						renderer.material.color = c;
-						yield return null;
-					}
-				}
-				 */
-				temp[i].transform.localPosition += new Vector3(0, 40f, 0);
+				StartCoroutine(MoveTextBox(currentDialogueBoxes[i]));
 			}
 		}
-
+		
 		// Only allow x textboxes on screen at once.
-		if (temp.Count >= 7)
+		if (currentDialogueBoxes.Count >= 7)
 		{
 			// TODO: Play exit animation first
 			Destroy(currentDialogueBoxes[0]);
 			currentDialogueBoxes.RemoveAt(0);
 		}
+	}
 
-		float x = isPlayerTalking ? -100f : 100f;
-		go.transform.localPosition = new Vector3(x, -50, 0); ;
+	IEnumerator MoveTextBox(GameObject go)
+	{
+		for (int i = 0; i < 10; i++)
+		{
+			if (go != null)
+			{
+				go.transform.localPosition += new Vector3(0, 4f, 0);
+				yield return null;	
+			}
+			else
+			{
+				StopCoroutine(MoveTextBox(go));
+			}
+		}
 	}
 
 	// Creates a button showing the choice text
