@@ -25,7 +25,9 @@ public class DialogueManager : MonoBehaviour {
 	[SerializeField]
     private Button buttonPrefab = null;
 
-	[SerializeField] float waitTime = 2.25f;
+	[SerializeField] float waitTime = 2f;
+
+	private Animator currentAnim;
 
     void Awake () {
 		// Remove the default message
@@ -71,13 +73,16 @@ public class DialogueManager : MonoBehaviour {
 			// Display the text on screen!
 			CreateContentView(text);
 
+
+			// TODO: Add player input (mouse click to skip to next)
 			if (story.canContinue)
 			{
 				yield return new WaitForSeconds(waitTime);
 			}
 			else
 			{
-				yield return null;
+				// If there's no more dialogue, don't bother waiting to display the buttons.
+				yield return new WaitUntil(() => GetClipName(currentAnim) == "ConstantDialogue");
 			}
 		}
 
@@ -109,6 +114,14 @@ public class DialogueManager : MonoBehaviour {
 		}
 	}
 
+	string GetClipName(Animator m_Animator)
+	{
+		//Fetch the current Animation clip information for the base layer
+		AnimatorClipInfo[] m_CurrentClipInfo = m_Animator.GetCurrentAnimatorClipInfo(0);
+		//Access the Animation clip name
+		return  m_CurrentClipInfo[0].clip.name;
+	}
+
 	// Creates a textbox showing the the line of text
 	void CreateContentView (string text) {
 		Text storyText = Instantiate (textPrefab) as Text;
@@ -119,6 +132,8 @@ public class DialogueManager : MonoBehaviour {
 
 		//textbox.GetComponentInChildren<Text>().text = storyText.text;
 		storyText.transform.SetParent (textbox.transform, false);
+
+		currentAnim = textbox.GetComponent<Animator>();
 	}
 
 	// Creates a button showing the choice text
