@@ -175,8 +175,7 @@ public class DialogueManager : MonoBehaviour {
 
 		GameObject textbox = Instantiate(textBoxPrefab) as GameObject;
 		textbox.transform.SetParent(dialogueCanvas.transform, false);
-
-		//textbox.GetComponentInChildren<Text>().text = storyText.text;
+		
 		storyText.transform.SetParent (textbox.transform, false);
 		
 		// Add to array
@@ -206,12 +205,30 @@ public class DialogueManager : MonoBehaviour {
 		if (currentDialogueBoxes.Count >= 7)
 		{
 			// TODO: Play exit animation first
-			Destroy(currentDialogueBoxes[0]);
-			currentDialogueBoxes.RemoveAt(0);
+
+			StartCoroutine(FadeTextBox(currentDialogueBoxes[0]));
 		}
 	}
 
-	IEnumerator MoveTextBox(GameObject go)
+	IEnumerator FadeTextBox(GameObject textbox)
+	{
+		Animator textboxAnim = textbox.GetComponent<Animator>();
+		textboxAnim.Play("DialogueFade");
+
+		Animator textAnim = null;
+		foreach (Transform child in textbox.transform)
+		{
+			textAnim = child.GetComponent<Animator>();
+		}
+		
+		textAnim.Play("DialogueTextFade");
+		
+		yield return new WaitUntil(() => GetClipName(textboxAnim) == "DialogueFadeConstant" && GetClipName(textAnim) == "DialogueTextFadeConstant");
+		
+		Destroy(currentDialogueBoxes[0]);
+		currentDialogueBoxes.RemoveAt(0);
+	}
+		IEnumerator MoveTextBox(GameObject go)
 	{
 		for (int i = 0; i < 10; i++)
 		{
