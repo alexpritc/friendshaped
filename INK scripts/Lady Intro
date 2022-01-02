@@ -16,6 +16,8 @@ She wears a gold bird cage as a head ornament (which she insists isn't a hat) so
  -> LadySecondStowaway
  * {StewardWhatHappenedAgain.SeeAnything} [Ask about the person the Steward saw]
  -> LadySomeonesUp
+ * {StoctorSomeoneUp.ABody} [Ask about the stowaway pretending to be the doctor]
+ ->LadyStoctor
   + [Walk Away]
  -> Start
  * ->
@@ -126,4 +128,36 @@ I need my sleep.
 I spent a while comforting Mr Lionel
 He refused to settle down last night!
 And when he eventually calmed down I was out like a light. 
+->LadyIntro
+
+
+===LadyStoctor
+Did you hear about the stowaway disguising themselves as the Doctor? #Player
+
+I most certainly did!#Lady
+Awful news.
+But nice to have this whole ordeal wrapped up and done with. 
+
+Well, not exactly. #Player
+We still don't know who murdered the real Doctor.
+
+Do we not?! #Lady
+Are you seriously believing that thief's story??
+He must be the murderer, it's the only thing that makes sense!
+
+I guess his closet story is a bit far fetched...#Player
+
+And what's more, #Lady
+He probably had an accomplice!
+Someone on the staff to sneak him in!
+
+...Like who? #Player
+
+Someone high up... #Lady
+With connnections...
+Doesn't it seem odd to you that you haven't seen the conductors face since boarding?
+She's been awfully quiet...
+Holed away in the engine room...
+
+//CONDUCTOR SUS UNLOCKED
 ->LadyIntro
