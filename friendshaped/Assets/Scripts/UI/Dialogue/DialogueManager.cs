@@ -98,16 +98,17 @@ public class DialogueManager : MonoBehaviour {
 			string text = story.Continue();
 			// This removes any white space from the text.
 			text = text.Trim();
-
-			// Display the text on screen!
+			
 			if (story.currentTags.Count != 0)
 			{
 				isCommentary = story.currentTags.Contains("Commentary") ? true : false;
 				isPlayerTalking = story.currentTags.Contains("Player") ? true : false;
 			}
 
+			// Display the text on screen!
 			if (isCommentary)
 			{
+				RemoveChildren(commentaryCanvas);
 				DisplayCommentary(text);
 			}
 			else
@@ -117,7 +118,14 @@ public class DialogueManager : MonoBehaviour {
 
 			if (story.canContinue)
 			{
-				yield return new WaitForSeconds(waitTime);
+				if (isCommentary)
+				{
+					yield return new WaitForSeconds(waitTime*2f);
+				}
+				else
+				{
+					yield return new WaitForSeconds(waitTime);
+				}
 			}
 			else
 			{
