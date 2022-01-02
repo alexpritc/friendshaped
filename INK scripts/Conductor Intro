@@ -1,5 +1,7 @@
+#Player
+#Conductor
 ===ConductorDescription
-The Conductor is a middle-aged woman who is very proud of this train. 
+The Conductor is a middle-aged woman who is very proud of this train. #Commentary
 She thinks she is a sea captain, and although you haven't seen her since boarding the train, other passengers say she wears an old sailors hat on her head. 
 You talk to her through a rusty intercom.
 
@@ -13,135 +15,152 @@ You talk to her through a rusty intercom.
  -> ConductorWhodunnit
   *{SandsWhodunnit.SECONDSTOWAWAY} [Ask about the second stowaway theory]
   -> ConductorSecondStowaway
+   * {StewardWhatHappenedAgain.SeeAnything} [Ask about the person the Steward saw]
+   ->ConductorSomeoneUp
   + [Walk Away]
  -> Start
  * ->
 -> Start
 
 ===ConductorWhatHappened
-Hello? 
+Hello? #Player
 Is this thing on?
 
--Bzzt-
+-Bzzt-#Conductor
 Roger! 
 This is the Conductor, at your service!
 How can I help you?
 
-Hello Mrs Conductor Lady!
+Hello Mrs Conductor Lady!#Player
 
-Oh please, no need for the formalities!
+Oh please, no need for the formalities!#Conductor
 Call me Captain!
 
-...Like, a boat captain?
+...Like, a boat captain?#Player
 
-Exactly!
+Exactly!#Conductor
 Now what do you want, skipper?
 I'm pretty busy up here!
 
-I wanted to ask you what happened last night as you remember it?
+I wanted to ask you what happened last night as you remember it?#Player
 
-Of course!
+Of course!#Conductor
 Well, naturally, I was stuck in here the whole night
 (I always miss out on the parties)
 But I heard you guests had a...
 Shindig?
 Is that what the kids call it these days?
 
-Shindig is good. 
+Shindig is good. #Player
 Or soiree.
 Both very hip.
 
-Right!
+Right!#Conductor
 Well all I know is the booze supplies took quite a hit
 Always brings out the worst in people, it seems.
 
-That matches up with what I remember. 
+That matches up with what I remember. #Player
 So you were really stuck in there the whole time?
 
-I'm afraid so, skipper
+I'm afraid so, skipper#Conductor
 Just the two of us 
 
-Two of you?
+Two of you?#Player
 
-Oh yes!
+Oh yes!#Conductor
 Turnip!
 My wife's cat often joins me on my shifts.
 He's a bit of a blighter but a jolly good first mate nonetheless.
 
-Are cats allowed on fancy cross-country trains?
+Are cats allowed on fancy cross-country trains?#Player
 
-...Yes.
+...Yes.#Conductor
 ->ConductorIntro
 ===ConductorWhodunnit
-As the head of this fine locomotive-
+As the head of this fine locomotive-#Player
 
-She's more than fine she is superb!
+She's more than fine she is superb!#Conductor
 
-She is indeed!
+She is indeed!#Player
 Well, do you have any idea who may have done this?
 
-I'm afraid not
+I'm afraid not#Conductor
 Being holed up in here I haven't seen much of the action.
 But rest assured they will be dealt with when we arrive!
 You have my word.
 
-I appreciate that.
+I appreciate that.#Player
 {not StewardWhodunnit:
 -> ConductorSuggestSteward
 -else: 
 ->ConductorWhodunnitEnd
 }
 =ConductorSuggestSteward
-One more thing -
+One more thing -#Conductor
 You should talk to someone more involved. 
 Maybe the Steward.
 
-Hm?
+Hm?#Player
 
-Yes, he's a good lad.
+Yes, he's a good lad.#Conductor
 A bit odd, Perhaps
 But I trust him wholeheartedly.
 ->ConductorWhodunnitEnd
 =ConductorWhodunnitEnd
 
-Thank you for all your help.
+Thank you for all your help.#Player
 
-No problemo, skipper.
+No problemo, skipper.#Conductor
 
 ->ConductorIntro
 
 ===ConductorSecondStowaway
-Have you heard the Inspector's latest theory?
+Have you heard the Inspector's latest theory?#Player
 
-Why no, I haven't!
+Why no, I haven't!#Conductor
 People often forget to update me on these things. 
 Please, tell me!
 
-*'He thinks maybe a second stowaway is on board, and they committed the murder?'
+*['He thinks maybe a second stowaway is on board, and they committed the murder?']
 ->ConductorSecondStowawayNice
-*'He reckons you've let a murderer sneak on board.'
+*['He reckons you've let a murderer sneak on board.']
 ->ConductorSecondStowawayRude
 
 =ConductorSecondStowawayNice
-I guess that could have happened?
+He thinks maybe a second stowaway is on board, and that they committed the murder?#Player
+
+I guess that could have happened?#Conductor
 I have no clue, I'm afraid.
 Sorry I couldn't be of more help. 
 ->ConductorIntro
 
 =ConductorSecondStowawayRude
-How dare you suggest that?
+He reckons you've let a murderer sneak on board#Player
 
-I didn't suggest it, the inspec-
+How dare you suggest that?#Conductor
 
-I run a tight ship here, Skipper!
+I didn't suggest it, the inspec-#Player
+
+I run a tight ship here, Skipper!#Conductor
 Nothing goes on without me knowing!
 
-(No-one said you didn't know about it)
-Of course not.
+(No-one said you didn't know about it)#Commentary
+Of course not.#Player
 Sorry for bringing it up. 
 
-You'd better be sorry!
+You'd better be sorry!#Conductor
 Look, I have to go now -
 Turnip needs some comforting
 He doesn't care for accusations either. 
+->ConductorIntro
+
+===ConductorSomeoneUp
+The Steward saw someone up after bedtime last night.#Player
+Dragging something...
+Do you know anything about that?
+
+I'm afraid not, Skipper. #Conductor
+Again -
+I'm stuck in this engine room. 
+I don't have a lot of hot goss to share. 
 ->ConductorIntro

@@ -1,5 +1,7 @@
+#Player
+#Inspector
 ===SandsDescription
-Inspector Sands is a middle aged gentlemen, a P.I (and a hack one at that). 
+Inspector Sands is a middle aged gentlemen, a P.I (and a hack one at that).  #Commentary
 He wears a brown trench coat and carries a magnifying glass everywhere he goes, like he belongs in a cartoon.
 ->SandsIntro
 
@@ -17,56 +19,56 @@ He wears a brown trench coat and carries a magnifying glass everywhere he goes, 
 -> Start
 
 ===SandsWhatHappened
-So, Inspector. 
+So, Inspector. #Player
 What were you doing last night?
 
-I was... 
+I was... #Inspector
 indulging...
 at the bar with everyone else.
 I remember having a rousing debate with you about the proper pronunciation of 'scone'
 
-Ah yes, Inspector, I remember that well.
+Ah yes, Inspector, I remember that well.#Player
 I guess we're all entitled to our opinions...
 (even if they are wrong)...
 
-Yes quite.
+Yes quite.#Inspector
 Anyway 
 At some point Docor squashed passed me on his way back to his bedchambers...
 Which made me spill my drink on Lady Mortimer
 
-Yikes
+Yikes#Player
 
-Yep.
+Yep.#Inspector
 She was not best pleased so I escaped away to my own bed shortly afterwards.
 
-That sounds like a smart move.
+That sounds like a smart move.#Player
 
-Yes, I thought so.
+Yes, I thought so.#Inspector
 I've seen a lot in my time 
 But that woman is something else
 
 ->SandsIntro
 
 ===SandsWhodunnit
-So I hear you are something of a detective yourself, Sands?
+So I hear you are something of a detective, Sands?#Player
 
-You heard right! 
+You heard right! #Inspector
 I'm a professional don't you know 
 And I'm very discreet
 
-I'm sure!
+I'm sure!#Player
 So what do you make of all of this?
 Who do you think committed this crime?
 
-I was wondering when you'd ask me!
+I was wondering when you'd ask me!#Inspector
 You learn a lot in this line of work
 Namely:
 It's always the spouse. 
 
-...but the body found was a stowaway?
+(...but the body found was a stowaway?)#Player
 ->SECONDSTOWAWAY
 =SECONDSTOWAWAY
-Exactly!
+Exactly!#Inspector
 So there must be a SECOND STOWAWAY! 
 A marital murder!
 Case closed. 
@@ -77,71 +79,71 @@ Case closed.
  -> SandsWhodunnitAgree
 
 ===SandsWhodunnitRidiculous
-Hm. 
+Hm. #Player
 Isn't that a bit of a stretch, Inspector?
 
-hsdafgdsa
+hsdafgdsa#Inspector
 You wanted my expert opinion!
 How dare you question me!
 
-I'm just sayi-
+I'm just sayi-#Player
 
-No!
+No!#Inspector
 For all we know it was probably you!
 Why else would you try and discredit a professional like myself??
 I've got my eye on you lad.
 
-I'm not a lad I'm a robot. 
+I'm not a lad I'm a robot. #Player
 
-You're an idiot, that's what you are.
+You're an idiot, that's what you are.#Inspector
 You don't want to be my enemy.
 Trust me. 
 ->SandsIntro
 
 ===SandsWhodunnitAgree
-Ah of course!
+Ah of course!#Player
 What a splendid theory, Sands!
 
-Thank you, lass!
+Thank you, lass!#Inspector
 This is my job after all!
 
-I'm not a lass I'm a robot. 
+I'm not a lass I'm a robot. #Player
 
-You're a damn genius, that's what you are!
+You're a damn genius, that's what you are!#Inspector
 I have your back, no matter what. 
 We detectives gotta stick together, eh?
 ->SandsIntro
 ===SandsSomeonesUp
-Someone was seen late last night
+Someone was seen late last night#Player
 After everyone had gone to bed 
 Walking from the rear cart to past the staff quarters and back again.
 
-Oh really?
+Oh really?#Inspector
 How intriguing!
 
-Yes.
+Yes.#Player
 And they seemed to be...
 Dragging something. 
 
-Curious!
+Curious!#Inspector
 But why do you bring this up?
 
-Well, Inspector.
+Well, Inspector.#Player
 I suspect they may have been dragging...
 THE BODY! 
 Which would suggest the murder took place in the rear sleeping carriage. 
 
-But that's where I sleep!
+But that's where I sleep!#Inspector
 
-...
+...#Player
 
-Proposterous suggestion!
+Proposterous suggestion!#Inspector
 You are saying the murder took place in the same carriage I was in?
 I would have been able to stop it!
 
-Even if you were asleep?
+Even if you were asleep?#Player
 
-CRIME NEVER SLEEPS AND NEITHER DO I!
+CRIME NEVER SLEEPS AND NEITHER DO I!#Inspector
 ...and if I did sleep I wouldn't sleep through that!
 
 

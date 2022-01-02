@@ -1,5 +1,7 @@
+#Player
+#Steward
 ===StewardDescription
-The Steward is a young man who clearly isn't too enthused with his job but can't afford to get fired. 
+The Steward is a young man who clearly isn't too enthused with his job but can't afford to get fired.  #Commentary
 He isn't very good at controlling his facial expressions so wears a face mask to keep them hidden and avoid trouble. 
 
 ->StewardIntro
@@ -19,24 +21,24 @@ He isn't very good at controlling his facial expressions so wears a face mask to
  * ->
 -> Start
 ===StewardWhatHappened
-Good morning Mr Steward sir!
+Good morning Mr Steward sir!#Player
 
-...Good Morning?
+...Good Morning?#Steward
 
-Working hard or hardly working, amiright?
+Working hard or hardly working, amiright?#Player
 
-...there's been a murder. 
+...there's been a murder. #Steward
 Why are you being like this?
 
-Yes.
+Yes.#Player
 Well.
 That's why I'm here!
 
-Hm?
+Hm?#Steward
 
-Can you explain what you were up to last night?
+Can you explain what you were up to last night?#Player
 
-Sure.
+Sure.#Steward
 Well as I'm sure you remember most of the passengers were taking drinks in the dining cart last night. 
 I don't do bar work,
 I'm more of a 'here when you need me' type guy.
@@ -48,140 +50,142 @@ So I was resting in the staff quarters for most of the night.
  -> StewardCoverUp
  
  ===StewardSatThere
-You were just sat there, waiting to be called upon, the whole night?
+You were just sat there, waiting to be called upon, the whole night?#Player
 
-(he shrugged)
-No one needed my services, I guess. 
+No one needed my services, I guess. #Steward
 
-Fair enough I guess. 
+Fair enough I guess. #Player
 Thanks for your help.
 
 ->StewardIntro
 
 ===StewardCoverUp
-This all sounds awfully bland. 
+This all sounds awfully bland. #Player
 
-Yeah, and?
+Yeah, and?#Steward
 That's the job. 
 It's not exactly thrilling. 
 
-I don't know, Steward. 
+I don't know, Steward. #Player
 It sounds to me like I'm not getting the full story.
 
-What are you suggesting?!
+What are you suggesting?!#Steward
 
-Did you see something?
+Did you see something?#Player
 Are you covering for the murderer?!
 
-WHAT?
+WHAT?#Steward
 NO!
 ..Fine.
 I haven't been completely honest.
 
-I knew it!
+I knew it!#Player
 
--but it's nothing like that!
+-but it's nothing like that!#Steward
 It's just...
 Sometimes...
 When none of the passengers need me...
 
-SPIT IT OUT man
+SPIT IT OUT MAN#Player
 
-I TAKE NAPS IN THE STAFF ROOM OKAY!
+I TAKE NAPS IN THE STAFF ROOM OKAY!#Steward
 
-Oh buddy.
+Oh buddy.#Player
 
-Yeah. 
+Yeah. #Steward
 I'm not proud. 
 I wasn't even asleep for long this time though!
 I was woken up around 11.30, I was barely out for 20 minutes!
 
-That's more than enough time for you to miss something!
+That's more than enough time for you to miss something!#Player
 What woke you up?
 
-There were birds screeching on top of the train. 
+There were birds screeching on top of the train. #Steward
 Must have been going through a flock of them or something?
 I don't know anything about birds but they were bloody loud. 
 
-Not a fun way to wake upon
+Not a fun way to wake up#Player
 But you kinda deserved it.
 
-Yeah I know. 
+Yeah I know. #Steward
 ...
 Please don't tell anyone I nap. 
 
-No promises.
+No promises.#Player
 
 ->StewardIntro
 ===StewardWhatHappenedAgain
-So Steward,
+So Steward,#Player
 Now I know your...
 sleepy secret...
 Is there anything else you want to tell me?
 
-Like what?
+Like what?#Steward
 Didn't we already do this?
 
-*'Did you do anything else last night?'
+*['Did you do anything else last night?']
 ->DoAnything
-*'Did you see anyone else last night?'
+*['Did you see anyone else last night?']
 ->SeeAnything
 
 =DoAnything
+Did you do anything else last night?#Player
 Are you sure you're telling me everything?
 I won't be mad
 (but I might be disappointed)
 
-I've told you everything I did last night!
+I've told you everything I did last night!#Steward
 I was in the staff room 
 Had a shameful nap 
 Woke up and continued to keep an eye out for guests!
 
-Nothing else?
+Nothing else?#Player
 
-No!
+No!#Steward
 This doesn't seem like a good use of your time,
 Asking me the same questions over and over!
 ->StewardIntro
 
 =SeeAnything
-Let me think...
+Did you see anyoneone else last night? #Player
+
+Let me think...#Steward
 Lady Mortimer walked by at about... 20 past ten?
 
-And you were still awake at that time?
+And you were still awake at that time?#Player
 
-Yes!
+Yes!#Steward
 I must've drifted off not long after that though...
 
-Until you were woken up by the bird noises?
+Until you were woken up by the bird noises?#Player
 
-Exactly!
+Exactly!#Steward
 That was at about half 11.
 Then nothing happened for a while
 
-But you didn't fall asleep again?
+But you didn't fall asleep again?#Player
 
-...I don't think so?
+...I don't think so?#Steward
 No?
 I'm pretty sure I didn't...
 Either way,
 I didn't see anyone else until gone midnight. 
 Maybe 12.30?
 
-Who did you see?
+Who did you see?#Player
 
-I couldn't make them out 
+I couldn't make them out #Steward
 But they came from the rear sleeping cart 
 Walked past the door dragging something
 And then went back in the direction they came 
 
-AND YOU DIDN'T THINK TO LOOK INTO IT?!
+AND YOU DIDN'T THINK TO LOOK INTO IT?!#Player
 
-I'm here if passengers request me!
+I'm here if passengers request me!#Steward
 I don't go out of my way to see if they need help dragging their things around the train!
 Why does it matter?
 
-BECAUSE IT MIGHT HAVE BEEN THE BODY!!
+BECAUSE IT MIGHT HAVE BEEN THE BODY!!#Player
 
 Oh. 
 Ew. 
@@ -190,65 +194,65 @@ Ew.
 ->StewardIntro
 
 ===StewardWhodunnit
-So you must have a pretty good take on everyone on this train, right?
+So you must have a pretty good take on everyone on this train, right?#Player
 
-I guess?
+I guess?#Steward
 
-If you had to pick someone, who would you suspect murdered the poor man?
+If you had to pick someone, who would you suspect murdered the poor man?#Player
 
-I don't know the passengers that well!
+I don't know the passengers that well!#Steward
 I know who takes tea before bed, not who has a homicidal streak!
 
-Well that's less useful. 
+Well that's less useful. #Player
 Do you have any suggestions?
 
-Hm. 
+Hm. #Steward
 Well. 
-No one walked past my door after Lady Mortimer went to bed
+No one walked towards the end of the train after the Lady went to bed
 And the stowaway was found dead in the dining cart
 So I'd assume it was someone who sleeps in the rear of the train?
 Perhaps Sands, he seems awfully interested in this whole thing. 
 
 // SANDS IS SUS UNLOCKED
 
-Good idea, Steward!
+Good idea, Steward!#Player
 
-Thanks?
+Thanks?#Steward
 
-One more thing...
+One more thing...#Player
 
-Yes?
+Yes?#Steward
 
-Who takes tea before bed?
+Who takes tea before bed?#Player
 
-Oh. 
+Oh. #Steward
 Lady Mortimer. 
 She says she needs it to fall asleep. 
 
-Fair enough. 
+Fair enough. #Player
 Ladies do like tea. 
 
 
 ->StewardIntro
 
 ===StewardSecondStowaway
-Do you think a second stowaway could have committed the murder?
+Do you think a second stowaway could have committed the murder?#Player
 
-Hm.
+Hm.#Steward
 I doubt it.
 It's a small train, I can't imagine multiple people would go unnoticed. 
 ...but to be fair, I didn't think there would be one stowaway in the first place
 ...until that body showed up.
 
-It is a bit of a plot twist, eh?
+It is a bit of a plot twist, eh?#Player
 
-Yeah.
+Yeah.#Steward
 I feel for the Conductor 
 - she normally runs such a tight ship.
 She can't be feeling good about having not noticed a stowaway
 
-Let alone a murdered stowaway.
+Let alone a murdered stowaway.#Player
 
-Exactly. 
+Exactly. #Steward
 
 ->StewardIntro
