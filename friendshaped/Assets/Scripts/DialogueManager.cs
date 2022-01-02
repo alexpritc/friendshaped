@@ -104,6 +104,7 @@ public class DialogueManager : MonoBehaviour {
 				});
 			}
 		}
+		// TODO: Change this to close the dialogue window
 		// If we've read all the content and there's no choices, the story is finished!
 		else
 		{
