@@ -196,6 +196,19 @@ public class DialogueManager : MonoBehaviour {
 			for (int i = 0; i < temp.Count; ++i)
 			{
 				// TODO: Make this a smoother transition i.e swipe up or fade in/fade out
+				// Coroutine to change pos 
+				/*
+				 * IEnumerator Fade()
+				{
+					Color c = renderer.material.color;
+					for (float alpha = 1f; alpha >= 0; alpha -= 0.1f)
+					{
+						c.a = alpha;
+						renderer.material.color = c;
+						yield return null;
+					}
+				}
+				 */
 				temp[i].transform.localPosition += new Vector3(0, 40f, 0);
 			}
 		}
@@ -203,6 +216,7 @@ public class DialogueManager : MonoBehaviour {
 		// Only allow x textboxes on screen at once.
 		if (temp.Count >= 7)
 		{
+			// TODO: Play exit animation first
 			Destroy(currentDialogueBoxes[0]);
 			currentDialogueBoxes.RemoveAt(0);
 		}
