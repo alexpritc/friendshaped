@@ -16,6 +16,16 @@ Will you please escort me?
 
 Certainly.
 
+What kind of incident?
+
+It is not for me to say.
+
+A most serious matter then!
+
+Will you please escort me?
+
+Certainly.
+
 ->DONE
 
 ===Dining_Car

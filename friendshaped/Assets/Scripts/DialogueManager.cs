@@ -3,6 +3,7 @@ using UnityEngine.UI;
 using System;
 using Ink.Runtime;
 using System.Collections;
+using System.Collections.Generic;
 
 // This is a super bare bones example of how to play and display a ink story in Unity.
 public class DialogueManager : MonoBehaviour {
@@ -29,7 +30,12 @@ public class DialogueManager : MonoBehaviour {
 
 	private Animator currentAnim;
 
-    void Awake () {
+	List<GameObject> currentDialogueBoxes;
+
+	void Awake () {
+
+		currentDialogueBoxes = new List<GameObject>();
+
 		// Remove the default message
 		RemoveChildren(dialogueCanvas);
 		RemoveChildren(choiceCanvas);
@@ -134,7 +140,37 @@ public class DialogueManager : MonoBehaviour {
 		//textbox.GetComponentInChildren<Text>().text = storyText.text;
 		storyText.transform.SetParent (textbox.transform, false);
 
+		// Add to array
+		AddToDialogueArray(ref textbox);
+
 		currentAnim = textbox.GetComponent<Animator>();
+	}
+
+	void AddToDialogueArray(ref GameObject go)
+	{
+		currentDialogueBoxes.Add(go);
+		List<GameObject> temp = currentDialogueBoxes;
+
+		// If not already empty
+		if (temp.Count > 0)
+		{
+			// Add dialogue box and 0,0 and move all other boxes up
+			for (int i = 0; i < temp.Count; ++i)
+			{
+				// TODO: Make this a smoother transition i.e swipe up or fade in/fade out
+				temp[i].transform.localPosition += new Vector3(0, 50f, 0);
+			}
+		}
+
+		// Only allow 4 textboxes on screen at once.
+		if (temp.Count >= 5)
+		{
+			Destroy(currentDialogueBoxes[0]);
+			currentDialogueBoxes.RemoveAt(0);
+		}
+
+		// TODO: Add x value depending on who is talking
+		go.transform.localPosition = new Vector3(0, -50, 0); ;
 	}
 
 	// Creates a button showing the choice text
@@ -155,14 +191,19 @@ public class DialogueManager : MonoBehaviour {
 	}
 
 	// Destroys all the children of this gameobject (all the UI)
-	void RemoveChildren (Canvas canvas) {
+	void RemoveChildren(Canvas canvas)
+	{
 		int childCount = canvas.transform.childCount;
-		for (int i = childCount - 1; i >= 0; --i) {
+		for (int i = childCount - 1; i >= 0; --i)
+		{
 			if (!canvas.transform.GetChild(i).name.Contains("Canvas"))
 			{
 				GameObject.Destroy(canvas.transform.GetChild(i).gameObject);
 			}
 		}
+
+
+		currentDialogueBoxes.Clear();
 	}
 }
 
