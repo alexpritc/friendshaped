@@ -20,6 +20,8 @@ She wears a gold bird cage as a head ornament (which she insists isn't a hat) so
  ->LadyStoctor
  *{SandsStoctor}[Tell her Sands thinks she's suspicious]
  ->LadySus
+ *{StewardWhodunnit}[Tell him the Steward suggested the Inspector may be a suspect]
+    ->LadyInspectorSus
   + [Walk Away]
  -> Start
  * ->
@@ -203,4 +205,14 @@ Finally, some sense!#Lady
 I was beginning to think everyone on this train had lost their minds
 Why, just last night the staff forgot to bring me my night-time tea!
 This institution is going to the dogs, I tell you
+->LadyIntro
+
+===LadyInspectorSus
+The Steward thinks the Inspector is to blame. #Player
+What do you think?
+
+Hm… #Lady
+I suppose he was in the cart next to the victim
+and it would explain why such a ‘good PI’ somehow has no clue how the murder occured under his nose…
+
 ->LadyIntro

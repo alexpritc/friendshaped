@@ -21,6 +21,8 @@ He wears a venetion mask and his heavy cloak smells of potent chemicals.
   ->StoctorConductorSus
    *{SandsStoctor}[Tell him that Sands thinks the Lady is hiding something]
     ->StoctorLadySus
+    *{StewardWhodunnit}[Tell him the Steward suggested the Inspector may be a suspect]
+    ->StoctorInspectorSus
   + [Walk Away]
  -> Start
  * ->
@@ -270,3 +272,58 @@ Right.
 }
 
 ->StoctorIntro
+
+===StoctorInspectorSus
+The Steward thinks that Sands might have something to do with this. #Player
+What do you think?
+
+{StoctorSomeoneUp.ABody:
+//if hes been revealed
+I think that's a pretty good theory actually! #Stoctor
+
+Really?#Player
+What makes you say that?
+
+Well, when I was hidden in the closet #Stoctor
+And the doctor was in the room 
+I heard the footsteps of the person who came in and killed him!!
+They came from the back of the train -
+The only things in that direction are the toilet and the Inspectors bedchambers
+
+That does look pretty suspicious #Player
+
+Yep.#Stoctor
+
+*[Ask if someone could have come from the bathroom]
+->Bathroom
+*[Ask if he thinks the Inspector could murder]
+->SandsMurder
+
+-else:
+The Inspector?#Stoctor
+No way!
+He is one good law-abiding citizen
+He loves the law
+As do I!
+He's not exactly some pick-pocket criminal now, is he
+}
+=Bathroom
+Do you think someone could have come from the bathroom?#Player
+
+Hm...#Stoctor
+Now you mention it
+You know those 'alternative routes' I mentioned?
+You didn't hear it from me but you can access the roof from the bathroom windows...
+So TECHNICALLY...
+It could have been anyone
+->StoctorIntro
+=SandsMurder
+Do you think the Inspector is capable of murder?#Player
+
+I honestly have no clue.#Stoctor
+I have heard other passengers saying his business is doing poorly these days 
+Perhaps he wanted to create a mystery to solve?
+I know what those high-class folk are like
+They'll do anything to make themselves rich
+->StoctorIntro
+}

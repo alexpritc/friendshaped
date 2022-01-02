@@ -17,6 +17,8 @@ He wears a brown trench coat and carries a magnifying glass everywhere he goes, 
  ->SandsStoctor
   * {LadyStoctor} [Tell Sands that Lady Mortimer suspects the Conductor]
   ->SandsConductorSus
+  *{StewardWhodunnit}[Tell him the Steward suggested the Inspector may be a suspect]
+    ->InspectorSus
  + [Walk Away]
  -> Start
  * ->
@@ -198,5 +200,23 @@ I think she's hiding something...
  
  (This is a non-stop journey...)#Player
  (Maybe she did have something to do with this?)
+
+->SandsIntro
+
+===InspectorSus
+The Steward thinks you may have had a hand in this case. #Player
+Care to comment?
+
+What an absurd accusation!#Inspector
+How dare you try and tarnish my stellar reputation?!
+It could have been anyone!
+The Steward is blaming me eh?
+Maybe it was him!
+
+I don't think 'he who smelt it dealt it' applies here, Inspector #Player
+
+TAKE THIS SERIOUSLY!#Inspector
+I AM!
+There is a murderer on this train and the longer you question me the longer they're free!
 
 ->SandsIntro

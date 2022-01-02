@@ -23,6 +23,8 @@ You talk to her through a rusty intercom.
     ->ConductorSus
     *{SandsStoctor}[Tell her that Sands thinks the Lady is hiding something]
     ->ConductorLadySus
+    *{StewardWhodunnit}[Tell him the Steward suggested the Inspector may be a suspect]
+    ->ConductorInspectorSus
   + [Walk Away]
  -> Start
  * ->
@@ -340,7 +342,14 @@ Nothing of note, I'm afraid.#Conductor
 Not much gets through the walls, just that bloomin birdbrain.
 }
 
+->ConductorIntro
 
+===ConductorInspectorSus
+The Steward thinks Sands may have had a hand in the murder. #Player
+What do you think?
 
-
+The Inspector?#Conductor
+Eh I doubt it. 
+He's fiery,
+But he isn't smart, mean, or organised enough to do something like this
 ->ConductorIntro
