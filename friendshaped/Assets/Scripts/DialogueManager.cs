@@ -12,13 +12,9 @@ public class DialogueManager : MonoBehaviour {
     public Story story;
 
     [SerializeField]
-    private Canvas canvas = null;
-
-	[Header("Textboxes")]
-	[SerializeField] private GameObject messageA;
-	[SerializeField] private GameObject messageB;
-	[SerializeField] private GameObject messageC;
-	[SerializeField] private GameObject messageD;
+    private Canvas dialogueCanvas = null;
+	[SerializeField]
+	private Canvas choiceCanvas = null;
 
 	// UI Prefabs
 	[SerializeField]
@@ -31,7 +27,8 @@ public class DialogueManager : MonoBehaviour {
 	private bool speakerRight;
     void Awake () {
 		// Remove the default message
-		RemoveChildren();
+		RemoveChildren(dialogueCanvas);
+		RemoveChildren(choiceCanvas);
 		StartStory();
 	}
 
@@ -47,8 +44,11 @@ public class DialogueManager : MonoBehaviour {
 	// Continues over all the lines of text, then displays all the choices. If there are no choices, the story is finished!
 	void RefreshView () {
 		// Remove all the UI on screen
-		RemoveChildren ();
+		RemoveChildren(dialogueCanvas);
+		RemoveChildren(choiceCanvas);
 		
+		// TODO: modify this section to display text boxes individually or speed up through clicks
+
 		// Read all the content until we can't continue any more
 		while (story.canContinue) {
 			// Continue gets the next line of the story
@@ -59,6 +59,9 @@ public class DialogueManager : MonoBehaviour {
 			CreateContentView(text);
 		}
 
+
+		// TODO: wait till all story has been revealed until buttons are
+		
 		// Display all the choices, if there are any!
 		if(story.currentChoices.Count > 0) {
 			for (int i = 0; i < story.currentChoices.Count; i++) {
@@ -91,17 +94,17 @@ public class DialogueManager : MonoBehaviour {
 		storyText.text = text;
 
 		GameObject textbox = Instantiate(textBoxPrefab) as GameObject;
-		textbox.transform.SetParent(canvas.transform, false);
+		textbox.transform.SetParent(dialogueCanvas.transform, false);
 
-		textbox.GetComponentInChildren<Text>().text = storyText.text;
-		//storyText.transform.SetParent (textbox.transform, false);
+		//textbox.GetComponentInChildren<Text>().text = storyText.text;
+		storyText.transform.SetParent (textbox.transform, false);
 	}
 
 	// Creates a button showing the choice text
 	Button CreateChoiceView (string text) {
 		// Creates the button from a prefab
 		Button choice = Instantiate (buttonPrefab) as Button;
-		choice.transform.SetParent (canvas.transform, false);
+		choice.transform.SetParent (choiceCanvas.transform, false);
 		
 		// Gets the text from the button prefab
 		Text choiceText = choice.GetComponentInChildren<Text> ();
@@ -115,7 +118,7 @@ public class DialogueManager : MonoBehaviour {
 	}
 
 	// Destroys all the children of this gameobject (all the UI)
-	void RemoveChildren () {
+	void RemoveChildren (Canvas canvas) {
 		int childCount = canvas.transform.childCount;
 		for (int i = childCount - 1; i >= 0; --i) {
 			if (!canvas.transform.GetChild(i).name.Contains("Canvas"))
