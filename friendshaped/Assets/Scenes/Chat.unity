@@ -514,7 +514,7 @@ MonoBehaviour:
   textBoxPrefab: {fileID: 6246375558831844526, guid: 5fa5a269a8adc7846bc62a1b78c97650, type: 3}
   buttonPrefab: {fileID: 2779583741234694907, guid: dc8cb031689974742a29e265a9d97258, type: 3}
   commentaryTextPrefab: {fileID: 2711499352260804783, guid: 29f460e2f40bbf446b89aa138181c35a, type: 3}
-  waitTime: 2
+  waitTime: 2.5
 --- !u!1 &800015300
 GameObject:
   m_ObjectHideFlags: 0

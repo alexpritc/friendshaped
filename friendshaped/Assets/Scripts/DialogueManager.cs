@@ -40,14 +40,22 @@ public class DialogueManager : MonoBehaviour {
 	private bool isCommentary;
 	private bool isPlayerTalking;
 
+	private PlayerControls controls;
+
+	private bool clickedButton;
+
 	void Awake () {
 
+		controls = new PlayerControls();
 		currentDialogueBoxes = new List<GameObject>();
 
 		// Remove the default message
 		RemoveChildren(dialogueCanvas);
 		RemoveChildren(choiceCanvas);
+		RemoveChildren(commentaryCanvas);
 		StartStory();
+
+		controls.interactions.click.performed += ctx => SkipDialogue();
 	}
 
 	// Creates a new Story object with the compiled story which we can then play!
@@ -67,6 +75,8 @@ public class DialogueManager : MonoBehaviour {
 		RemoveChildren(choiceCanvas);
 		RemoveChildren(commentaryCanvas);
 
+		clickedButton = false;
+
 		// Read all the content until we can't continue any more
 		StartCoroutine(DisplayNextDialogue());
 	}
@@ -79,16 +89,16 @@ public class DialogueManager : MonoBehaviour {
 
 	IEnumerator DisplayNextDialogue()
 	{
-		// Read all the content until we can't continue any more
 		while (story.canContinue)
 		{
+			// Read all the content until we can't continue any more
+
 			// Continue gets the next line of the story
 			string text = story.Continue();
 			// This removes any white space from the text.
 			text = text.Trim();
 
 			// Display the text on screen!
-
 			if (story.currentTags.Count != 0)
 			{
 				isCommentary = story.currentTags.Contains("Commentary") ? true : false;
@@ -97,7 +107,6 @@ public class DialogueManager : MonoBehaviour {
 
 			if (isCommentary)
 			{
-				// TODO: If is commentary, spawn in own place below buttons.
 				DisplayCommentary(text);
 			}
 			else
@@ -105,8 +114,6 @@ public class DialogueManager : MonoBehaviour {
 				CreateContentView(text);
 			}
 
-
-			// TODO: Add player input (mouse click to skip to next)
 			if (story.canContinue)
 			{
 				yield return new WaitForSeconds(waitTime);
@@ -118,8 +125,10 @@ public class DialogueManager : MonoBehaviour {
 			}
 		}
 
-		// Display all the choices, if there are any!
-		DisplayNextChoices();
+		if (!story.canContinue)
+		{
+			DisplayNextChoices();
+		}
 	}
 
 	void DisplayCommentary(string text)
@@ -146,15 +155,7 @@ public class DialogueManager : MonoBehaviour {
 				});
 			}
 		}
-		// TODO: Change this to close the dialogue window
-		// If we've read all the content and there's no choices, the story is finished!
-		else
-		{
-			Button choice = CreateChoiceView("End of story.\nRestart?");
-			choice.onClick.AddListener(delegate {
-				StartStory();
-			});
-		}
+		// TODO: else close the dialogue window
 	}
 
 	string GetClipName(Animator m_Animator)
@@ -206,7 +207,6 @@ public class DialogueManager : MonoBehaviour {
 			currentDialogueBoxes.RemoveAt(0);
 		}
 
-		// TODO: Add x value depending on who is talking
 		float x = isPlayerTalking ? -100f : 100f;
 		go.transform.localPosition = new Vector3(x, -50, 0); ;
 	}
@@ -240,8 +240,24 @@ public class DialogueManager : MonoBehaviour {
 			}
 		}
 
-
 		currentDialogueBoxes.Clear();
+	}
+
+	void SkipDialogue()
+	{
+		StopAllCoroutines();
+		StartCoroutine(DisplayNextDialogue());
+	}
+
+	// Required for the input system.
+	void OnEnable()
+	{
+		controls.Enable();
+	}
+
+	void OnDisable()
+	{
+		controls.Disable();
 	}
 }
 

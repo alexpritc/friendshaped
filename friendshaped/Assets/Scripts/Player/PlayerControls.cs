@@ -133,6 +133,15 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""click"",
+                    ""type"": ""Button"",
+                    ""id"": ""66314969-6b90-4ea7-ae2b-de7fa6a9acf6"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -144,6 +153,17 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""groups"": """",
                     ""action"": ""interact"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""9e9c0a62-1a24-4718-9b91-2b1c1602488f"",
+                    ""path"": ""<Mouse>/rightButton"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""click"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -162,6 +182,7 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
         // interactions
         m_interactions = asset.FindActionMap("interactions", throwIfNotFound: true);
         m_interactions_interact = m_interactions.FindAction("interact", throwIfNotFound: true);
+        m_interactions_click = m_interactions.FindAction("click", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -296,11 +317,13 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
     private readonly InputActionMap m_interactions;
     private IInteractionsActions m_InteractionsActionsCallbackInterface;
     private readonly InputAction m_interactions_interact;
+    private readonly InputAction m_interactions_click;
     public struct InteractionsActions
     {
         private @PlayerControls m_Wrapper;
         public InteractionsActions(@PlayerControls wrapper) { m_Wrapper = wrapper; }
         public InputAction @interact => m_Wrapper.m_interactions_interact;
+        public InputAction @click => m_Wrapper.m_interactions_click;
         public InputActionMap Get() { return m_Wrapper.m_interactions; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -313,6 +336,9 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
                 @interact.started -= m_Wrapper.m_InteractionsActionsCallbackInterface.OnInteract;
                 @interact.performed -= m_Wrapper.m_InteractionsActionsCallbackInterface.OnInteract;
                 @interact.canceled -= m_Wrapper.m_InteractionsActionsCallbackInterface.OnInteract;
+                @click.started -= m_Wrapper.m_InteractionsActionsCallbackInterface.OnClick;
+                @click.performed -= m_Wrapper.m_InteractionsActionsCallbackInterface.OnClick;
+                @click.canceled -= m_Wrapper.m_InteractionsActionsCallbackInterface.OnClick;
             }
             m_Wrapper.m_InteractionsActionsCallbackInterface = instance;
             if (instance != null)
@@ -320,6 +346,9 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
                 @interact.started += instance.OnInteract;
                 @interact.performed += instance.OnInteract;
                 @interact.canceled += instance.OnInteract;
+                @click.started += instance.OnClick;
+                @click.performed += instance.OnClick;
+                @click.canceled += instance.OnClick;
             }
         }
     }
@@ -336,5 +365,6 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
     public interface IInteractionsActions
     {
         void OnInteract(InputAction.CallbackContext context);
+        void OnClick(InputAction.CallbackContext context);
     }
 }
