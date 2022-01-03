@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Ink.Runtime;
 using Player;
 using UnityEngine;
 using UnityEngine.UI;
@@ -229,6 +230,13 @@ public class GameManager : MonoBehaviour {
     public void MakeItemCarryOver(Item item){
         if (onMakeItemCarryOver != null) {
             onMakeItemCarryOver(item);
+        }
+    }
+    
+    public event Action onTalkToNPC;
+    public void TalkToNPC(){
+        if (onTalkToNPC != null) {
+            onTalkToNPC();
         }
     }
 }

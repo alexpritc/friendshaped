@@ -30,6 +30,7 @@ namespace Player
                         break;
                     case "NPC":
                         // Start dialogue
+                        GameManager.Instance.TalkToNPC();
                         break;
                     case "Item":
                         GameManager.Instance.PickUpItem(interactWith.GetComponent<Item>());

@@ -4,14 +4,15 @@ using UnityEngine;
 
 public class InkManager : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
+    private DialogueManager dialogueManager;
+    [SerializeField] private GameObject chatWindow;
+    [SerializeField] private TextAsset[] inkJSONAssets = null;
+
+    void Awake() {
+        GameManager.Instance.onTalkToNPC += InstantiateChatInstance;
     }
 
-    // Update is called once per frame
-    void Update()
+    private void InstantiateChatInstance()
     {
         
     }
