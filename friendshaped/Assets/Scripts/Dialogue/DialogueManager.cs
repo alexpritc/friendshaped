@@ -85,6 +85,13 @@ public class DialogueManager : MonoBehaviour {
 	void OnClickChoiceButton (Choice choice) {
 		story.ChooseChoiceIndex (choice.index);
 
+		// TODO: if choice is tagged #end close window
+		if (choice.text.ToLower().CompareTo("Walk Away".ToLower()) == 0)
+		{
+			Debug.Log("walked away");
+			EndChat();
+		}
+		
 		RefreshView();
 	}
 
@@ -167,10 +174,13 @@ public class DialogueManager : MonoBehaviour {
 				});
 			}
 		}
-		// TODO: else close the dialogue window
-		
 	}
 
+	void EndChat()
+	{
+		GameManager.Instance.StopTalkingToNPC(gameObject);
+	}
+	
 	string GetClipName(Animator m_Animator)
 	{
 		//Fetch the current Animation clip information for the base layer

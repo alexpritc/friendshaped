@@ -242,4 +242,12 @@ public class GameManager : MonoBehaviour {
             isChatWindowActive = true;
         }
     }
+    
+    public event Action<GameObject> onStopTalkingToNPC;
+    public void StopTalkingToNPC(GameObject chatWindow){
+        if (onStopTalkingToNPC != null) {
+            onStopTalkingToNPC(chatWindow);
+            isChatWindowActive = false;
+        }
+    }
 }

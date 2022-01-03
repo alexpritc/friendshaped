@@ -9,6 +9,7 @@ public class InkManager : MonoBehaviour
 
     void Start() {
         GameManager.Instance.onTalkToNPC += InstantiateChatInstance;
+        GameManager.Instance.onStopTalkingToNPC += CloseChatInstance;
     }
 
     private void InstantiateChatInstance(TextAsset script)
@@ -17,5 +18,10 @@ public class InkManager : MonoBehaviour
         
         dialogueManager = instance.GetComponent<DialogueManager>();
         dialogueManager.inkJSONAsset = script;
+    }
+
+    private void CloseChatInstance(GameObject window)
+    {
+        Destroy(window);
     }
 }
