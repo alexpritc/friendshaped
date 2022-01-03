@@ -10,6 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 5653875619030296252}
   - component: {fileID: 5653875619030296255}
+  - component: {fileID: 1847627600}
+  - component: {fileID: 65211197}
   m_Layer: 0
   m_Name: DialogueController
   m_TagString: Untagged
@@ -66,6 +68,46 @@ MonoBehaviour:
   m_ChildScaleWidth: 0
   m_ChildScaleHeight: 0
   m_ReverseArrangement: 0
+--- !u!114 &1847627600
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5653875619030296254}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9fe6268ef9dc60a40b58321afaa16218, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  inkJSONAsset: {fileID: 4900000, guid: d1113131b1380ef4cad500c2dce99907, type: 3}
+  dialogueCanvas: {fileID: 5653875619479434252}
+  choiceCanvas: {fileID: 5653875620603905734}
+  commentaryCanvas: {fileID: 5653875619161326569}
+  textPrefab: {fileID: 3400733937973919571, guid: b93bc6e3e720df0478994c57e57e90ae, type: 3}
+  textBoxPrefab: {fileID: 6246375558831844526, guid: 5fa5a269a8adc7846bc62a1b78c97650, type: 3}
+  buttonPrefab: {fileID: 2779583741234694907, guid: dc8cb031689974742a29e265a9d97258, type: 3}
+  commentaryTextBoxPrefab: {fileID: 2803328960669597586, guid: 6bc6f593c5dc8df4caddc3aad89cdbf9, type: 3}
+  waitTime: 2.5
+--- !u!95 &65211197
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5653875619030296254}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 1b686068210ccfb4587416036a658f5e, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &5653875619055413711
 GameObject:
   m_ObjectHideFlags: 0
@@ -444,7 +486,6 @@ GameObject:
   - component: {fileID: 5653875619479434252}
   - component: {fileID: 5653875619479434255}
   - component: {fileID: 5653875619479434254}
-  - component: {fileID: 5653875619479434259}
   m_Layer: 5
   m_Name: Canvas - Dialogue
   m_TagString: Untagged
@@ -532,27 +573,6 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
---- !u!114 &5653875619479434259
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5653875619479434249}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9fe6268ef9dc60a40b58321afaa16218, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  inkJSONAsset: {fileID: 4900000, guid: d1113131b1380ef4cad500c2dce99907, type: 3}
-  dialogueCanvas: {fileID: 5653875619479434252}
-  choiceCanvas: {fileID: 5653875620603905734}
-  commentaryCanvas: {fileID: 5653875619161326569}
-  textPrefab: {fileID: 3400733937973919571, guid: b93bc6e3e720df0478994c57e57e90ae, type: 3}
-  textBoxPrefab: {fileID: 6246375558831844526, guid: 5fa5a269a8adc7846bc62a1b78c97650, type: 3}
-  buttonPrefab: {fileID: 2779583741234694907, guid: dc8cb031689974742a29e265a9d97258, type: 3}
-  commentaryTextBoxPrefab: {fileID: 2803328960669597586, guid: 6bc6f593c5dc8df4caddc3aad89cdbf9, type: 3}
-  waitTime: 2.5
 --- !u!1 &5653875619740716406
 GameObject:
   m_ObjectHideFlags: 0

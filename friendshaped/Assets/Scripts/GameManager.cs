@@ -46,6 +46,8 @@ public class GameManager : MonoBehaviour {
     private bool foundWeapon;
     private bool foundLocation;
 
+    public bool isChatWindowActive = false;
+
     void Awake() {
         if(instance != null) {
             Destroy(instance.gameObject);
@@ -57,8 +59,8 @@ public class GameManager : MonoBehaviour {
 
     private void Update()
     {
-        //if (player.GetComponent<PlayerManager>().PlayerState == MovementStates.WALKING)
-        //{
+        if (!isChatWindowActive)
+        {
             timer += Time.deltaTime * timeModifier;
             loopUI.value = timer;
 
@@ -66,7 +68,7 @@ public class GameManager : MonoBehaviour {
             {
                 OnLoopComplete();
             }
-        //}
+        }
     }
 
     private void OnLoopComplete()
@@ -233,10 +235,11 @@ public class GameManager : MonoBehaviour {
         }
     }
     
-    public event Action onTalkToNPC;
-    public void TalkToNPC(){
+    public event Action<TextAsset> onTalkToNPC;
+    public void TalkToNPC(TextAsset inkScript){
         if (onTalkToNPC != null) {
-            onTalkToNPC();
+            onTalkToNPC(inkScript);
+            isChatWindowActive = true;
         }
     }
 }

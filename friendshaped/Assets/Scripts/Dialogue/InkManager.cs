@@ -5,15 +5,17 @@ using UnityEngine;
 public class InkManager : MonoBehaviour
 {
     private DialogueManager dialogueManager;
-    [SerializeField] private GameObject chatWindow;
-    [SerializeField] private TextAsset[] inkJSONAssets = null;
+    [SerializeField] private GameObject chatWindowPrefab;
 
-    void Awake() {
+    void Start() {
         GameManager.Instance.onTalkToNPC += InstantiateChatInstance;
     }
 
-    private void InstantiateChatInstance()
+    private void InstantiateChatInstance(TextAsset script)
     {
+        GameObject instance = Instantiate(chatWindowPrefab);
         
+        dialogueManager = instance.GetComponent<DialogueManager>();
+        dialogueManager.inkJSONAsset = script;
     }
 }

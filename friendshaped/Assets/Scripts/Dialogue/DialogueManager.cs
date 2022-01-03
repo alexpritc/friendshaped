@@ -9,9 +9,8 @@ using TMPro;
 // This is a super bare bones example of how to play and display a ink story in Unity.
 public class DialogueManager : MonoBehaviour {
     public static event Action<Story> OnCreateStory;
-
-    [SerializeField]
-    private TextAsset inkJSONAsset = null;
+    
+    public TextAsset inkJSONAsset = null;
     public Story story;
 
     [SerializeField]
@@ -143,12 +142,6 @@ public class DialogueManager : MonoBehaviour {
 		}
 	}
 
-	IEnumerator RemoveCommentary()
-	{
-		yield return new WaitForSeconds(waitTime*2f);
-		RemoveChildren(commentaryCanvas);
-	}
-	
 	void DisplayCommentary(string text)
 	{
 		GameObject textbox = Instantiate(commentaryTextBoxPrefab) as GameObject;
@@ -175,6 +168,7 @@ public class DialogueManager : MonoBehaviour {
 			}
 		}
 		// TODO: else close the dialogue window
+		
 	}
 
 	string GetClipName(Animator m_Animator)
