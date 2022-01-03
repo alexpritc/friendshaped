@@ -28,7 +28,8 @@ public class DialogueManager : MonoBehaviour {
 	private GameObject textBoxPrefab = null;
 	[SerializeField]
     private Button buttonPrefab = null;
-	[SerializeField]
+
+    [SerializeField] private GameObject commentaryTextBoxPrefab = null;
 	private TextMeshProUGUI commentaryTextPrefab = null;
 
 	[SerializeField] float waitTime = 2f;
@@ -121,6 +122,7 @@ public class DialogueManager : MonoBehaviour {
 				if (isCommentary)
 				{
 					yield return new WaitForSeconds(waitTime*2f);
+					RemoveChildren(commentaryCanvas);
 				}
 				else
 				{
@@ -141,14 +143,21 @@ public class DialogueManager : MonoBehaviour {
 		}
 	}
 
+	IEnumerator RemoveCommentary()
+	{
+		yield return new WaitForSeconds(waitTime*2f);
+		RemoveChildren(commentaryCanvas);
+	}
+	
 	void DisplayCommentary(string text)
 	{
-		TextMeshProUGUI storyText = Instantiate(commentaryTextPrefab) as TextMeshProUGUI;
+		GameObject textbox = Instantiate(commentaryTextBoxPrefab) as GameObject;
+		TextMeshProUGUI storyText = textbox.GetComponentInChildren<TextMeshProUGUI>();
 		storyText.text = text;
 
-		storyText.transform.SetParent(commentaryCanvas.transform, false);
+		textbox.transform.SetParent(commentaryCanvas.transform, false);
 
-		currentAnim = storyText.GetComponent<Animator>();
+		currentAnim = textbox.GetComponent<Animator>();
 	}
 
 	void DisplayNextChoices()
@@ -214,7 +223,7 @@ public class DialogueManager : MonoBehaviour {
 				StartCoroutine(MoveTextBox(currentDialogueBoxes[i]));
 			}
 		}
-		
+
 		// Only allow x textboxes on screen at once.
 		if (currentDialogueBoxes.Count >= 6)
 		{
@@ -295,7 +304,10 @@ public class DialogueManager : MonoBehaviour {
 			}
 		}
 
-		currentDialogueBoxes.Clear();
+		if (canvas.name.Contains("Dialogue"))
+		{
+			currentDialogueBoxes.Clear();	
+		}
 	}
 	
 	void SkipDialogue()
