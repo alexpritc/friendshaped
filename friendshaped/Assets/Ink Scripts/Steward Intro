@@ -1,0 +1,258 @@
+#Player
+#Steward
+===StewardDescription
+The Steward is a young man who clearly isn't too enthused with his job but can't afford to get fired.  #Commentary
+He isn't very good at controlling his facial expressions so wears a face mask to keep them hidden and avoid trouble. 
+
+->StewardIntro
+
+===StewardIntro
+
+ * [Ask the Steward what they were doing last night]
+ -> StewardWhatHappened
+ * {StewardCoverUp} [Ask him what happened last night again]
+ -> StewardWhatHappenedAgain
+ * [Ask him who he suspects]
+ -> StewardWhodunnit
+  *{SandsWhodunnit.SECONDSTOWAWAY} [Ask about the second stowaway theory]
+  -> StewardSecondStowaway
+  + [Walk Away]
+ -> Start
+ * ->
+-> Start
+===StewardWhatHappened
+Good morning Mr Steward sir!#Player
+
+...Good Morning?#Steward
+
+Working hard or hardly working, amiright?#Player
+
+...there's been a murder. #Steward
+Why are you being like this?
+
+Yes.#Player
+Well.
+That's why I'm here!
+
+Hm?#Steward
+
+Can you explain what you were up to last night?#Player
+
+Sure.#Steward
+Well as I'm sure you remember most of the passengers were taking drinks in the dining cart last night. 
+I don't do bar work,
+I'm more of a 'here when you need me' type guy.
+So I was resting in the staff quarters for most of the night. 
+
+ * [Ask if he was sat there the whole night]
+ -> StewardSatThere
+ * [Ask if he's covering for someone]
+ -> StewardCoverUp
+ 
+ ===StewardSatThere
+You were just sat there, waiting to be called upon, the whole night?#Player
+
+No one needed my services, I guess. #Steward
+
+Fair enough I guess. #Player
+Thanks for your help.
+
+->StewardIntro
+
+===StewardCoverUp
+This all sounds awfully bland. #Player
+
+Yeah, and?#Steward
+That's the job. 
+It's not exactly thrilling. 
+
+I don't know, Steward. #Player
+It sounds to me like I'm not getting the full story.
+
+What are you suggesting?!#Steward
+
+Did you see something?#Player
+Are you covering for the murderer?!
+
+WHAT?#Steward
+NO!
+..Fine.
+I haven't been completely honest.
+
+I knew it!#Player
+
+-but it's nothing like that!#Steward
+It's just...
+Sometimes...
+When none of the passengers need me...
+
+SPIT IT OUT MAN#Player
+
+I TAKE NAPS IN THE STAFF ROOM OKAY!#Steward
+
+Oh buddy.#Player
+
+Yeah. #Steward
+I'm not proud. 
+I wasn't even asleep for long this time though!
+I was woken up around 11.30, I was barely out for 20 minutes!
+
+That's more than enough time for you to miss something!#Player
+What woke you up?
+
+There were birds screeching on top of the train. #Steward
+Must have been going through a flock of them or something?
+I don't know anything about birds but they were bloody loud. 
+
+Not a fun way to wake up#Player
+But you kinda deserved it.
+
+Yeah I know. #Steward
+...
+Please don't tell anyone I nap. 
+
+No promises.#Player
+
+->StewardIntro
+===StewardWhatHappenedAgain
+So Steward,#Player
+Now I know your...
+sleepy secret...
+Is there anything else you want to tell me?
+
+Like what?#Steward
+Didn't we already do this?
+
+*['Did you do anything else last night?']
+->DoAnything
+*['Did you see anyone else last night?']
+->SeeAnything
+
+=DoAnything
+Did you do anything else last night?#Player
+Are you sure you're telling me everything?
+I won't be mad
+(but I might be disappointed)
+
+I've told you everything I did last night!#Steward
+I was in the staff room 
+Had a shameful nap 
+Woke up and continued to keep an eye out for guests!
+
+Nothing else?#Player
+
+No!#Steward
+This doesn't seem like a good use of your time,
+Asking me the same questions over and over!
+->StewardIntro
+
+=SeeAnything
+Did you see anyoneone else last night? #Player
+
+Let me think...#Steward
+Lady Mortimer walked by at about... 20 past ten?
+
+And you were still awake at that time?#Player
+
+Yes!#Steward
+I must've drifted off not long after that though...
+
+Until you were woken up by the bird noises?#Player
+
+Exactly!#Steward
+That was at about half 11.
+Then nothing happened for a while
+
+But you didn't fall asleep again?#Player
+
+...I don't think so?#Steward
+No?
+I'm pretty sure I didn't...
+Either way,
+I didn't see anyone else until gone midnight. 
+Maybe 12.30?
+
+Who did you see?#Player
+
+I couldn't make them out #Steward
+But they came from the rear sleeping cart 
+Walked past the door dragging something
+And then went back in the direction they came 
+
+AND YOU DIDN'T THINK TO LOOK INTO IT?!#Player
+
+I'm here if passengers request me!#Steward
+I don't go out of my way to see if they need help dragging their things around the train!
+Why does it matter?
+
+BECAUSE IT MIGHT HAVE BEEN THE BODY!!#Player
+
+Oh. 
+Ew. 
+
+//SOMEONE IS UP AFTER BED PROMPT UNLOCKED
+->StewardIntro
+
+===StewardWhodunnit
+So you must have a pretty good take on everyone on this train, right?#Player
+
+I guess?#Steward
+
+If you had to pick someone, who would you suspect murdered the poor man?#Player
+
+I don't know the passengers that well!#Steward
+I know who takes tea before bed, not who has a homicidal streak!
+
+Well that's less useful. #Player
+Do you have any suggestions?
+
+Hm. #Steward
+Well. 
+No one walked towards the end of the train after the Lady went to bed
+And the stowaway was found dead in the dining cart
+So I'd assume it was someone who sleeps in the rear of the train?
+Perhaps Sands, he seems awfully interested in this whole thing. 
+
+// SANDS IS SUS UNLOCKED
+
+Good idea, Steward!#Player
+
+Thanks?#Steward
+
+One more thing...#Player
+
+Yes?#Steward
+
+Who takes tea before bed?#Player
+
+Oh. #Steward
+Lady Mortimer. 
+She says she needs it to fall asleep. 
+
+Fair enough. #Player
+Ladies do like tea. 
+
+
+->StewardIntro
+
+===StewardSecondStowaway
+Do you think a second stowaway could have committed the murder?#Player
+
+Hm.#Steward
+I doubt it.
+It's a small train, I can't imagine multiple people would go unnoticed. 
+...but to be fair, I didn't think there would be one stowaway in the first place
+...until that body showed up.
+
+It is a bit of a plot twist, eh?#Player
+
+Yeah.#Steward
+I feel for the Conductor 
+- she normally runs such a tight ship.
+She can't be feeling good about having not noticed a stowaway
+
+Let alone a murdered stowaway.#Player
+
+Exactly. #Steward
+
+->StewardIntro

@@ -13,6 +13,8 @@ namespace Player
 
         private GameObject interactWith;
 
+        [SerializeField] private TextAsset script;
+
         void Awake()
         {
             controls = new PlayerControls();
@@ -29,7 +31,10 @@ namespace Player
                         interactWith.GetComponent<Door>().UseDoor();
                         break;
                     case "NPC":
+                        // Pick a script to play
+                        
                         // Start dialogue
+                        GameManager.Instance.TalkToNPC(script);
                         break;
                     case "Item":
                         GameManager.Instance.PickUpItem(interactWith.GetComponent<Item>());

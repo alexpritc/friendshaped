@@ -1,10 +1,12 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Ink.Runtime;
 using Player;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public enum PromptKeys { A, D, E, Right, Left }
 [System.Serializable]
@@ -33,6 +35,19 @@ public class GameManager : MonoBehaviour {
     [SerializeField]
     private GameObject player;
 
+    [SerializeField]
+    private Slider loopUI;
+    private float timer;
+    [SerializeField]
+    private float timeModifier = 2f;
+
+    [Header("Objectives")]
+    private bool foundMurderer;
+    private bool foundWeapon;
+    private bool foundLocation;
+
+    public bool isChatWindowActive = false;
+
     void Awake() {
         if(instance != null) {
             Destroy(instance.gameObject);
@@ -40,6 +55,25 @@ public class GameManager : MonoBehaviour {
         instance = this;
 
         CreatePrompt(player.transform.position + new Vector3(1, 2, 0), "Move", PromptKeys.A, PromptKeys.D);
+    }
+
+    private void Update()
+    {
+        if (!isChatWindowActive)
+        {
+            timer += Time.deltaTime * timeModifier;
+            loopUI.value = timer;
+
+            if (timer >= loopUI.maxValue)
+            {
+                OnLoopComplete();
+            }
+        }
+    }
+
+    private void OnLoopComplete()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 
     public void NextPrompt()
@@ -198,6 +232,22 @@ public class GameManager : MonoBehaviour {
     public void MakeItemCarryOver(Item item){
         if (onMakeItemCarryOver != null) {
             onMakeItemCarryOver(item);
+        }
+    }
+    
+    public event Action<TextAsset> onTalkToNPC;
+    public void TalkToNPC(TextAsset inkScript){
+        if (onTalkToNPC != null) {
+            onTalkToNPC(inkScript);
+            isChatWindowActive = true;
+        }
+    }
+    
+    public event Action<GameObject> onStopTalkingToNPC;
+    public void StopTalkingToNPC(GameObject chatWindow){
+        if (onStopTalkingToNPC != null) {
+            onStopTalkingToNPC(chatWindow);
+            isChatWindowActive = false;
         }
     }
 }
