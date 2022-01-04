@@ -47,6 +47,8 @@ public class DialogueManager : MonoBehaviour {
 	[SerializeField] private int maxCharactersPerDialogue = 30;
 	[SerializeField] private int maxCharactersPerCommentary = 100;
 	[SerializeField] private int maxCharactersPerButton = 80;
+	
+	[SerializeField] private int dialogueBoxesLimit = 7;
 
 	void Awake () {
 
@@ -237,7 +239,6 @@ public class DialogueManager : MonoBehaviour {
 	{
 		if (DoesStringFitCriteria(input, charLimit))
 		{
-			Debug.Log("string is formatted first time round");
 			return input;
 		}
 
@@ -341,7 +342,6 @@ public class DialogueManager : MonoBehaviour {
 		{
 			if (line.Length >= charLimit)
 			{
-				Debug.Log("line is too long");
 				isFormatted = false;
 			}
 		}
@@ -367,7 +367,7 @@ public class DialogueManager : MonoBehaviour {
 		}
 
 		// Only allow x textboxes on screen at once.
-		if (currentDialogueBoxes.Count >= 6)
+		if (currentDialogueBoxes.Count >= dialogueBoxesLimit)
 		{
 			StartCoroutine(FadeTextBox(currentDialogueBoxes[0]));
 		}
@@ -447,7 +447,7 @@ public class DialogueManager : MonoBehaviour {
 
 		if (currentDialogueBoxes != null && currentDialogueBoxes.Count > 0)
 		{
-			if (currentDialogueBoxes.Count >= 6)
+			if (currentDialogueBoxes.Count >= dialogueBoxesLimit)
 			{
 				// Only allow x textboxes on screen at once.
 				Destroy(currentDialogueBoxes[0]);

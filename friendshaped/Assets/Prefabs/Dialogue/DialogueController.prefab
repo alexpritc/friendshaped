@@ -91,7 +91,8 @@ MonoBehaviour:
   waitTime: 2.5
   maxCharactersPerDialogue: 50
   maxCharactersPerCommentary: 80
-  maxCharactersPerButton: 50
+  maxCharactersPerButton: 40
+  dialogueBoxesLimit: 7
 --- !u!95 &65211197
 Animator:
   serializedVersion: 3
