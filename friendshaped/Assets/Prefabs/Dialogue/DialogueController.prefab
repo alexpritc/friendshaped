@@ -89,7 +89,7 @@ MonoBehaviour:
   buttonPrefab: {fileID: 2779583741234694907, guid: dc8cb031689974742a29e265a9d97258, type: 3}
   commentaryTextBoxPrefab: {fileID: 2803328960669597586, guid: 6bc6f593c5dc8df4caddc3aad89cdbf9, type: 3}
   waitTime: 2.5
-  maxCharactersPerDialogue: 30
+  maxCharactersPerDialogue: 50
   maxCharactersPerCommentary: 80
   maxCharactersPerButton: 50
 --- !u!95 &65211197
