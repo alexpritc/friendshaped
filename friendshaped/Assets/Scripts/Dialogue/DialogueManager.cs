@@ -438,8 +438,23 @@ public class DialogueManager : MonoBehaviour {
 	void SkipDialogue()
 	{
 		StopAllCoroutines();
-		RemoveChildren(commentaryCanvas);
-		//StopCoroutine(DisplayNextDialogue());
+		
+		// Clear commentary
+		if (story.canContinue)
+		{
+			RemoveChildren(commentaryCanvas);	
+		}
+
+		if (currentDialogueBoxes != null && currentDialogueBoxes.Count > 0)
+		{
+			if (currentDialogueBoxes.Count >= 6)
+			{
+				// Only allow x textboxes on screen at once.
+				Destroy(currentDialogueBoxes[0]);
+				currentDialogueBoxes.RemoveAt(0);	
+			}
+		}
+		
 		StartCoroutine(DisplayNextDialogue());
 	}
 
