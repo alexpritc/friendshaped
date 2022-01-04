@@ -43,6 +43,10 @@ public class DialogueManager : MonoBehaviour {
 	private PlayerControls controls;
 
 	private bool clickedButton;
+	
+	[SerializeField] private int maxCharactersPerDialogue = 30;
+	[SerializeField] private int maxCharactersPerCommentary = 100;
+	[SerializeField] private int maxCharactersPerButton = 80;
 
 	void Awake () {
 
@@ -116,7 +120,7 @@ public class DialogueManager : MonoBehaviour {
 			if (isCommentary)
 			{
 				RemoveChildren(commentaryCanvas);
-				DisplayCommentary(text);
+				CreateCommentaryView(text);
 			}
 			else
 			{
@@ -147,17 +151,6 @@ public class DialogueManager : MonoBehaviour {
 			clickedButton = true;
 			DisplayNextChoices();
 		}
-	}
-
-	void DisplayCommentary(string text)
-	{
-		GameObject textbox = Instantiate(commentaryTextBoxPrefab) as GameObject;
-		TextMeshProUGUI storyText = textbox.GetComponentInChildren<TextMeshProUGUI>();
-		storyText.text = text;
-
-		textbox.transform.SetParent(commentaryCanvas.transform, false);
-
-		currentAnim = textbox.GetComponent<Animator>();
 	}
 
 	void DisplayNextChoices()
@@ -198,7 +191,7 @@ public class DialogueManager : MonoBehaviour {
 	void CreateContentView (string text) {
 
 		Text storyText = Instantiate (textPrefab) as Text;
-		storyText.text = text;
+		storyText.text = ManageTextFormatting(text, maxCharactersPerDialogue);
 
 		GameObject textbox = Instantiate(textBoxPrefab) as GameObject;
 		textbox.transform.SetParent(dialogueCanvas.transform, false);
@@ -210,7 +203,152 @@ public class DialogueManager : MonoBehaviour {
 
 		currentAnim = textbox.GetComponent<Animator>();
 	}
+	
+	// Creates a button showing the choice text
+	Button CreateChoiceView (string text) {
+		// Creates the button from a prefab
+		Button choice = Instantiate (buttonPrefab) as Button;
+		choice.transform.SetParent (choiceCanvas.transform, false);
+		
+		// Gets the text from the button prefab
+		Text choiceText = choice.GetComponentInChildren<Text> ();
+		choiceText.text = ManageTextFormatting(text, maxCharactersPerButton);
 
+		// Make the button expand to fit the text
+		HorizontalLayoutGroup layoutGroup = choice.GetComponent <HorizontalLayoutGroup> ();
+		layoutGroup.childForceExpandHeight = false;
+
+		return choice;
+	}
+	
+	void CreateCommentaryView(string text)
+	{
+		GameObject textbox = Instantiate(commentaryTextBoxPrefab) as GameObject;
+		TextMeshProUGUI storyText = textbox.GetComponentInChildren<TextMeshProUGUI>();
+		storyText.text = ManageTextFormatting(text, maxCharactersPerCommentary);
+
+		textbox.transform.SetParent(commentaryCanvas.transform, false);
+
+		currentAnim = textbox.GetComponent<Animator>();
+	}
+
+	// needs to be recursive
+	string ManageTextFormatting(string input, int charLimit)
+	{
+		if (DoesStringFitCriteria(input, charLimit))
+		{
+			Debug.Log("string is formatted first time round");
+			return input;
+		}
+
+		string output = "";
+		string temp = "";
+
+		// Get individual lines
+		List<string> lines = new List<string>();
+		lines = GetLines(input);
+
+		// Empty line - shouldn't happen in real script
+		if (lines == null || lines.Count == 0)
+		{
+			return "";
+		}
+		
+		string unformattedString = lines[lines.Count-1];
+		
+		for (int i = 0; i < unformattedString.Length; i++)
+		{
+			if (i >= charLimit)
+			{
+				temp = "";
+				for (int j = i; j > 0; j--)
+				{
+					if (input[j] == ' ')
+					{
+						temp += unformattedString.Substring(0, j);
+						if (j < unformattedString.Length - 1)
+						{
+							int t = unformattedString.Length - j;
+							temp += '\n' + unformattedString.Substring(j, t);
+							break;
+						}
+					}
+				}
+
+				if (temp == "")
+				{
+					temp = unformattedString;
+				}
+
+				break;
+			}
+			
+			if (temp == "")
+			{
+				temp = unformattedString;
+			}
+			
+		}
+
+		lines[lines.Count-1] = temp;
+
+		foreach (var line in lines)
+		{
+			output += line + '\n';
+		}
+
+		// get rid of the last \n
+		output = output.Substring(0, output.Length-1);
+
+		return output;
+	}
+
+	List<string> GetLines(string input)
+	{
+		List<string> lines = new List<string>();
+
+		string line = "";
+
+		for (int i = 0; i < input.Length; i++)
+		{
+			if (input[i] != '\n')
+			{
+				line += input[i];
+
+				// If end of line
+				if (i >= input.Length-1)
+				{
+					lines.Add(line);
+					line = "";
+				}
+			}
+			else
+			{
+				lines.Add(line);
+				line = "";
+			}
+		}
+		return lines;
+	}
+
+	bool DoesStringFitCriteria(string input, int charLimit)
+	{
+		bool isFormatted = true;
+		
+		List<string> lines = GetLines(input);
+
+		foreach (var line in lines)
+		{
+			if (line.Length >= charLimit)
+			{
+				Debug.Log("line is too long");
+				isFormatted = false;
+			}
+		}
+
+		return isFormatted;
+	}
+	
 	void AddToDialogueArray(ref GameObject go)
 	{
 		currentDialogueBoxes.Add(go);
@@ -278,23 +416,6 @@ public class DialogueManager : MonoBehaviour {
 		}
 	}
 
-	// Creates a button showing the choice text
-	Button CreateChoiceView (string text) {
-		// Creates the button from a prefab
-		Button choice = Instantiate (buttonPrefab) as Button;
-		choice.transform.SetParent (choiceCanvas.transform, false);
-		
-		// Gets the text from the button prefab
-		Text choiceText = choice.GetComponentInChildren<Text> ();
-		choiceText.text = text;
-
-		// Make the button expand to fit the text
-		HorizontalLayoutGroup layoutGroup = choice.GetComponent <HorizontalLayoutGroup> ();
-		layoutGroup.childForceExpandHeight = false;
-
-		return choice;
-	}
-
 	// Destroys all the children of this gameobject (all the UI)
 	void RemoveChildren(Canvas canvas)
 	{
@@ -317,6 +438,7 @@ public class DialogueManager : MonoBehaviour {
 	void SkipDialogue()
 	{
 		StopAllCoroutines();
+		RemoveChildren(commentaryCanvas);
 		//StopCoroutine(DisplayNextDialogue());
 		StartCoroutine(DisplayNextDialogue());
 	}
