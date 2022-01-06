@@ -17,7 +17,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2711499352260804783, guid: 29f460e2f40bbf446b89aa138181c35a, type: 3}
       propertyPath: m_fontSize
-      value: 25
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 2711499352260804783, guid: 29f460e2f40bbf446b89aa138181c35a, type: 3}
       propertyPath: m_fontColor.b
@@ -33,7 +33,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2711499352260804783, guid: 29f460e2f40bbf446b89aa138181c35a, type: 3}
       propertyPath: m_fontSizeBase
-      value: 25
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 2711499352260804783, guid: 29f460e2f40bbf446b89aa138181c35a, type: 3}
       propertyPath: m_fontColor32.rgba
@@ -252,10 +252,10 @@ PrefabInstance:
     - target: {fileID: 6246375558825184028, guid: 5fa5a269a8adc7846bc62a1b78c97650, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
+      objectReference: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
     - target: {fileID: 6246375558825184028, guid: 5fa5a269a8adc7846bc62a1b78c97650, type: 3}
       propertyPath: m_Color.a
-      value: 0.6862745
+      value: 0.6745098
       objectReference: {fileID: 0}
     - target: {fileID: 6246375558825184028, guid: 5fa5a269a8adc7846bc62a1b78c97650, type: 3}
       propertyPath: m_Color.b
@@ -274,8 +274,44 @@ PrefabInstance:
       value: Textbox Commentary Variant
       objectReference: {fileID: 0}
     - target: {fileID: 8961935445304321432, guid: 5fa5a269a8adc7846bc62a1b78c97650, type: 3}
+      propertyPath: m_Spacing
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 8961935445304321432, guid: 5fa5a269a8adc7846bc62a1b78c97650, type: 3}
+      propertyPath: m_Padding.m_Top
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 8961935445304321432, guid: 5fa5a269a8adc7846bc62a1b78c97650, type: 3}
+      propertyPath: m_ChildAlignment
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 8961935445304321432, guid: 5fa5a269a8adc7846bc62a1b78c97650, type: 3}
+      propertyPath: m_ChildScaleWidth
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8961935445304321432, guid: 5fa5a269a8adc7846bc62a1b78c97650, type: 3}
+      propertyPath: m_ChildScaleHeight
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8961935445304321432, guid: 5fa5a269a8adc7846bc62a1b78c97650, type: 3}
       propertyPath: m_Padding.m_Bottom
-      value: 10
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 8961935445304321432, guid: 5fa5a269a8adc7846bc62a1b78c97650, type: 3}
+      propertyPath: m_ChildControlWidth
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8961935445304321432, guid: 5fa5a269a8adc7846bc62a1b78c97650, type: 3}
+      propertyPath: m_ChildControlHeight
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8961935445304321432, guid: 5fa5a269a8adc7846bc62a1b78c97650, type: 3}
+      propertyPath: m_ChildForceExpandWidth
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8961935445304321432, guid: 5fa5a269a8adc7846bc62a1b78c97650, type: 3}
+      propertyPath: m_ChildForceExpandHeight
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5fa5a269a8adc7846bc62a1b78c97650, type: 3}

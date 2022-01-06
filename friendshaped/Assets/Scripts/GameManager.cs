@@ -54,7 +54,7 @@ public class GameManager : MonoBehaviour {
         }
         instance = this;
 
-        CreatePrompt(player.transform.position + new Vector3(1, 2, 0), "Move", PromptKeys.A, PromptKeys.D);
+        CreatePrompt(player.transform.position + new Vector3(1.2f,1.3f,0f), "Move", PromptKeys.A,PromptKeys.D);
     }
 
     private void Update()
@@ -235,10 +235,10 @@ public class GameManager : MonoBehaviour {
         }
     }
     
-    public event Action<TextAsset> onTalkToNPC;
-    public void TalkToNPC(TextAsset inkScript){
+    public event Action<TextAsset, Sprite, Sprite> onTalkToNPC;
+    public void TalkToNPC(TextAsset inkScript, Sprite chatBackground, Sprite chatSprite){
         if (onTalkToNPC != null) {
-            onTalkToNPC(inkScript);
+            onTalkToNPC(inkScript, chatBackground, chatSprite);
             isChatWindowActive = true;
         }
     }
