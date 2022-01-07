@@ -54,7 +54,7 @@ public class GameManager : MonoBehaviour {
         }
         instance = this;
 
-        CreatePrompt(player.transform.position + new Vector3(1.2f,1.3f,0f), "Move", PromptKeys.A,PromptKeys.D);
+        CreatePrompt(player.transform.position + new Vector3(0f,2f,0f), "Move", PromptKeys.A,PromptKeys.D);
     }
 
     private void Update()
