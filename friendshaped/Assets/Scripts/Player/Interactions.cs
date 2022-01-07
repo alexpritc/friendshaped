@@ -13,7 +13,7 @@ namespace Player
 
         private GameObject interactWith;
 
-        [SerializeField] private TextAsset script;
+        private NPC npc;
 
         void Awake()
         {
@@ -23,7 +23,7 @@ namespace Player
 
         private void Interact()
         {
-            if (canInteract)
+            if (canInteract && !GameManager.Instance.isChatWindowActive)
             {
                 switch (interactWith.tag)
                 {
@@ -31,10 +31,8 @@ namespace Player
                         interactWith.GetComponent<Door>().UseDoor();
                         break;
                     case "NPC":
-                        // Pick a script to play
-                        
-                        // Start dialogue
-                        GameManager.Instance.TalkToNPC(script);
+                        npc = interactWith.GetComponent<NPC>();
+                        GameManager.Instance.TalkToNPC(npc.script, npc.chatWindowBackground, npc.chatWindowSprite);
                         break;
                     case "Item":
                         GameManager.Instance.PickUpItem(interactWith.GetComponent<Item>());
@@ -53,15 +51,15 @@ namespace Player
 
             if (collision.tag == "Door")
             {
-                GameManager.Instance.CreatePrompt(transform.position + new Vector3(1, 2, 0), "Use Door", PromptKeys.E);
+                GameManager.Instance.CreatePrompt(transform.position + new Vector3(0.5f, 3, 0), "Use Door", PromptKeys.E);
             }
             else if (collision.tag == "NPC")
             {
-                GameManager.Instance.CreatePrompt(transform.position + new Vector3(1, 2, 0), "Talk", PromptKeys.E);
+                GameManager.Instance.CreatePrompt(transform.position + new Vector3(0.5f, 3, 0), "Talk", PromptKeys.E);
             }
             else if (collision.tag == "Item")
             {
-                GameManager.Instance.CreatePrompt(transform.position + new Vector3(1, 2, 0), "Inspect", PromptKeys.E);
+                GameManager.Instance.CreatePrompt(transform.position + new Vector3(0.5f, 3, 0), "Inspect", PromptKeys.E);
             }
         }
 

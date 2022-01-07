@@ -48,7 +48,11 @@ public class DialogueManager : MonoBehaviour {
 	[SerializeField] private int maxCharactersPerCommentary = 100;
 	[SerializeField] private int maxCharactersPerButton = 80;
 	
-	[SerializeField] private int dialogueBoxesLimit = 7;
+	[SerializeField] private int dialogueBoxesLimit = 4;
+
+	public Image windowBackground;
+	public Image chatSpriteA;
+	public Image chatSpriteB;
 
 	void Awake () {
 
@@ -62,6 +66,13 @@ public class DialogueManager : MonoBehaviour {
 		StartStory();
 
 		controls.interactions.click.performed += ctx => SkipDialogue();
+	}
+
+	public void SetImages(Sprite bg, Sprite a, Sprite b)
+	{
+		windowBackground.sprite = bg;
+		chatSpriteA.sprite = a;
+		chatSpriteB.sprite = b;
 	}
 
 	// Creates a new Story object with the compiled story which we can then play!
@@ -225,6 +236,9 @@ public class DialogueManager : MonoBehaviour {
 	
 	void CreateCommentaryView(string text)
 	{
+
+		RemoveChildren(commentaryCanvas);
+		
 		GameObject textbox = Instantiate(commentaryTextBoxPrefab) as GameObject;
 		TextMeshProUGUI storyText = textbox.GetComponentInChildren<TextMeshProUGUI>();
 		storyText.text = ManageTextFormatting(text, maxCharactersPerCommentary);
@@ -354,7 +368,7 @@ public class DialogueManager : MonoBehaviour {
 		currentDialogueBoxes.Add(go);
 		
 		float x = isPlayerTalking ? -100f : 100f;
-		go.transform.localPosition = new Vector3(x, -100, 0); ;
+		go.transform.localPosition = new Vector3(x, -200, 0); ;
 		
 		// If not already empty
 		if (currentDialogueBoxes.Count > 0)
@@ -402,7 +416,7 @@ public class DialogueManager : MonoBehaviour {
 	}
 	IEnumerator MoveTextBox(GameObject go)
 	{
-		for (int i = 0; i < 10; i++)
+		for (int i = 0; i < 15; i++)
 		{
 			if (go != null)
 			{
