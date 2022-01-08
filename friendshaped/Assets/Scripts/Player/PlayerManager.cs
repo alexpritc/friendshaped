@@ -16,6 +16,8 @@ namespace Player {
         public MovementStates PlayerState { get => playerState; set => playerState = value;}
 
         private Rigidbody2D rb2D;
+        private SpriteRenderer spriteRenderer;
+        private Animator animator;
         private Vector2 velocity;
 
         private bool hasMoved = false;
@@ -24,7 +26,6 @@ namespace Player {
         void Awake() {
             rb2D = GetComponent<Rigidbody2D>();
             controls = new PlayerControls();
-
             // Input callbacks
             controls.movement.walkLeft.started += ctx => isMovingLeft = true;
             controls.movement.walkRight.started += ctx => isMovingRight = true;
