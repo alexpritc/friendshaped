@@ -52,7 +52,7 @@ MonoBehaviour:
     LeftArrow: {fileID: 21300000, guid: 7d42c8b79bd956a4e9db86f6e6096108, type: 3}
   Prompt: {fileID: 1563592478186888474, guid: 034e80e5a82ba874285730706f4151a6, type: 3}
   OneKeyPrompt: {fileID: 1563592478186888474, guid: 2c07fbdf5206b37469d490709838adac, type: 3}
-  TwoKeyPrompt: {fileID: 7650606273561944377, guid: 8e54f06914f167944b791fdfd4743f4d, type: 3}
+  TwoKeyPrompt: {fileID: 4356903949146609778, guid: 0a98f47c6bb09214e946235f08c6b4f5, type: 3}
   PromptCanvas: {fileID: 0}
   CurrentPrompt: {fileID: 0}
   player: {fileID: 0}
@@ -71,4 +71,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9c1c39c5ed680da4d9a857a354a27371, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  chatWindowPrefab: {fileID: 0}
+  chatWindowPrefab: {fileID: 5653875619030296254, guid: 4938e788c9a5c724fa37ae70bd2b675c, type: 3}
+  playerSprite: {fileID: 21300000, guid: 1154d9c8a3fd69a4ca6120bb1f8c9817, type: 3}
