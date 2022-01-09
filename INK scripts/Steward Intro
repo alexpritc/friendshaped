@@ -16,6 +16,12 @@ He isn't very good at controlling his facial expressions so wears a face mask to
  -> StewardWhodunnit
   *{SandsWhodunnit.SECONDSTOWAWAY} [Ask about the second stowaway theory]
   -> StewardSecondStowaway
+  * {StoctorSomeoneUp.ABody} [Ask about the stowaway pretending to be the doctor]
+  ->StewardStoctor
+  * {LadyStoctor} [Tell the Steward that Lady Mortimer suspects the Conductor]
+  ->StewardConductorSus
+  *{SandsStoctor}[Tell him that Sands thinks the Lady is hiding something]
+ ->StewardLadySus
   + [Walk Away]
  -> Start
  * ->
@@ -254,5 +260,97 @@ She can't be feeling good about having not noticed a stowaway
 Let alone a murdered stowaway.#Player
 
 Exactly. #Steward
+
+->StewardIntro
+
+===StewardStoctor
+Hey Steward! #Player
+Did you hear about the Doctor?
+Well, the Stowaway/Doctor.
+Stocter, if you will?
+
+I heard. #Steward
+So it was a body I saw being dragged...
+
+Yep. #Player
+
+... #Steward
+I'm just not going to think about it. 
+It's fine. 
+I'm fine. 
+
+->StewardIntro
+
+===StewardConductorSus
+The Lady thinks that the Conductor is suspicious. #Player
+What do you reckon?
+
+Nah I don't think she would have anything to do with something like this. #Steward
+She's a good person
+And a good boss.
+She wouldn't hurt a fly.
+
+*[Ask how long they've worked together]
+->History  
+*[Suggest he's covering for the Conductor]
+->Covering
+
+=History
+You speak highly of her. #Player
+How long have you worked together?
+
+Almost a year now, I think?#Steward
+She has her quirks, for sure.
+She has her... secrets
+But I've always enjoyed working with her
+She makes it fun, ya'know?
+->StewardIntro
+=Covering
+Are you maybe... #Player
+Covering for the conductor?
+
+What a ridiculous suggestion! #Steward
+This job doesn't pay well enough to buy my silence!!
+Certainly not on something serious like this!
+->StewardIntro
+
+===StewardLadySus
+Sands thinks the Lady may have had something to do with last night's incident. #Player
+What do you think, Steward?
+
+Well, she's certainly mean enough to do something like that #Steward
+But she was definitely in her room all last night - 
+She didn't walk back past the staff quarters all night.
+
+{StewardWhodunnit:
+I'm pretty sure she fell asleep quickly. #Steward
+
+What makes you say that? #Player
+
+Well you know I said she takes tea every night?#Steward
+She normally swears she can't sleep without it
+{StewardCoverUp:
+
+But last night I sent someone over with the tea and she didn't answer the door #Steward
+
+And what time was that?#Player
+
+Right after I was woken up by those bird noises from the roof #Steward
+So just gone 11.30?
+
+-else:
+But last night I sent someone over with the tea at 11.30 and she didn't answer the door #Steward
+}
+She must have already been out like a light #Steward
+
+Isn't that a bit unusual? #Player
+If she can't normally sleep without it?
+
+I don't know#Steward
+All I know is she didn't answer the door and the room was dead quiet
+}
+
+Thanks for your help, Steward.#Player
+
 
 ->StewardIntro
