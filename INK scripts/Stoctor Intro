@@ -126,20 +126,20 @@ Only an idiot would try and sneak onto a fancy train like this without backup.
 ->StoctorIntro
 
 ===StoctorSomeoneUp
-The Steward saw someone up after bed last night.#Player
+The Steward heard someone up after bed last night.#Player
 
 ...Oh yes?#Stoctor
 
 Yes.#Player
 Moving from the rear sleeping cart 
-Past the staff quarters
+Into the closet in the dining cart
 And back again.
 
 ...#Stoctor
 How very odd.
 
 That's not even the odd part. #Player
-The Steward said they appeared to be...
+The Steward said they seemed to be...
 Dragging something. 
 
 ...#Stoctor
