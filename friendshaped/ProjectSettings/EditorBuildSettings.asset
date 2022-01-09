@@ -8,4 +8,22 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/MainWorkingScene.unity
     guid: d9759f7e53c5e4f4ba3649d59e0c79bb
+  - enabled: 1
+    path: Assets/Scenes/MainMenu.unity
+    guid: 011aae2b7ad7b944baf0451143ac78da
+  - enabled: 1
+    path: Assets/Scenes/Accuse.unity
+    guid: f786e7dbb0985e44e859bc749e92624a
+  - enabled: 1
+    path: Assets/Scenes/Chat.unity
+    guid: c17c318f8939025479120b17c7025a50
+  - enabled: 1
+    path: Assets/Scenes/Intro.unity
+    guid: 726b700a7a571e84fb1b8892c15534e7
+  - enabled: 1
+    path: Assets/Scenes/LoseScreen.unity
+    guid: 2cd144e3652db9e46913e6710f37703b
+  - enabled: 1
+    path: Assets/Scenes/WinScreen.unity
+    guid: 7f9693a9893b88c4f9ba33b575148b60
   m_configObjects: {}

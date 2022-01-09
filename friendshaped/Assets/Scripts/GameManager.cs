@@ -73,7 +73,7 @@ public class GameManager : MonoBehaviour {
 
     private void OnLoopComplete()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        SceneManager.LoadScene("Accuse");
     }
 
     public void NextPrompt()
@@ -249,5 +249,28 @@ public class GameManager : MonoBehaviour {
             onStopTalkingToNPC(chatWindow);
             isChatWindowActive = false;
         }
+    }
+
+    //scene management
+    public void LoadMenu()
+    {
+        SceneManager.LoadScene("MainMenu");
+    }
+    public void LoadGame()
+    {
+        SceneManager.LoadScene("MainWorkingScene");
+    }
+
+    public void LoadWin()
+    {
+        SceneManager.LoadScene("WinScreen");
+    }
+    public void LoadLose()
+    {
+        SceneManager.LoadScene("LoseScreen");
+    }
+    public void LoadIntro()
+    {
+        SceneManager.LoadScene("Intro");
     }
 }
