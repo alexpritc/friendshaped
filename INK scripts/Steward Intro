@@ -8,6 +8,10 @@ He isn't very good at controlling his facial expressions so wears a face mask to
 
 ===StewardIntro
 
+{not StewardDescription:
+-> StewardDescription
+}
+
  * [Ask the Steward what they were doing last night]
  -> StewardWhatHappened
  * {StewardCoverUp} [Ask him what happened last night again]

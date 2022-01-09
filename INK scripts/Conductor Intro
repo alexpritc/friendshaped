@@ -9,6 +9,10 @@ You talk to her through a rusty intercom.
 
 ===ConductorIntro
 
+{not ConductorDescription:
+-> ConductorDescription
+}
+
  * [Ask the Conductor what she was doing last night]
  -> ConductorWhatHappened
  * [Ask her who she suspects]

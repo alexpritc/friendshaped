@@ -9,6 +9,10 @@ He wears a venetion mask and his heavy cloak smells of potent chemicals.
 
 ===StoctorIntro
 
+{not StoctorDescription:
+-> StoctorDescription
+}
+
  * [Ask the Doctor what he was doing last night]
  -> StoctorWhatHappened
  * [Ask him who he suspects]

@@ -7,6 +7,10 @@ He wears a brown trench coat and carries a magnifying glass everywhere he goes, 
 
 ===SandsIntro
 
+{not SandsDescription:
+-> SandsDescription
+}
+
  * [Ask Sands what he was doing last night]
  -> SandsWhatHappened
  * [Ask him who he suspects]

@@ -8,6 +8,10 @@ She wears a gold bird cage as a head ornament (which she insists isn't a hat) so
 
 ===LadyIntro
 
+{not LadyDescription:
+-> LadyDescription
+}
+
  * [Ask Lady Mortimer what she was doing last night]
  -> LadyWhatHappened
  * [Ask her who she suspects]
