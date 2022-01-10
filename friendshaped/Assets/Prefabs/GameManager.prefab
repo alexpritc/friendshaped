@@ -59,6 +59,9 @@ MonoBehaviour:
   loopUI: {fileID: 0}
   timeModifier: 1
   isChatWindowActive: 0
+  themedFont: {fileID: 11400000, guid: 03eb9a05226beec489bb4fe79d6c4dda, type: 2}
+  openDyslexiaFont: {fileID: 11400000, guid: ab1270cbb2ef6344faee4d9556a12472, type: 2}
+  dyslexiaMode: 0
 --- !u!114 &5031041581961349264
 MonoBehaviour:
   m_ObjectHideFlags: 0

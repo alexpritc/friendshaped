@@ -48,6 +48,7 @@ public class GameManager : MonoBehaviour {
 
     public bool isChatWindowActive = false;
 
+
     void Awake() {
         if(instance != null) {
             Destroy(instance.gameObject);
@@ -69,6 +70,7 @@ public class GameManager : MonoBehaviour {
                 OnLoopComplete();
             }
         }
+
     }
 
     private void OnLoopComplete()
@@ -273,4 +275,11 @@ public class GameManager : MonoBehaviour {
     {
         SceneManager.LoadScene("Intro");
     }
+
+    public void LoadSettings()
+    {
+        SceneManager.LoadScene("Settings");
+    }
+
+    
 }
