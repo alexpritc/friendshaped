@@ -37,9 +37,6 @@ public class GameManager : MonoBehaviour {
 
     [SerializeField]
     private Slider loopUI;
-    private float timer;
-    [SerializeField]
-    private float timeModifier = 2f;
 
     [Header("Objectives")]
     private bool foundMurderer;
@@ -48,6 +45,15 @@ public class GameManager : MonoBehaviour {
 
     public bool isChatWindowActive = false;
 
+    private int actionsLimit = 20;
+    private int actionsTaken = 0;
+
+    public void Action()
+    {
+        actionsTaken++;
+        loopUI.value = actionsTaken;
+    }
+
 
     void Awake() {
         if(instance != null) {
@@ -55,22 +61,21 @@ public class GameManager : MonoBehaviour {
         }
         instance = this;
 
-        CreatePrompt(player.transform.position + new Vector3(0f,2f,0f), "Move", PromptKeys.A,PromptKeys.D);
+        loopUI.maxValue = actionsLimit;
+        loopUI.value = actionsTaken;
+
+        CreatePrompt(player.transform.position + new Vector3(0f,1.25f,0f), "Move", PromptKeys.A,PromptKeys.D);
     }
 
     private void Update()
     {
         if (!isChatWindowActive)
         {
-            timer += Time.deltaTime * timeModifier;
-            loopUI.value = timer;
-
-            if (timer >= loopUI.maxValue)
+            if (actionsTaken >= actionsLimit)
             {
                 OnLoopComplete();
             }
         }
-
     }
 
     private void OnLoopComplete()
@@ -237,10 +242,10 @@ public class GameManager : MonoBehaviour {
         }
     }
     
-    public event Action<TextAsset, Sprite, Sprite> onTalkToNPC;
-    public void TalkToNPC(TextAsset inkScript, Sprite chatBackground, Sprite chatSprite){
+    public event Action<String, Sprite, Sprite> onTalkToNPC;
+    public void TalkToNPC(String introKnot, Sprite chatBackground, Sprite chatSprite){
         if (onTalkToNPC != null) {
-            onTalkToNPC(inkScript, chatBackground, chatSprite);
+            onTalkToNPC(introKnot, chatBackground, chatSprite);
             isChatWindowActive = true;
         }
     }

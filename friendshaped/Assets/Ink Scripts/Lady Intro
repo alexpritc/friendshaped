@@ -8,6 +8,10 @@ She wears a gold bird cage as a head ornament (which she insists isn't a hat) so
 
 ===LadyIntro
 
+{not LadyDescription:
+-> LadyDescription
+}
+
  * [Ask Lady Mortimer what she was doing last night]
  -> LadyWhatHappened
  * [Ask her who she suspects]
@@ -16,6 +20,12 @@ She wears a gold bird cage as a head ornament (which she insists isn't a hat) so
  -> LadySecondStowaway
  * {StewardWhatHappenedAgain.SeeAnything} [Ask about the person the Steward saw]
  -> LadySomeonesUp
+ * {StoctorSomeoneUp.ABody} [Ask about the stowaway pretending to be the doctor]
+ ->LadyStoctor
+ *{SandsStoctor}[Tell her Sands thinks she's suspicious]
+ ->LadySus
+ *{StewardWhodunnit}[Tell him the Steward suggested the Inspector may be a suspect]
+    ->LadyInspectorSus
   + [Walk Away]
  -> Start
  * ->
@@ -125,5 +135,88 @@ Oh no, dear. #Lady
 I need my sleep. 
 I spent a while comforting Mr Lionel
 He refused to settle down last night!
-And when he eventually calmed down I was out like a light. 
+And when he eventually calmed down around 3am I was out like a light. 
+->LadyIntro
+
+
+===LadyStoctor
+Did you hear about the stowaway disguising themselves as the Doctor? #Player
+
+I most certainly did!#Lady
+Awful news.
+But nice to have this whole ordeal wrapped up and done with. 
+
+Well, not exactly. #Player
+We still don't know who murdered the real Doctor.
+
+Do we not?! #Lady
+Are you seriously believing that thief's story??
+He must be the murderer, it's the only thing that makes sense!
+
+I guess his closet story is a bit far fetched...#Player
+
+And what's more, #Lady
+He probably had an accomplice!
+Someone on the staff to sneak him in!
+
+...Like who? #Player
+
+Someone high up... #Lady
+With connnections...
+Doesn't it seem odd to you that you haven't seen the conductors face since boarding?
+She's been awfully quiet...
+Holed away in the engine room...
+I often hear her talking in there. 
+She's either a lunatic who talks to herself...
+Or she's been hiding someone...
+
+//CONDUCTOR SUS UNLOCKED
+->LadyIntro
+
+===LadySus
+Lady Mortimer, the Inspector thinks you are hiding something #Player
+Care to comment?
+
+Oh that old buffoon thinks I'm suspicious?#Lady
+I wouldn't take his word for it dear 
+He talks the talk but I hear he's been out of work for a long time
+He's not exactly in demand these days 
+
+*[Ask her for a detailed account of last night]
+->LastNight
+*[Agree that Sands is talking rubbish]
+->SandsRubbish
+=LastNight
+Can you clarify exactly what you did last night after you went to bed?#Player
+
+I'VE TOLD YOU ALREADY!#Lady
+Mr Lionel was being restless
+He wouldn't stop squawking until about 2 in the morning!
+...Not that I mind looking after a dear friend, of course.
+
+Of course not. #Player
+So you just stayed in and looked after him?
+
+Yes! #Lady
+For hours!
+Now please let us be or he'll be just as bad tonight. 
+->LadyIntro
+=SandsRubbish
+You're right, Lady Mortimer #Player
+I don't know why I would consider anything that man suggested
+
+Finally, some sense!#Lady
+I was beginning to think everyone on this train had lost their minds
+Why, just last night the staff forgot to bring me my night-time tea!
+This institution is going to the dogs, I tell you
+->LadyIntro
+
+===LadyInspectorSus
+The Steward thinks the Inspector is to blame. #Player
+What do you think?
+
+Hm… #Lady
+I suppose he was in the cart next to the victim
+and it would explain why such a ‘good PI’ somehow has no clue how the murder occured under his nose…
+
 ->LadyIntro
