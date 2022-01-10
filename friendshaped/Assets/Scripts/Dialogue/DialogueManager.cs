@@ -375,9 +375,9 @@ public class DialogueManager : MonoBehaviour {
 	{
 		currentDialogueBoxes.Add(go);
 		
-		float x = isPlayerTalking ? -100f : 100f;
+		float x = isPlayerTalking ? -110f : 110f;
 		go.transform.localPosition = new Vector3(x, -200, 0); ;
-		
+
 		// If not already empty
 		if (currentDialogueBoxes.Count > 0)
 		{

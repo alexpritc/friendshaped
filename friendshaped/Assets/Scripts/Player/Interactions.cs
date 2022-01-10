@@ -51,15 +51,15 @@ namespace Player
 
             if (collision.tag == "Door")
             {
-                GameManager.Instance.CreatePrompt(transform.position + new Vector3(0.5f, 3, 0), "Use Door", PromptKeys.E);
+                GameManager.Instance.CreatePrompt(transform.position + new Vector3(0.5f, 2, 0), "Use Door", PromptKeys.E);
             }
             else if (collision.tag == "NPC")
             {
-                GameManager.Instance.CreatePrompt(transform.position + new Vector3(0.5f, 3, 0), "Talk", PromptKeys.E);
+                GameManager.Instance.CreatePrompt(transform.position + new Vector3(0.5f, 2, 0), "Talk", PromptKeys.E);
             }
             else if (collision.tag == "Item")
             {
-                GameManager.Instance.CreatePrompt(transform.position + new Vector3(0.5f, 3, 0), "Inspect", PromptKeys.E);
+                GameManager.Instance.CreatePrompt(transform.position + new Vector3(0.5f, 2, 0), "Inspect", PromptKeys.E);
             }
         }
 
