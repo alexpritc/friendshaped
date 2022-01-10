@@ -1,11 +1,15 @@
 #Player
 #Inspector
 ===SandsDescription
-Inspector Sands is a middle aged gentlemen, a P.I (and a hack one at that).  #Commentary
+Inspector Sands is a middle aged gentlemen, a P.I (and a hack one at that).  # Commentary
 He wears a brown trench coat and carries a magnifying glass everywhere he goes, like he belongs in a cartoon.
 ->SandsIntro
 
 ===SandsIntro
+
+{not SandsDescription:
+-> SandsDescription
+}
 
  * [Ask Sands what he was doing last night]
  -> SandsWhatHappened
@@ -13,6 +17,12 @@ He wears a brown trench coat and carries a magnifying glass everywhere he goes, 
  -> SandsWhodunnit
  * {StewardWhatHappenedAgain.SeeAnything} [Ask about the person the Steward saw moving something]
  ->SandsSomeonesUp
+ * {StoctorSomeoneUp.ABody} [Ask about the stowaway pretending to be the doctor]
+ ->SandsStoctor
+  * {LadyStoctor} [Tell Sands that Lady Mortimer suspects the Conductor]
+  ->SandsConductorSus
+  *{StewardWhodunnit}[Tell him the Steward suggested the Inspector may be a suspect]
+    ->InspectorSus
  + [Walk Away]
  -> Start
  * ->
@@ -146,5 +156,71 @@ Even if you were asleep?#Player
 CRIME NEVER SLEEPS AND NEITHER DO I!#Inspector
 ...and if I did sleep I wouldn't sleep through that!
 
+
+->SandsIntro
+
+===SandsStoctor
+Inspector, have you heard?#Player
+There's been a new lead in the case!
+
+Well don't just babble on, what is it man?! #Inspector
+
+The Doctor is actually the stowaway in disguise! #Player
+And the body found in the dining cart is the real Doctor!
+
+Pfffft #Inspector
+What are you on about?
+That's a load of tripe
+
+It's true, Inspector! #Player
+
+Naaah. #Inspector
+I was talking to the Doctor just earlier this morning!
+He is no imposter!
+Detective work is my job, I can spot a liar.
+
+Oh really?
+Are you sure about that? #Player
+
+Yes! #Inspector
+The Doctor is 100% legitimate!
+That old lady though...
+
+Hm? #Player
+
+There's something not right about that woman... #Inspector
+I think she's hiding something...
+
+//LADY IS SUS UNLOCKED
+
+->SandsIntro
+
+===SandsConductorSus
+ Did you hear the Lady thinks the Conductor is suspicious?#Player
+ 
+ The Conductor? #Inspector
+ Nah im pretty sure she needs to drive the train. 
+ I mean, its not like she can just leave the engine alone, especially on a complicated journey like this! 
+ 
+ (This is a non-stop journey...)#Player
+ (Maybe she did have something to do with this?)
+
+->SandsIntro
+
+===InspectorSus
+The Steward thinks you may have had a hand in this case. #Player
+Care to comment?
+
+What an absurd accusation!#Inspector
+How dare you try and tarnish my stellar reputation?!
+It could have been anyone!
+The Steward is blaming me eh?
+Maybe it was him!
+
+I don't think 'he who smelt it dealt it' applies here, Inspector #Player
+
+TAKE THIS SERIOUSLY!#Inspector
+I AM!
+There is a murderer on this train and the longer you question me the longer they're free!
 
 ->SandsIntro

@@ -54,8 +54,8 @@ public class DialogueManager : MonoBehaviour {
 	public Image chatSpriteA;
 	public Image chatSpriteB;
 
-	void Awake () {
-
+	void Awake ()
+	{
 		controls = new PlayerControls();
 		currentDialogueBoxes = new List<GameObject>();
 
@@ -63,11 +63,12 @@ public class DialogueManager : MonoBehaviour {
 		RemoveChildren(dialogueCanvas);
 		RemoveChildren(choiceCanvas);
 		RemoveChildren(commentaryCanvas);
-		StartStory();
 
 		controls.interactions.click.performed += ctx => SkipDialogue();
-	}
 
+		StartStory();
+	}
+	
 	public void SetImages(Sprite bg, Sprite a, Sprite b)
 	{
 		windowBackground.sprite = bg;
@@ -76,17 +77,15 @@ public class DialogueManager : MonoBehaviour {
 	}
 
 	// Creates a new Story object with the compiled story which we can then play!
-	void StartStory () {
+	 void StartStory () {
 		story = new Story (inkJSONAsset.text);
         if(OnCreateStory != null) OnCreateStory(story);
-
-		RefreshView();
 	}
 	
 	// This is the main function called every time the story changes. It does a few things:
 	// Destroys all the old content and choices.
 	// Continues over all the lines of text, then displays all the choices. If there are no choices, the story is finished!
-	void RefreshView () {
+	public void RefreshView () {
 		// Remove all the UI on screen
 		RemoveChildren(dialogueCanvas);
 		RemoveChildren(choiceCanvas);
@@ -99,13 +98,15 @@ public class DialogueManager : MonoBehaviour {
 	}
 
 	// When we click the choice button, tell the story to choose that choice!
-	void OnClickChoiceButton (Choice choice) {
+	void OnClickChoiceButton (Choice choice)
+	{
+		GameManager.Instance.Action();
+		
 		story.ChooseChoiceIndex (choice.index);
 
 		// TODO: if choice is tagged #end close window
 		if (choice.text.ToLower().CompareTo("Walk Away".ToLower()) == 0)
 		{
-			Debug.Log("walked away");
 			EndChat();
 		}
 		
@@ -129,33 +130,40 @@ public class DialogueManager : MonoBehaviour {
 				isPlayerTalking = story.currentTags.Contains("Player") ? true : false;
 			}
 
-			// Display the text on screen!
-			if (isCommentary)
+			if (text != "" && text != null)
 			{
-				RemoveChildren(commentaryCanvas);
-				CreateCommentaryView(text);
-			}
-			else
-			{
-				CreateContentView(text);
-			}
-
-			if (story.canContinue)
-			{
+				// Display the text on screen!
 				if (isCommentary)
 				{
-					yield return new WaitForSeconds(waitTime*2f);
 					RemoveChildren(commentaryCanvas);
+					CreateCommentaryView(text);
 				}
 				else
 				{
-					yield return new WaitForSeconds(waitTime);
+
+					CreateContentView(text);
 				}
-			}
-			else
-			{
-				// If there's no more dialogue, don't bother waiting to display the buttons.
-				yield return new WaitUntil(() => GetClipName(currentAnim) == "ConstantDialogue" || GetClipName(currentAnim) == "ConstantCommentaryText");
+
+				if (story.canContinue)
+				{
+					if (isCommentary)
+					{
+						yield return new WaitForSeconds(waitTime*2f);
+						RemoveChildren(commentaryCanvas);
+					}
+					else
+					{
+						yield return new WaitForSeconds(waitTime);
+					}
+				}
+				else
+				{
+					// If there's no more dialogue, don't bother waiting to display the buttons.
+					yield return new WaitUntil(() =>
+						GetClipName(currentAnim) == "ConstantDialogue" ||
+						GetClipName(currentAnim) == "ConstantCommentaryText");
+
+				}
 			}
 		}
 
@@ -367,9 +375,9 @@ public class DialogueManager : MonoBehaviour {
 	{
 		currentDialogueBoxes.Add(go);
 		
-		float x = isPlayerTalking ? -100f : 100f;
+		float x = isPlayerTalking ? -110f : 110f;
 		go.transform.localPosition = new Vector3(x, -200, 0); ;
-		
+
 		// If not already empty
 		if (currentDialogueBoxes.Count > 0)
 		{
