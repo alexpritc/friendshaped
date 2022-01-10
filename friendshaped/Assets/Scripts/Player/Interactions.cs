@@ -32,7 +32,7 @@ namespace Player
                         break;
                     case "NPC":
                         npc = interactWith.GetComponent<NPC>();
-                        GameManager.Instance.TalkToNPC(npc.script, npc.chatWindowBackground, npc.chatWindowSprite);
+                        GameManager.Instance.TalkToNPC(npc.myIntro, npc.chatWindowBackground, npc.chatWindowSprite);
                         break;
                     case "Item":
                         GameManager.Instance.PickUpItem(interactWith.GetComponent<Item>());

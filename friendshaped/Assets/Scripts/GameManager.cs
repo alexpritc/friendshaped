@@ -237,10 +237,10 @@ public class GameManager : MonoBehaviour {
         }
     }
     
-    public event Action<TextAsset, Sprite, Sprite> onTalkToNPC;
-    public void TalkToNPC(TextAsset inkScript, Sprite chatBackground, Sprite chatSprite){
+    public event Action<String, Sprite, Sprite> onTalkToNPC;
+    public void TalkToNPC(String introKnot, Sprite chatBackground, Sprite chatSprite){
         if (onTalkToNPC != null) {
-            onTalkToNPC(inkScript, chatBackground, chatSprite);
+            onTalkToNPC(introKnot, chatBackground, chatSprite);
             isChatWindowActive = true;
         }
     }

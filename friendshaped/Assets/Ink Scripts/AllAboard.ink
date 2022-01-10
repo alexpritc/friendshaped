@@ -4,8 +4,12 @@ INCLUDE Inspector Intro
 INCLUDE Conductor Intro
 INCLUDE Stoctor Intro
 
+
+
+// who to talk to
 ->Start
 ===Start 
+Who do you want to talk to?
 *{not SandsDescription} [Inspector Sands]
 ->SandsDescription
 +{SandsDescription} [Inspector Sands]
