@@ -22098,6 +22098,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 456.5
       objectReference: {fileID: 0}
+    - target: {fileID: 5653875619740716404, guid: 4938e788c9a5c724fa37ae70bd2b675c, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 1293149888446f844ad17d1612dce751, type: 3}
     - target: {fileID: 5653875620603905730, guid: 4938e788c9a5c724fa37ae70bd2b675c, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -22696,8 +22700,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4d1e45a40c45518478a94b494c376288, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  chatWindowSprite: {fileID: 21300000, guid: 4752b0c1f1d1b2046840626a509910c6, type: 3}
-  chatWindowBackground: {fileID: 21300000, guid: e8a250b80a35756489fd6bff374f32bc, type: 3}
+  chatWindowSprite: {fileID: 21300000, guid: 1293149888446f844ad17d1612dce751, type: 3}
+  chatWindowBackground: {fileID: 21300000, guid: 397c9736c64b9cb4e8818854ef8eb071, type: 3}
   myIntro: ConductorIntro
   mainSprite: {fileID: 21300000, guid: 3f357122851ee3c4ba8cd5f7fbade35f, type: 3}
   interactionSprite: {fileID: 21300000, guid: f4f618542dc0e6f4fbba7eb6eb338da3, type: 3}
