@@ -5926,7 +5926,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: -7
+  m_SortingOrder: -5
   m_Sprite: {fileID: 21300000, guid: 770fa0d05ac3fb34dafd1c6088c316ae, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -22008,120 +22008,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!1 &827659647
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 827659649}
-  - component: {fileID: 827659648}
-  m_Layer: 0
-  m_Name: Parallaxium
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &827659648
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 827659647}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8c14373a6bdb6454eb5d8b160722a16f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  cam: {fileID: 1774941761}
-  active: 1
-  xParallaxDirection: 1
-  yParallaxDirection: 1
-  DepthOfField: 1
-  BlurScale: 2
-  DistanceFog: 1
-  BackgroundTint: {r: 0.9058824, g: 0.9058824, b: 0.9058824, a: 1}
-  ForegroundTint: {r: 1, g: 0.048387095, b: 0, a: 1}
-  TintScale: 1
-  layers:
-  - Name: Default 1
-    Depth: 0.8
-    sections:
-    - Name: New Section
-      horizontalSeamless: 1
-      verticalSeamless: 1
-      DisableBlur: 0
-      DisableTint: 0
-      objects:
-      - {fileID: 0}
-      isExpanded: 1
-    isExpanded: 0
-  - Name: Default 2
-    Depth: 0.6
-    sections:
-    - Name: New Section
-      horizontalSeamless: 1
-      verticalSeamless: 1
-      DisableBlur: 0
-      DisableTint: 0
-      objects:
-      - {fileID: 0}
-      isExpanded: 1
-    isExpanded: 0
-  - Name: Default 3
-    Depth: 0.4
-    sections:
-    - Name: New Section
-      horizontalSeamless: 1
-      verticalSeamless: 1
-      DisableBlur: 0
-      DisableTint: 0
-      objects:
-      - {fileID: 0}
-      isExpanded: 1
-    isExpanded: 0
-  - Name: Default 4
-    Depth: 0.2
-    sections:
-    - Name: New Section
-      horizontalSeamless: 1
-      verticalSeamless: 1
-      DisableBlur: 0
-      DisableTint: 0
-      objects:
-      - {fileID: 0}
-      isExpanded: 1
-    isExpanded: 0
-  - Name: Default 5
-    Depth: 0
-    sections:
-    - Name: New Section
-      horizontalSeamless: 1
-      verticalSeamless: 1
-      DisableBlur: 0
-      DisableTint: 0
-      objects:
-      - {fileID: 0}
-      isExpanded: 1
-    isExpanded: 0
---- !u!4 &827659649
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 827659647}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 14
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &861324009
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -22439,8 +22325,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 867874833}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 6.2613, y: 206.35, z: -52.819}
-  m_LocalScale: {x: 0.9342854, y: 0.9342854, z: 0.9342854}
+  m_LocalPosition: {x: 2.2322, y: 158.14, z: -38.339}
+  m_LocalScale: {x: 0.6781604, y: 0.6781604, z: 0.6781604}
   m_Children:
   - {fileID: 1017844297}
   - {fileID: 795401326}
@@ -39447,7 +39333,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!212 &1622555593
 SpriteRenderer:
   m_ObjectHideFlags: 0
