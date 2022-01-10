@@ -11,6 +11,11 @@ namespace Map
 
         [SerializeField] private GameObject player;
 
+
+        public SpriteRenderer doorwayLineSprite;
+        public Color highlightedColour = new Color(0.86f, 0.65f, 0.19f, 1f);
+
+
         public void UseDoor()
         {
             ToggleFog(roomOne, roomTwo);
@@ -50,6 +55,19 @@ namespace Map
 
             player.transform.position = newPos;
             Camera.main.transform.position = new Vector3(player.transform.position.x, Camera.main.transform.position.y, Camera.main.transform.position.z);
+        }
+
+        private void Start()
+        {
+            doorwayLineSprite = this.gameObject.transform.GetChild(0).gameObject.GetComponent<SpriteRenderer>();
+        }
+        private void OnTriggerEnter2D(Collider2D collision)
+        {
+            doorwayLineSprite.color = highlightedColour;
+        }
+        private void OnTriggerExit2D(Collider2D collision)
+        {
+            doorwayLineSprite.color = Color.white;
         }
     }
 }
