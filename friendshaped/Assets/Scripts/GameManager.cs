@@ -37,9 +37,6 @@ public class GameManager : MonoBehaviour {
 
     [SerializeField]
     private Slider loopUI;
-    private float timer;
-    [SerializeField]
-    private float timeModifier = 2f;
 
     [Header("Objectives")]
     private bool foundMurderer;
@@ -48,12 +45,24 @@ public class GameManager : MonoBehaviour {
 
     public bool isChatWindowActive = false;
 
+    private int actionsLimit = 20;
+    private int actionsTaken = 0;
+
+    public void Action()
+    {
+        actionsTaken++;
+        loopUI.value = actionsTaken;
+    }
+
 
     void Awake() {
         if(instance != null) {
             Destroy(instance.gameObject);
         }
         instance = this;
+
+        loopUI.maxValue = actionsLimit;
+        loopUI.value = actionsTaken;
 
         CreatePrompt(player.transform.position + new Vector3(0f,2f,0f), "Move", PromptKeys.A,PromptKeys.D);
     }
@@ -62,15 +71,11 @@ public class GameManager : MonoBehaviour {
     {
         if (!isChatWindowActive)
         {
-            timer += Time.deltaTime * timeModifier;
-            loopUI.value = timer;
-
-            if (timer >= loopUI.maxValue)
+            if (actionsTaken >= actionsLimit)
             {
                 OnLoopComplete();
             }
         }
-
     }
 
     private void OnLoopComplete()

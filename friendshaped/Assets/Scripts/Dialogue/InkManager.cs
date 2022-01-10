@@ -14,22 +14,10 @@ public class InkManager : MonoBehaviour
         GameManager.Instance.onTalkToNPC += OpenChatInstance;
         GameManager.Instance.onStopTalkingToNPC += CloseChatInstance;
         
-        //script = Resources.Load<TextAsset>("Ink Scripts/AllAboard.json");
         dialogueManager = chatWindowInstance.GetComponent<DialogueManager>();
         dialogueManager.inkJSONAsset = script;
     }
-
-    // private void InstantiateChatInstance(TextAsset script, String inkKnot, Sprite chatBackground, Sprite chatSprite)
-    // {
-    //     GameObject instance = Instantiate(chatWindowPrefab);
-    //     
-    //     dialogueManager = instance.GetComponent<DialogueManager>();
-    //     dialogueManager.SetImages(chatBackground, playerSprite, chatSprite);
-    //     dialogueManager.inkJSONAsset = script;
-    //     dialogueManager.story.ChoosePathString(inkKnot);
-    //     dialogueManager.RefreshView();
-    // }
-
+    
     private void OpenChatInstance(String inkKnot, Sprite chatBackground, Sprite chatSprite)
     {
         chatWindowInstance.SetActive(true);

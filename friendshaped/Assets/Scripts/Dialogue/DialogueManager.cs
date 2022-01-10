@@ -98,7 +98,10 @@ public class DialogueManager : MonoBehaviour {
 	}
 
 	// When we click the choice button, tell the story to choose that choice!
-	void OnClickChoiceButton (Choice choice) {
+	void OnClickChoiceButton (Choice choice)
+	{
+		GameManager.Instance.Action();
+		
 		story.ChooseChoiceIndex (choice.index);
 
 		// TODO: if choice is tagged #end close window
