@@ -11,8 +11,19 @@ public class NPC : MonoBehaviour
     public TextAsset script;
     
     [Header("In-Game")]
-    public Sprite mainSprite;
-    public Sprite interactionSprite;
-    
-    
+    public SpriteRenderer outlineSprite;
+    public Color highlightedColour = new Color(0.86f,0.65f,0.19f,1f);
+
+    private void Start()
+    {
+        outlineSprite = this.gameObject.transform.GetChild(0).gameObject.GetComponent<SpriteRenderer>();
+    }
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        outlineSprite.color = highlightedColour;
+    }
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        outlineSprite.color = Color.white;
+    }
 }
