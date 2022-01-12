@@ -26,6 +26,9 @@ namespace Player {
         void Awake() {
             rb2D = GetComponent<Rigidbody2D>();
             controls = new PlayerControls();
+            spriteRenderer = GetComponent<SpriteRenderer>();
+            animator = GetComponent<Animator>();
+            
             // Input callbacks
             controls.movement.walkLeft.started += ctx => isMovingLeft = true;
             controls.movement.walkRight.started += ctx => isMovingRight = true;
@@ -37,17 +40,25 @@ namespace Player {
         private void FixedUpdate() {
             switch (isMovingLeft, isMovingRight)
             {
+                // Left
                 case (true, false):
                     playerState = MovementStates.WALKING;
                     velocity = new Vector2(-1f * speedModifier, 0f);
+                    spriteRenderer.flipX = true;
+                    animator.Play("playerMove");
                     break;
+                // Right
                 case (false, true):
                     playerState = MovementStates.WALKING;
                     velocity = new Vector2(speedModifier, 0f);
+                    spriteRenderer.flipX = false;
+                    animator.Play("playerMove");
                     break;
+                // Not moving
                 default:
                     playerState = MovementStates.NONE;
                     velocity = new Vector2(0f, 0f);
+                    animator.Play("playerIdle");
                     break;
             }
 

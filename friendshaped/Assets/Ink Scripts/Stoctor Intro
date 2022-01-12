@@ -9,6 +9,10 @@ He wears a venetion mask and his heavy cloak smells of potent chemicals.
 
 ===StoctorIntro
 
+{not StoctorDescription:
+-> StoctorDescription
+}
+
  * [Ask the Doctor what he was doing last night]
  -> StoctorWhatHappened
  * [Ask him who he suspects]
@@ -17,6 +21,12 @@ He wears a venetion mask and his heavy cloak smells of potent chemicals.
   ->StoctorSecondStowaway
   * {StewardWhatHappenedAgain.SeeAnything} [Ask about the person the Steward saw]
   ->StoctorSomeoneUp
+   * {LadyStoctor} [Tell the Doctor that Lady Mortimer suspects the Conductor]
+  ->StoctorConductorSus
+   *{SandsStoctor}[Tell him that Sands thinks the Lady is hiding something]
+    ->StoctorLadySus
+    *{StewardWhodunnit}[Tell him the Steward suggested the Inspector may be a suspect]
+    ->StoctorInspectorSus
   + [Walk Away]
  -> Start
  * ->
@@ -24,7 +34,7 @@ He wears a venetion mask and his heavy cloak smells of potent chemicals.
 ===StoctorWhatHappened
 Hello doctor!#Player
 
-(nods)
+(he nods solomnly) #Commentary
 
 Right.#Player
 Can I ask you a few questions?
@@ -201,3 +211,123 @@ Soz
 ->StoctorIntro
 
 ->StoctorIntro
+
+===StoctorConductorSus
+=Doctor
+The Lady thinks the Conductor is suspicious. #Player
+What do you think?
+
+Well, wasn't she in the engine room? #Stoctor
+I doubt someone could sneak around this train unnoticed...
+->StoctorIntro
+=Stowaway
+The Lady thinks the Conductor is suspicious. #Player
+What do you think?
+
+Well...#Stoctor
+From... 
+...personal experience...
+There are lots of ways to move around this train unnoticed
+Or she certainly knows the train well enough.
+
+What valuable insight!#Player
+
+But I don't think she had anything to do with this #Stoctor
+She doesn't seem like a bad egg
+The staff all speak highly of her,
+always a good sign. 
+->StoctorIntro
+There's word that the Lady is hiding something. 
+What do you make of that?
+===StoctorLadySus
+{StoctorSomeoneUp.ABody:
+//if hes been revealed
+I have no idea if she has anything to do with this, I'm afraid. #Stoctor
+She's certainly not a very nice woman
+She's the type I would happily rob without remorse
+Eat the rich, ya know?
+
+Eh, I think she'd just taste bitter #Player
+
+You're probably right. #Stoctor
+-else:
+Well... #Stoctor
+Not to speak ill of such a charming woman
+But I do happen to know she's on some pretty intense medication
+Side effects of mood swings and violent outbursts are very common!
+
+Oh wow! #Player
+That could explain some things.
+How do you know which pills she's taking?
+Did you prescribe them?
+
+...#Stoctor
+No.
+I just know. 
+
+..?#Player
+
+It's a doctor thing, you wouldn't understand#Stoctor
+
+Hm.#Player
+Right.
+(Well that's a load of nonsense.)#Commentary
+
+}
+
+->StoctorIntro
+
+===StoctorInspectorSus
+The Steward thinks that Sands might have something to do with this. #Player
+What do you think?
+
+{StoctorSomeoneUp.ABody:
+//if hes been revealed
+I think that's a pretty good theory actually! #Stoctor
+
+Really?#Player
+What makes you say that?
+
+Well, when I was hidden in the closet #Stoctor
+And the doctor was in the room 
+I heard the footsteps of the person who came in and killed him!!
+They came from the back of the train -
+The only things in that direction are the toilet and the Inspectors bedchambers
+
+That does look pretty suspicious #Player
+
+Yep.#Stoctor
+
+*[Ask if someone could have come from the bathroom]
+->Bathroom
+*[Ask if he thinks the Inspector could murder]
+->SandsMurder
+
+-else:
+The Inspector?#Stoctor
+No way!
+He is one good law-abiding citizen
+He loves the law
+As do I!
+He's not exactly some pick-pocket criminal now, is he
+}
+=Bathroom
+Do you think someone could have come from the bathroom?#Player
+
+Hm...#Stoctor
+Now you mention it
+You know those 'alternative routes' I mentioned?
+You didn't hear it from me but you can access the roof from the bathroom windows...
+So TECHNICALLY...
+It could have been anyone
+->StoctorIntro
+=SandsMurder
+Do you think the Inspector is capable of murder?#Player
+
+I honestly have no clue.#Stoctor
+I have heard other passengers saying his business is doing poorly these days 
+Perhaps he wanted to create a mystery to solve?
+I know what those high-class folk are like
+They'll do anything to make themselves rich
+->StoctorIntro
+}

@@ -59,9 +59,6 @@ MonoBehaviour:
   loopUI: {fileID: 0}
   timeModifier: 1
   isChatWindowActive: 0
-  themedFont: {fileID: 11400000, guid: 03eb9a05226beec489bb4fe79d6c4dda, type: 2}
-  openDyslexiaFont: {fileID: 11400000, guid: ab1270cbb2ef6344faee4d9556a12472, type: 2}
-  dyslexiaMode: 0
 --- !u!114 &5031041581961349264
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -75,4 +72,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   chatWindowPrefab: {fileID: 5653875619030296254, guid: 4938e788c9a5c724fa37ae70bd2b675c, type: 3}
-  playerSprite: {fileID: 21300000, guid: 1154d9c8a3fd69a4ca6120bb1f8c9817, type: 3}
+  playerSprite: {fileID: 21300000, guid: 37c0c1367e52abf4b85867e824fb8bf5, type: 3}
