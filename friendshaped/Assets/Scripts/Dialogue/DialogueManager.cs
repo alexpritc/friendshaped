@@ -136,11 +136,11 @@ public class DialogueManager : MonoBehaviour {
 				if (isCommentary)
 				{
 					RemoveChildren(commentaryCanvas);
+					yield return new WaitUntil(() => commentaryCanvas.transform.childCount == 0);
 					CreateCommentaryView(text);
 				}
 				else
 				{
-
 					CreateContentView(text);
 				}
 

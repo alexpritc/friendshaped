@@ -2,7 +2,7 @@
 #Conductor
 ===ConductorDescription
 The Conductor is a middle-aged woman who is very proud of this train. #Commentary
-She thinks she is a sea captain, and although you haven't seen her since boarding the train, other passengers say she wears an old sailors hat on her head. 
+She thinks she is a sea captain, and although you haven't seen her since boarding the train, other passengers say she wears an old sailor's hat on her head. 
 You talk to her through a rusty intercom.
 
 ->ConductorIntro
@@ -43,7 +43,7 @@ Roger!
 This is the Conductor, at your service!
 How can I help you?
 
-Hello Mrs Conductor Lady!#Player
+Hello Mrs. Conductor Lady!#Player
 
 Oh please, no need for the formalities!#Conductor
 Call me Captain!
@@ -51,7 +51,7 @@ Call me Captain!
 ...Like, a boat captain?#Player
 
 Exactly!#Conductor
-Now what do you want, skipper?
+Now, what do you want, skipper?
 I'm pretty busy up here!
 
 I wanted to ask you what happened last night as you remember it?#Player
@@ -65,7 +65,7 @@ Is that what the kids call it these days?
 
 Shindig is good. #Player
 Or soiree.
-Both very hip.
+Both are very hip.
 
 Right!#Conductor
 Well all I know is the booze supplies took quite a hit
@@ -111,9 +111,9 @@ Maybe the Steward.
 
 Hm?#Player
 
-Yes, he's a good lad.#Conductor
+Yes, she's a good lad.#Conductor
 A bit odd, Perhaps
-But I trust him wholeheartedly.
+But I trust them wholeheartedly.
 ->ConductorWhodunnitEnd
 =ConductorWhodunnitEnd
 
@@ -180,7 +180,7 @@ I don't have a lot of hot goss to share.
 ===ConductorStoctor
 There's an update in the case Conductor! #Player
 The dead body we found is actually the Doctor!
-And the man dressed up as the Doctor is the stowaway in diguise!
+And the person dressed up as the Doctor is the stowaway in disguise!
 
 WHAT?! #Conductor
 NO!!
@@ -295,10 +295,10 @@ That's fair enough.#Player
 Sorry I doubted you.
 Give him a boop from me
 
-You can boop him youself when we arrive #Conductor
+You can boop him yourself when we arrive #Conductor
 
 YAY! #Player
-Thanks Captain
+Thanks, Captain
 ->ConductorIntro
 
 ===ConductorLadySus
@@ -317,12 +317,12 @@ I'm half tempted to let him loose so he can silence that thing...
 {LadySomeonesUp || LadySus.LastNight:
 That could actually be very useful! #Player
 Lady Mortimer claims she was in her room all night
-And Mr Lionel was screeching constantly until the early hours. 
+And Mr. Lionel was screeching constantly until the early hours. 
 Does that match up with what you heard?
 
-Oh yes that bird was a nightmare last night! #Conductor
+Oh yes, that bird was a nightmare last night! #Conductor
 Far worse than usual!
-...Apart from a 40 minute window, now you mention it
+...Apart from a 40-minute window, now you mention it
 
 Really?!#Player
 
@@ -353,7 +353,7 @@ The Steward thinks Sands may have had a hand in the murder. #Player
 What do you think?
 
 The Inspector?#Conductor
-Eh I doubt it. 
+Eh, I doubt it. 
 He's fiery,
 But he isn't smart, mean, or organised enough to do something like this
 ->ConductorIntro
