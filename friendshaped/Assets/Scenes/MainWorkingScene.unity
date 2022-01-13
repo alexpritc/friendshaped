@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657826, g: 0.49641263, b: 0.57481676, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -5661,6 +5661,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   chatWindowSprite: {fileID: 21300000, guid: db88e0d5c609a4945b25592528408251, type: 3}
   chatWindowBackground: {fileID: 21300000, guid: 0c4c4f75f0d64394f882651d943fd10d, type: 3}
+  chatBackgroundMusic: {fileID: 8300000, guid: 5ddc86d9937a75741a310eab3b710c62, type: 3}
   myIntro: StewardIntro
   outlineSprite: {fileID: 0}
   highlightedColour: {r: 0.86, g: 0.65, b: 0.19, a: 1}
@@ -22784,6 +22785,102 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 5653875619030296254, guid: 4938e788c9a5c724fa37ae70bd2b675c, type: 3}
   m_PrefabInstance: {fileID: 861324009}
   m_PrefabAsset: {fileID: 0}
+--- !u!82 &812314086
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 812314085}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 1
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1001 &861324009
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -23666,6 +23763,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   chatWindowSprite: {fileID: 21300000, guid: 1293149888446f844ad17d1612dce751, type: 3}
   chatWindowBackground: {fileID: 21300000, guid: 397c9736c64b9cb4e8818854ef8eb071, type: 3}
+  chatBackgroundMusic: {fileID: 8300000, guid: 9e6ac47450b40a345b2e06448df7aff6, type: 3}
   myIntro: ConductorIntro
   outlineSprite: {fileID: 0}
   highlightedColour: {r: 0.86, g: 0.65, b: 0.19, a: 1}
@@ -24611,6 +24709,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   chatWindowSprite: {fileID: 21300000, guid: 6030ca1ce41999147bde7ea963e5cd1d, type: 3}
   chatWindowBackground: {fileID: 21300000, guid: 0c4c4f75f0d64394f882651d943fd10d, type: 3}
+  chatBackgroundMusic: {fileID: 8300000, guid: 926d550780062ad458eb49abbc7ea1a8, type: 3}
   myIntro: LadyIntro
   outlineSprite: {fileID: 0}
   highlightedColour: {r: 0.86, g: 0.65, b: 0.19, a: 1}
@@ -46462,6 +46561,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   chatWindowSprite: {fileID: 21300000, guid: d8efd934b94ea5c46b500241f625bd21, type: 3}
   chatWindowBackground: {fileID: 21300000, guid: e8a250b80a35756489fd6bff374f32bc, type: 3}
+  chatBackgroundMusic: {fileID: 8300000, guid: f5e77538c00c91f49bbdba1d1ea76b22, type: 3}
   myIntro: StoctorIntro
   outlineSprite: {fileID: 0}
   highlightedColour: {r: 0.86, g: 0.65, b: 0.19, a: 1}
@@ -52449,6 +52549,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   chatWindowSprite: {fileID: 21300000, guid: 244b564d72144224295a092fbeb90968, type: 3}
   chatWindowBackground: {fileID: 21300000, guid: 397c9736c64b9cb4e8818854ef8eb071, type: 3}
+  chatBackgroundMusic: {fileID: 8300000, guid: 9f57057e5960e4d4eb8ba496178bece0, type: 3}
   myIntro: SandsIntro
   outlineSprite: {fileID: 0}
   highlightedColour: {r: 0.86, g: 0.65, b: 0.19, a: 1}

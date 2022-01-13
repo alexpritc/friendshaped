@@ -8,6 +8,7 @@ public class NPC : MonoBehaviour
     [Header("Chat Window")]
     public Sprite chatWindowSprite;
     public Sprite chatWindowBackground;
+    public AudioClip chatBackgroundMusic;
     
     [Header("Ink Knots")]
     public string myIntro;

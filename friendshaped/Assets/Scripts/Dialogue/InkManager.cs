@@ -18,9 +18,11 @@ public class InkManager : MonoBehaviour
         dialogueManager.inkJSONAsset = script;
     }
     
-    private void OpenChatInstance(String inkKnot, Sprite chatBackground, Sprite chatSprite)
+    private void OpenChatInstance(String inkKnot, Sprite chatBackground, Sprite chatSprite, AudioClip chatBackgroundMusic)
     {
         chatWindowInstance.SetActive(true);
+        chatWindowInstance.GetComponent<AudioSource>().clip = chatBackgroundMusic;
+        chatWindowInstance.GetComponent<AudioSource>().Play();
         dialogueManager.SetImages(chatBackground, playerSprite, chatSprite);
         dialogueManager.story.ChoosePathString(inkKnot);
         dialogueManager.RefreshView();

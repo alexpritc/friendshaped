@@ -296,10 +296,10 @@ public class GameManager : MonoBehaviour {
         }
     }
     
-    public event Action<String, Sprite, Sprite> onTalkToNPC;
-    public void TalkToNPC(String introKnot, Sprite chatBackground, Sprite chatSprite){
+    public event Action<String, Sprite, Sprite, AudioClip> onTalkToNPC;
+    public void TalkToNPC(String introKnot, Sprite chatBackground, Sprite chatSprite, AudioClip chatBackgroundMusic){
         if (onTalkToNPC != null) {
-            onTalkToNPC(introKnot, chatBackground, chatSprite);
+            onTalkToNPC(introKnot, chatBackground, chatSprite, chatBackgroundMusic);
             isChatWindowActive = true;
         }
     }
