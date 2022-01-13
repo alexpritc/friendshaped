@@ -1,0 +1,6 @@
+Website: 			https://www.friendshaped.co.uk/
+Release Page:			https://alexpritc.itch.io/all-aboard
+GitHub Repository:		https://github.com/alexpritc/friendshaped
+Jira: 				https://friend-shaped.atlassian.net/jira/software/projects/GAME/boards/1
+Trailer (YouTube):
+Dev Walkthrough (YouTube):
