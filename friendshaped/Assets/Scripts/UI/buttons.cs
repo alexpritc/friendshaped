@@ -15,16 +15,23 @@ public class buttons : MonoBehaviour
 
     public void spinCogs()
     {
+        playClickSound();
         animator.SetBool("spin", true);
     }
 
     public void stopCogs()
     {
+        pauseClickSound();
         animator.SetBool("spin", false);
     }
 
     public void playClickSound()
     {
         clickNoise.Play();
+    }
+    
+    public void pauseClickSound()
+    {
+        clickNoise.Pause();
     }
 }
