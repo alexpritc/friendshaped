@@ -130,7 +130,7 @@ public class DialogueManager : MonoBehaviour {
 			GameManager.foundNapper = true;
 		}
 		
-		if (text == "Why, just last night the staff forgot to bring me my night-time tea!")
+		if (text == "Why, just last night the staff forgot to bring me my night-time tea!"|| text == "Ladies do like tea." )
 		{
 			GameManager.foundTeaDrinker = true;
 		}
