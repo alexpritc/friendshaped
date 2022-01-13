@@ -64,7 +64,7 @@ public class GameManager : MonoBehaviour {
     public void Action()
     {
         actionsTaken++;
-        loopUI.value = actionsTaken;
+        //loopUI.value = actionsTaken;
     }
 
 
@@ -115,6 +115,16 @@ public class GameManager : MonoBehaviour {
     {
         if (!isChatWindowActive)
         {
+            if (loopUI.value < actionsTaken)
+            {
+                loopUI.value += 0.1f;
+            }
+
+            if (loopUI.value > actionsTaken)
+            {
+                loopUI.value = actionsTaken;
+            }
+            
             if (actionsTaken >= actionsLimit)
             {
                 OnLoopComplete();
