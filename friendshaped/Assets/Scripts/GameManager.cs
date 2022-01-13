@@ -38,10 +38,23 @@ public class GameManager : MonoBehaviour {
     [SerializeField]
     private Slider loopUI;
 
-    [Header("Objectives")]
-    private bool foundMurderer;
-    private bool foundWeapon;
-    private bool foundLocation;
+    [Header("Objectives")] 
+    [SerializeField]
+    private GameObject foundMurdererTick;
+    [SerializeField]
+    private GameObject foundVictimTick;
+    [SerializeField]
+    private GameObject foundCatTick;
+    [SerializeField]
+    private GameObject foundNapperTick;
+    [SerializeField]
+    private GameObject foundTeaDrinkerTick;
+    
+    public static bool foundMurderer;
+    public static  bool foundVictim;
+    public static  bool foundCat;
+    public static  bool foundNapper;
+    public static  bool foundTeaDrinker;
 
     public bool isChatWindowActive = false;
 
@@ -61,10 +74,41 @@ public class GameManager : MonoBehaviour {
         }
         instance = this;
 
-        loopUI.maxValue = actionsLimit;
-        loopUI.value = actionsTaken;
+        if (SceneManager.GetActiveScene().name == "MainWorkingScene")
+        {
+            loopUI.maxValue = actionsLimit;
+            loopUI.value = actionsTaken;
 
-        CreatePrompt(player.transform.position + new Vector3(0f,1.25f,0f), "Move", PromptKeys.A,PromptKeys.D);
+            CreatePrompt(player.transform.position + new Vector3(0f,1.25f,0f), "Move", PromptKeys.A,PromptKeys.D);
+        }
+
+        if (SceneManager.GetActiveScene().name == "WinScreen" || SceneManager.GetActiveScene().name == "LoseScreen")
+        {
+            if (foundMurderer)
+            {
+                foundMurdererTick.SetActive(true);
+            }
+
+            if (foundCat)
+            {
+                foundCatTick.SetActive(true);
+            }
+
+            if (foundVictim)
+            {
+                foundVictimTick.SetActive(true);
+            }
+            
+            if (foundNapper)
+            {
+                foundNapperTick.SetActive(true);
+            }
+
+            if (foundTeaDrinker)
+            {
+                foundTeaDrinkerTick.SetActive(true);
+            }
+        }
     }
 
     private void Update()
@@ -270,10 +314,12 @@ public class GameManager : MonoBehaviour {
 
     public void LoadWin()
     {
+        foundMurderer = true;
         SceneManager.LoadScene("WinScreen");
     }
     public void LoadLose()
     {
+        foundMurderer = false;
         SceneManager.LoadScene("LoseScreen");
     }
     public void LoadIntro()
@@ -285,6 +331,4 @@ public class GameManager : MonoBehaviour {
     {
         SceneManager.LoadScene("Settings");
     }
-
-    
 }

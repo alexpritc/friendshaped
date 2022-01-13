@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.37311953, g: 0.38074014, b: 0.3587274, a: 1}
+  m_IndirectSpecularColor: {r: 0.37311918, g: 0.3807398, b: 0.35872716, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1062,7 +1062,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &373320706
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1649,7 +1649,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &823428125
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2708,6 +2708,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 5031041581961349264, guid: f09304facc524b64dacb437ee002bdf3, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8122547940080541553, guid: f09304facc524b64dacb437ee002bdf3, type: 3}
       propertyPath: m_RootOrder
       value: 3
@@ -2756,7 +2760,28 @@ PrefabInstance:
       propertyPath: m_Name
       value: GameManager
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 8122547940080541558, guid: f09304facc524b64dacb437ee002bdf3, type: 3}
+      propertyPath: foundCatTick
+      value: 
+      objectReference: {fileID: 1974581030}
+    - target: {fileID: 8122547940080541558, guid: f09304facc524b64dacb437ee002bdf3, type: 3}
+      propertyPath: foundNapperTick
+      value: 
+      objectReference: {fileID: 823428124}
+    - target: {fileID: 8122547940080541558, guid: f09304facc524b64dacb437ee002bdf3, type: 3}
+      propertyPath: foundVictimTick
+      value: 
+      objectReference: {fileID: 373320705}
+    - target: {fileID: 8122547940080541558, guid: f09304facc524b64dacb437ee002bdf3, type: 3}
+      propertyPath: foundMurdererTick
+      value: 
+      objectReference: {fileID: 1826493551}
+    - target: {fileID: 8122547940080541558, guid: f09304facc524b64dacb437ee002bdf3, type: 3}
+      propertyPath: foundTeaDrinkerTick
+      value: 
+      objectReference: {fileID: 1914808748}
+    m_RemovedComponents:
+    - {fileID: 5031041581961349264, guid: f09304facc524b64dacb437ee002bdf3, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: f09304facc524b64dacb437ee002bdf3, type: 3}
 --- !u!114 &1687595065 stripped
 MonoBehaviour:
@@ -3095,7 +3120,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1826493552
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3170,7 +3195,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1914808749
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3423,7 +3448,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1974581031
 RectTransform:
   m_ObjectHideFlags: 0

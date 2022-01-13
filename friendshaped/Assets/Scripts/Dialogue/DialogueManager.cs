@@ -113,6 +113,29 @@ public class DialogueManager : MonoBehaviour {
 		RefreshView();
 	}
 
+	void CheckObjectives(string text)
+	{
+		if (text == "...Is that a cat?")
+		{
+			GameManager.foundCat = true;
+		}
+
+		if (text == "I'm the stowaway.")
+		{
+			GameManager.foundVictim = true;
+		}
+
+		if (text == "I TAKE NAPS IN THE STAFF ROOM OKAY!" || text == "Had a shameful nap")
+		{
+			GameManager.foundNapper = true;
+		}
+		
+		if (text == "Why, just last night the staff forgot to bring me my night-time tea!")
+		{
+			GameManager.foundTeaDrinker = true;
+		}
+	}
+
 	IEnumerator DisplayNextDialogue()
 	{
 		while (story.canContinue)
@@ -132,6 +155,8 @@ public class DialogueManager : MonoBehaviour {
 
 			if (text != "" && text != null)
 			{
+				CheckObjectives(text);
+
 				// Display the text on screen!
 				if (isCommentary)
 				{
