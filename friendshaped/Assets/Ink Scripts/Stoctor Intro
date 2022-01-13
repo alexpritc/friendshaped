@@ -3,7 +3,7 @@
 
 ===StoctorDescription
 The Doctor is a quiet fellow who tends to blend into the background.  #Commentary
-He wears a venetion mask and his heavy cloak smells of potent chemicals.
+They wear a Venetian mask and their heavy cloak smells of potent chemicals.
 
 ->StoctorIntro
 
@@ -13,9 +13,9 @@ He wears a venetion mask and his heavy cloak smells of potent chemicals.
 -> StoctorDescription
 }
 
- * [Ask the Doctor what he was doing last night]
+ * [Ask the Doctor what they were doing last night]
  -> StoctorWhatHappened
- * [Ask him who he suspects]
+ * [Ask them who they suspect]
  -> StoctorWhodunnit
   *{SandsWhodunnit.SECONDSTOWAWAY} [Ask about the second stowaway theory]
   ->StoctorSecondStowaway
@@ -23,9 +23,9 @@ He wears a venetion mask and his heavy cloak smells of potent chemicals.
   ->StoctorSomeoneUp
    * {LadyStoctor} [Tell the Doctor that Lady Mortimer suspects the Conductor]
   ->StoctorConductorSus
-   *{SandsStoctor}[Tell him that Sands thinks the Lady is hiding something]
+   *{SandsStoctor}[Tell them that Sands thinks the Lady is hiding something]
     ->StoctorLadySus
-    *{StewardWhodunnit}[Tell him the Steward suggested the Inspector may be a suspect]
+    *{StewardWhodunnit}[Tell them the Steward suggested the Inspector may be a suspect]
     ->StoctorInspectorSus
   + [Walk Away]
  -> Start
@@ -34,7 +34,7 @@ He wears a venetion mask and his heavy cloak smells of potent chemicals.
 ===StoctorWhatHappened
 Hello doctor!#Player
 
-(he nods solomnly) #Commentary
+(he nods solemnly) #Commentary
 
 Right.#Player
 Can I ask you a few questions?
@@ -49,7 +49,7 @@ With the rest of us?#Player
 
 Exactly!#Stoctor
 But I got tired of everyone.
-So I went to bed at 10pm.
+So I went to bed at 10 pm.
 
 Fair enough. #Player
 I do hope I didn't contribute to your early departure?
@@ -60,7 +60,7 @@ You know... #Player
 I said your mask made you look like the Lady's bird?
 
 Oh that!#Stoctor
-Yes I'm afraid that didn't help.
+Yes, I'm afraid that didn't help.
 
 Oops.#Player
 
@@ -83,7 +83,7 @@ I thought we were pretty sure!
 
 Oh yes.#Stoctor
 You see it all in the medical world.
-For all we know, he had a medical issue which took him away unexpectedly. 
+For all we know, they had a medical issue that took them away unexpectedly. 
 Things present in misleading ways.
 
 (Hm. Isn't a bullet wound pretty obvious though?)#Commentary
@@ -108,7 +108,7 @@ Well.
 I suppose it could be possible?
 
 Really?!#Player
-I'm surprised an educated man such as youself would consider it
+I'm surprised an educated person such as yourself would consider it
 Maybe the theory does hold some weight?
 
 Perhaps.#Stoctor
@@ -126,20 +126,20 @@ Only an idiot would try and sneak onto a fancy train like this without backup.
 ->StoctorIntro
 
 ===StoctorSomeoneUp
-The Steward saw someone up after bed last night.#Player
+The Steward heard someone up after bed last night.#Player
 
 ...Oh yes?#Stoctor
 
 Yes.#Player
 Moving from the rear sleeping cart 
-Past the staff quarters
+Into the closet in the dining cart
 And back again.
 
 ...#Stoctor
 How very odd.
 
 That's not even the odd part. #Player
-The Steward said they appeared to be...
+The Steward said they seemed to be...
 Dragging something. 
 
 ...#Stoctor
@@ -150,8 +150,8 @@ You do?#Player
 
 Yes!#Stoctor
 It was me!
-Taking some of my medical journals out of my bedchambers. 
-It good to set up a rest/work divide, you know?
+Taking some of my medical journals out of my bed-chambers. 
+It's good to set up a rest/work divide, you know?
 
 *['That's odd. No journals were found.']
 ->ThatsOdd
@@ -164,7 +164,7 @@ No journals were found.
 
 Well yes I of course moved them back into my room this morning!!#Stoctor
 I need them to do my medicine work!
-You know how us Doctors are!
+You know how we Doctors are!
 Now I must get back to those books, if you don't mind!
 ->StoctorIntro
 
@@ -187,18 +187,18 @@ But the stowaway was found dead?#Player
 You're the doctor!
 
 I'm pretending to be the doctor!#Stoctor
-I was ...going through everyones rooms while you were at the party 
-The Doctor came back while I was in his room so I hid in the closet
-While I was in there someone came into his room and killed him!
+I was ...going through everyone's rooms while you were at the party 
+The Doctor came back while I was in their room so I hid in the closet
+While I was in there someone came into his room and killed them!
 
 ...This is a lot of new information. #Player
 
 I know!#Stoctor
 It's been a helluva day!
-All I know is someone came in and killed the guy 
+All I know is someone came in and killed the poor fella
 I made the best of a bad situation
 Swapped our clothes over 
-And took his body to the dining cart so it wouldn't be found with me 
+And took their body to the dining cart so it wouldn't be found with me 
 I'm a thief but not a murderer, I swear!
 
 I mean #Player
@@ -292,7 +292,7 @@ Well, when I was hidden in the closet #Stoctor
 And the doctor was in the room 
 I heard the footsteps of the person who came in and killed him!!
 They came from the back of the train -
-The only things in that direction are the toilet and the Inspectors bedchambers
+The only things in that direction are the toilet and the Inspectors bed-chambers
 
 That does look pretty suspicious #Player
 

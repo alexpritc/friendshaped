@@ -1,8 +1,8 @@
 #Player
 #Steward
 ===StewardDescription
-The Steward is a young man who clearly isn't too enthused with his job but can't afford to get fired.  #Commentary
-He isn't very good at controlling his facial expressions so wears a face mask to keep them hidden and avoid trouble. 
+The Steward is a young person who clearly isn't too enthused with her job but can't afford to get fired.  #Commentary
+They have permanent bedhead and look as though they could fall asleep at any moment. 
 
 ->StewardIntro
 
@@ -14,9 +14,9 @@ He isn't very good at controlling his facial expressions so wears a face mask to
 
  * [Ask the Steward what they were doing last night]
  -> StewardWhatHappened
- * {StewardCoverUp} [Ask him what happened last night again]
+ * {StewardCoverUp} [Ask her what happened last night again]
  -> StewardWhatHappenedAgain
- * [Ask him who he suspects]
+ * [Ask them who they suspect]
  -> StewardWhodunnit
   *{SandsWhodunnit.SECONDSTOWAWAY} [Ask about the second stowaway theory]
   -> StewardSecondStowaway
@@ -24,14 +24,14 @@ He isn't very good at controlling his facial expressions so wears a face mask to
   ->StewardStoctor
   * {LadyStoctor} [Tell the Steward that Lady Mortimer suspects the Conductor]
   ->StewardConductorSus
-  *{SandsStoctor}[Tell him that Sands thinks the Lady is hiding something]
+  *{SandsStoctor}[Tell her that Sands thinks the Lady is hiding something]
  ->StewardLadySus
   + [Walk Away]
  -> Start
  * ->
 -> Start
 ===StewardWhatHappened
-Good morning Mr Steward sir!#Player
+Good morning Ms. Steward Ma'am!#Player
 
 ...Good Morning?#Steward
 
@@ -51,12 +51,12 @@ Can you explain what you were up to last night?#Player
 Sure.#Steward
 Well as I'm sure you remember most of the passengers were taking drinks in the dining cart last night. 
 I don't do bar work,
-I'm more of a 'here when you need me' type guy.
+I'm more of a 'here when you need me' type of guy.
 So I was resting in the staff quarters for most of the night. 
 
- * [Ask if he was sat there the whole night]
+ * [Ask if they were sat there the whole night]
  -> StewardSatThere
- * [Ask if he's covering for someone]
+ * [Ask if they're covering for someone]
  -> StewardCoverUp
  
  ===StewardSatThere
@@ -110,14 +110,14 @@ I was woken up around 11.30, I was barely out for 20 minutes!
 That's more than enough time for you to miss something!#Player
 What woke you up?
 
-There were birds screeching on top of the train. #Steward
-Must have been going through a flock of them or something?
+Birds were screeching on top of the train. #Steward
+We must have been going through a flock of them or something?
 I don't know anything about birds but they were bloody loud. 
 
 Not a fun way to wake up#Player
 But you kinda deserved it.
 
-Yeah I know. #Steward
+Yeah, I know. #Steward
 ...
 Please don't tell anyone I nap. 
 
@@ -157,7 +157,7 @@ Asking me the same questions over and over!
 ->StewardIntro
 
 =SeeAnything
-Did you see anyoneone else last night? #Player
+Did you see anyone else last night? #Player
 
 Let me think...#Steward
 Lady Mortimer walked by at about... 20 past ten?
@@ -179,15 +179,18 @@ But you didn't fall asleep again?#Player
 No?
 I'm pretty sure I didn't...
 Either way,
-I didn't see anyone else until gone midnight. 
+I didn't see or hear anyone else until gone midnight. 
 Maybe 12.30?
 
 Who did you see?#Player
 
-I couldn't make them out #Steward
-But they came from the rear sleeping cart 
-Walked past the door dragging something
-And then went back in the direction they came 
+I heard someone moving around #Steward
+Not sure who 
+But they didn't pass by the staff quarters.
+There was a sort of, dragging noise
+In the dining cart
+And I heard the supply closet door slam shut.
+That's all I heard.
 
 AND YOU DIDN'T THINK TO LOOK INTO IT?!#Player
 
@@ -213,13 +216,13 @@ If you had to pick someone, who would you suspect murdered the poor man?#Player
 I don't know the passengers that well!#Steward
 I know who takes tea before bed, not who has a homicidal streak!
 
-Well that's less useful. #Player
+Well, that's less useful. #Player
 Do you have any suggestions?
 
 Hm. #Steward
 Well. 
 No one walked towards the end of the train after the Lady went to bed
-And the stowaway was found dead in the dining cart
+And the stowaway was found dead in the cupboard in the dining cart
 So I'd assume it was someone who sleeps in the rear of the train?
 Perhaps Sands, he seems awfully interested in this whole thing. 
 

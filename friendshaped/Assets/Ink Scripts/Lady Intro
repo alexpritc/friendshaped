@@ -2,7 +2,7 @@
 #Lady
 ===LadyDescription
 Lady Mortimer is an elderly lady and quite the character.  #Commentary
-She wears a gold bird cage as a head ornament (which she insists isn't a hat) so she can be close to her dearest pet conure at all times.
+She wears a gold birdcage as a head ornament (which she insists isn't a hat) so she can be close to her dearest pet bird at all times.
 
 ->LadyIntro
 
@@ -24,7 +24,7 @@ She wears a gold bird cage as a head ornament (which she insists isn't a hat) so
  ->LadyStoctor
  *{SandsStoctor}[Tell her Sands thinks she's suspicious]
  ->LadySus
- *{StewardWhodunnit}[Tell him the Steward suggested the Inspector may be a suspect]
+ *{StewardWhodunnit}[Tell her the Steward suggested the Inspector may be a suspect]
     ->LadyInspectorSus
   + [Walk Away]
  -> Start
@@ -41,11 +41,11 @@ Fair enough. #Player
 Can you describe to me what happened last night?
 
 I suppose. #Lady
-I was trying to enjoy a quiet drink with my dear friend Mr Lionel. 
+I was trying to enjoy a quiet drink with my dear friend Mr. Lionel. 
 
-I don't think I've met Mr Lionel, is he another passenger?#Player
+I don't think I've met Mr. Lionel, is he another passenger?#Player
 
-Well of course you've met him, he's right here! (she gestures to the conure on her head)#Lady
+Well of course you've met him, he's right here! (she gestures to the bird on her head)#Lady
 
 ...Of course. #Player
 Sorry. 
@@ -62,9 +62,9 @@ I'm sure you did. #Player
 
 Quite. #Lady
 Once he ran off I also retired to my bed chambers. 
-Mr Lionel was quite shaken up by the whole ordeal so I had to tend to him. 
+Mr. Lionel was quite shaken up by the whole ordeal so I had to tend to him. 
 
-Are you feeling better now, Mr Lionel?#Player
+Are you feeling better now, Mr. Lionel?#Player
 
 ...He's a bird. #Lady
 He can't talk. 
@@ -74,7 +74,7 @@ Of course, apologies. #Player
 ...imbecile...#Lady
 ->LadyIntro
 ===LadyWhodunnit
-I get the sense you're a well travelled woman, Lady Mortimer. #Player
+I get the sense you're a well-traveled woman, Lady Mortimer. #Player
 
 I've seen some things in my time, yes. #Lady
 
@@ -99,7 +99,7 @@ My apologies, Lady Mortimer. #Player
 ->LadyIntro
 
 ===LadySecondStowaway
-What do you make of the detectives theory?#Player
+What do you make of the detective's theory?#Player
 That there is a second stowaway on board
 And they committed the murder?
 
@@ -133,9 +133,9 @@ Were you up at all past midnight, Ma'am?
 
 Oh no, dear. #Lady
 I need my sleep. 
-I spent a while comforting Mr Lionel
+I spent a while comforting Mr. Lionel
 He refused to settle down last night!
-And when he eventually calmed down around 3am I was out like a light. 
+And when he eventually calmed down around 3 am I was out like a light. 
 ->LadyIntro
 
 
@@ -151,19 +151,19 @@ We still don't know who murdered the real Doctor.
 
 Do we not?! #Lady
 Are you seriously believing that thief's story??
-He must be the murderer, it's the only thing that makes sense!
+They must be the murderer, it's the only thing that makes sense!
 
-I guess his closet story is a bit far fetched...#Player
+I guess their closet story is a bit far fetched...#Player
 
 And what's more, #Lady
-He probably had an accomplice!
-Someone on the staff to sneak him in!
+They probably had an accomplice!
+Someone on the staff to sneak them in!
 
 ...Like who? #Player
 
 Someone high up... #Lady
-With connnections...
-Doesn't it seem odd to you that you haven't seen the conductors face since boarding?
+With connections...
+Doesn't it seem odd to you that you haven't seen the conductor's face since boarding?
 She's been awfully quiet...
 Holed away in the engine room...
 I often hear her talking in there. 
@@ -190,7 +190,7 @@ He's not exactly in demand these days
 Can you clarify exactly what you did last night after you went to bed?#Player
 
 I'VE TOLD YOU ALREADY!#Lady
-Mr Lionel was being restless
+Mr. Lionel was being restless
 He wouldn't stop squawking until about 2 in the morning!
 ...Not that I mind looking after a dear friend, of course.
 
@@ -217,6 +217,6 @@ What do you think?
 
 Hm… #Lady
 I suppose he was in the cart next to the victim
-and it would explain why such a ‘good PI’ somehow has no clue how the murder occured under his nose…
+and it would explain why such a ‘good PI’ somehow has no clue how the murder occurred under his nose…
 
 ->LadyIntro
