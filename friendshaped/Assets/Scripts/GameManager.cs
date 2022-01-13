@@ -113,7 +113,7 @@ public class GameManager : MonoBehaviour {
 
     private void Update()
     {
-        if (!isChatWindowActive)
+        if (!isChatWindowActive && SceneManager.GetActiveScene().name == "MainWorkingScene")
         {
             if (loopUI.value < actionsTaken)
             {
