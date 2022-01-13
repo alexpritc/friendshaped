@@ -9,6 +9,7 @@ public class InkManager : MonoBehaviour
     [SerializeField] private GameObject chatWindowInstance;
     [SerializeField] private Sprite playerSprite;
     public TextAsset script;
+    public GameObject bgMusic;
 
     void Start() {
         GameManager.Instance.onTalkToNPC += OpenChatInstance;
@@ -22,6 +23,7 @@ public class InkManager : MonoBehaviour
     {
         chatWindowInstance.SetActive(true);
         chatWindowInstance.GetComponent<AudioSource>().clip = chatBackgroundMusic;
+        bgMusic.SetActive(false);
         chatWindowInstance.GetComponent<AudioSource>().Play();
         dialogueManager.SetImages(chatBackground, playerSprite, chatSprite);
         dialogueManager.story.ChoosePathString(inkKnot);
@@ -30,6 +32,8 @@ public class InkManager : MonoBehaviour
     
     private void CloseChatInstance(GameObject window)
     {
+        chatWindowInstance.GetComponent<AudioSource>().Pause();
+        bgMusic.SetActive(true);
         chatWindowInstance.SetActive(false);
     }
 }
