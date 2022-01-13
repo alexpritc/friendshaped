@@ -17,7 +17,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2711499352260804783, guid: 29f460e2f40bbf446b89aa138181c35a, type: 3}
       propertyPath: m_fontSize
-      value: 30
+      value: 35
       objectReference: {fileID: 0}
     - target: {fileID: 2711499352260804783, guid: 29f460e2f40bbf446b89aa138181c35a, type: 3}
       propertyPath: m_fontColor.b
@@ -33,11 +33,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2711499352260804783, guid: 29f460e2f40bbf446b89aa138181c35a, type: 3}
       propertyPath: m_fontSizeBase
-      value: 30
+      value: 35
       objectReference: {fileID: 0}
+    - target: {fileID: 2711499352260804783, guid: 29f460e2f40bbf446b89aa138181c35a, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: -3289003802798316920, guid: ab1270cbb2ef6344faee4d9556a12472, type: 2}
     - target: {fileID: 2711499352260804783, guid: 29f460e2f40bbf446b89aa138181c35a, type: 3}
       propertyPath: m_fontColor32.rgba
       value: 4291286244
+      objectReference: {fileID: 0}
+    - target: {fileID: 2711499352260804783, guid: 29f460e2f40bbf446b89aa138181c35a, type: 3}
+      propertyPath: m_overrideHtmlColors
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2711499352260804783, guid: 29f460e2f40bbf446b89aa138181c35a, type: 3}
+      propertyPath: m_hasFontAssetChanged
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3400733937966822289, guid: 29f460e2f40bbf446b89aa138181c35a, type: 3}
       propertyPath: m_Name
@@ -268,6 +280,10 @@ PrefabInstance:
     - target: {fileID: 6246375558825184028, guid: 5fa5a269a8adc7846bc62a1b78c97650, type: 3}
       propertyPath: m_Color.r
       value: 0.37254903
+      objectReference: {fileID: 0}
+    - target: {fileID: 6246375558825184028, guid: 5fa5a269a8adc7846bc62a1b78c97650, type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6246375558831844526, guid: 5fa5a269a8adc7846bc62a1b78c97650, type: 3}
       propertyPath: m_Name
