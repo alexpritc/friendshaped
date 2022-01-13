@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 namespace Player {
@@ -21,6 +22,7 @@ namespace Player {
         private Vector2 velocity;
 
         private bool hasMoved = false;
+        private bool hasPrompt = false;
 
         // Start is called before the first frame update
         void Awake() {
@@ -35,6 +37,15 @@ namespace Player {
             
             controls.movement.walkLeft.canceled += ctx => isMovingLeft = false;
             controls.movement.walkRight.canceled += ctx => isMovingRight = false;
+        }
+
+        private void Update()
+        {
+            if (!hasPrompt)
+            {
+                GameManager.Instance.CreatePrompt(transform.position + new Vector3(2.5f, 3, 0), "Move", PromptKeys.A,PromptKeys.D);
+                hasPrompt = true;
+            }
         }
 
         private void FixedUpdate() {
