@@ -6,6 +6,7 @@ public class buttons : MonoBehaviour
 {
 
     private Animator animator;
+    public AudioSource clickNoise;
     // Start is called before the first frame update
     void Start()
     {
@@ -20,5 +21,10 @@ public class buttons : MonoBehaviour
     public void stopCogs()
     {
         animator.SetBool("spin", false);
+    }
+
+    public void playClickSound()
+    {
+        clickNoise.Play();
     }
 }
