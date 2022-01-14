@@ -43,7 +43,7 @@ public class DialogueManager : MonoBehaviour
 	[SerializeField] private int maxCharactersPerCommentary = 100;
 	[SerializeField] private int maxCharactersPerButton = 80;
 
-	[SerializeField] private int dialogueBoxesLimit = 4;
+	[SerializeField] private int dialogueBoxesLimit = 3;
 
 	public Image windowBackground;
 	public Image chatSpriteA;
@@ -416,7 +416,7 @@ public class DialogueManager : MonoBehaviour
 		currentDialogueBoxes.Add(go);
 
 		float x = isPlayerTalking ? -110f : 110f;
-		go.transform.localPosition = new Vector3(x, -200, 0);
+		go.transform.localPosition = new Vector3(x, -150, 0);
 		;
 
 		// If not already empty

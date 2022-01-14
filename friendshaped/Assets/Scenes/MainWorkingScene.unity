@@ -33834,9 +33834,9 @@ MonoBehaviour:
   commentaryTextBoxPrefab: {fileID: 2803328960669597586, guid: 6bc6f593c5dc8df4caddc3aad89cdbf9, type: 3}
   waitTime: 2.5
   maxCharactersPerDialogue: 40
-  maxCharactersPerCommentary: 70
-  maxCharactersPerButton: 40
-  dialogueBoxesLimit: 7
+  maxCharactersPerCommentary: 80
+  maxCharactersPerButton: 30
+  dialogueBoxesLimit: 6
   windowBackground: {fileID: 5653875619849366308}
   chatSpriteA: {fileID: 5653875621077653205}
   chatSpriteB: {fileID: 5653875619452538781}
