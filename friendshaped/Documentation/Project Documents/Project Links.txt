@@ -2,6 +2,6 @@ Website: 			https://www.friendshaped.co.uk/
 Release Page:			https://alexpritc.itch.io/all-aboard
 GitHub Repository:		https://github.com/alexpritc/friendshaped
 Jira: 				https://friend-shaped.atlassian.net/jira/software/projects/GAME/boards/1
-Trailer (YouTube):
+Trailer (YouTube):		https://www.youtube.com/watch?v=aWb7VMSRp8U
 Dev Walkthrough (YouTube):
 Miro Moodboards (high quality)	https://miro.com/app/board/uXjVOYDwjpg=/?invite_link_id=884994055545
