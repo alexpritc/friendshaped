@@ -49,15 +49,15 @@ namespace Player
 
             interactWith = collision.gameObject;
 
-            if (collision.tag == "Door")
+            if (collision.tag == "Door" && !GameManager.Instance.isChatWindowActive)
             {
                 GameManager.Instance.CreatePrompt(transform.position + new Vector3(2.5f, 3, 0), "Use Door", PromptKeys.E);
             }
-            else if (collision.tag == "NPC")
+            else if (collision.tag == "NPC" && !GameManager.Instance.isChatWindowActive)
             {
                 GameManager.Instance.CreatePrompt(transform.position + new Vector3(2.5f, 3, 0), "Talk", PromptKeys.E);
             }
-            else if (collision.tag == "Item")
+            else if (collision.tag == "Item" && !GameManager.Instance.isChatWindowActive)
             {
                 GameManager.Instance.CreatePrompt(transform.position + new Vector3(2.5f, 3, 0), "Inspect", PromptKeys.E);
             }

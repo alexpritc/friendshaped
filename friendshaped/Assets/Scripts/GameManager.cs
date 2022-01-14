@@ -78,8 +78,6 @@ public class GameManager : MonoBehaviour {
         {
             loopUI.maxValue = actionsLimit;
             loopUI.value = actionsTaken;
-
-            CreatePrompt(player.transform.position + new Vector3(1.5f,2f,0f), "Move", PromptKeys.A,PromptKeys.D);
         }
 
         if (SceneManager.GetActiveScene().name == "WinScreen" || SceneManager.GetActiveScene().name == "LoseScreen")
