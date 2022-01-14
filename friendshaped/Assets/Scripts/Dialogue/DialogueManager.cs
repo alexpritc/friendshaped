@@ -76,6 +76,11 @@ public class DialogueManager : MonoBehaviour {
 		chatSpriteB.sprite = b;
 	}
 
+	public void EndAllCoroutinesEarly()
+	{
+		StopAllCoroutines();
+	}
+
 	// Creates a new Story object with the compiled story which we can then play!
 	 void StartStory () {
 		story = new Story (inkJSONAsset.text);
@@ -92,7 +97,7 @@ public class DialogueManager : MonoBehaviour {
 		RemoveChildren(commentaryCanvas);
 
 		clickedButton = false;
-
+		
 		// Read all the content until we can't continue any more
 		StartCoroutine(DisplayNextDialogue());
 	}
@@ -109,8 +114,10 @@ public class DialogueManager : MonoBehaviour {
 		{
 			EndChat();
 		}
-		
-		RefreshView();
+		else
+		{
+			RefreshView();	
+		}
 	}
 
 	void CheckObjectives(string text)
@@ -217,6 +224,7 @@ public class DialogueManager : MonoBehaviour {
 
 	void EndChat()
 	{
+		EndAllCoroutinesEarly();
 		GameManager.Instance.StopTalkingToNPC(gameObject);
 	}
 	

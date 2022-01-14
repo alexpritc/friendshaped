@@ -49,6 +49,11 @@ namespace Player {
         }
 
         private void FixedUpdate() {
+            if (GameManager.Instance.isChatWindowActive)
+            {
+                return;
+            }
+            
             switch (isMovingLeft, isMovingRight)
             {
                 // Left
