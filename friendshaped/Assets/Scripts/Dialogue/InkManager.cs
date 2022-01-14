@@ -22,7 +22,7 @@ public class InkManager : MonoBehaviour
     private void OpenChatInstance(String inkKnot, Sprite chatBackground, Sprite chatSprite, AudioClip chatBackgroundMusic)
     {
         chatWindowInstance.SetActive(true);
-        UpdateRectTransform();
+        //UpdateRectTransform();
         chatWindowInstance.GetComponent<AudioSource>().clip = chatBackgroundMusic;
         bgMusic.SetActive(false);
         chatWindowInstance.GetComponent<AudioSource>().Play();

@@ -47,6 +47,6 @@ TagManager:
   - name: InFrontOfPlayer
     uniqueID: 2527888261
     locked: 0
-  - name: UI
+  - name: Dialogue
     uniqueID: 267983049
     locked: 0
