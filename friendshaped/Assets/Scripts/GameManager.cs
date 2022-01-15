@@ -1,7 +1,4 @@
 using System;
-using System.Collections;
-using System.Collections.Generic;
-using Ink.Runtime;
 using Player;
 using UnityEngine;
 using UnityEngine.UI;
@@ -64,7 +61,6 @@ public class GameManager : MonoBehaviour {
     public void Action()
     {
         actionsTaken++;
-        //loopUI.value = actionsTaken;
     }
 
 
