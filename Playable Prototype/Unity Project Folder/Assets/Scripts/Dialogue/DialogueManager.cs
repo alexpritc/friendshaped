@@ -16,6 +16,7 @@ public class DialogueManager : MonoBehaviour
 
 	[SerializeField] private Canvas dialogueCanvas = null;
 	[SerializeField] private Canvas choiceCanvas = null;
+	[SerializeField] private Canvas choiceCanvasUpper = null;
 	[SerializeField] private Canvas commentaryCanvas = null;
 
 	// UI Prefabs
@@ -60,6 +61,7 @@ public class DialogueManager : MonoBehaviour
 		// Remove the default message
 		RemoveChildren(dialogueCanvas);
 		RemoveChildren(choiceCanvas);
+		RemoveChildren(choiceCanvasUpper);
 		RemoveChildren(commentaryCanvas);
 
 		controls.interactions.click.performed += ctx => SkipDialogue();
@@ -96,6 +98,7 @@ public class DialogueManager : MonoBehaviour
 		// Remove all the UI on screen
 		RemoveChildren(dialogueCanvas);
 		RemoveChildren(choiceCanvas);
+		RemoveChildren(choiceCanvasUpper);
 		RemoveChildren(commentaryCanvas);
 
 		clickedButton = false;
@@ -156,9 +159,7 @@ public class DialogueManager : MonoBehaviour
 			string text = story.Continue();
 			// This removes any white space from the text.
 			text = text.Trim();
-
-			Debug.Log("text.trim():" + text);
-
+			
 			if (story.currentTags.Count != 0)
 			{
 				isCommentary = story.currentTags.Contains("Commentary") ? true : false;
@@ -213,14 +214,27 @@ public class DialogueManager : MonoBehaviour
 
 	void DisplayNextChoices()
 	{
+		int count = story.currentChoices.Count;
+		
 		if (story.currentChoices.Count > 0)
 		{
 			for (int i = 0; i < story.currentChoices.Count; i++)
 			{
 				Choice choice = story.currentChoices[i];
-				Button button = CreateChoiceView(choice.text.Trim());
-				// Tell the button what to do when we press it
-				button.onClick.AddListener(delegate { OnClickChoiceButton(choice); });
+				
+				// i starts at 0
+				if (count >= 4 && i >= 3)
+				{
+					Button button = CreateChoiceViewUpper(choice.text.Trim());
+					// Tell the button what to do when we press it
+					button.onClick.AddListener(delegate { OnClickChoiceButton(choice); });	
+				}
+				else
+				{
+					Button button = CreateChoiceView(choice.text.Trim());
+					// Tell the button what to do when we press it
+					button.onClick.AddListener(delegate { OnClickChoiceButton(choice); });	
+				}
 			}
 		}
 	}
@@ -280,6 +294,25 @@ public class DialogueManager : MonoBehaviour
 
 		return choice;
 	}
+	
+	// Creates a button showing the choice text
+	Button CreateChoiceViewUpper(string text)
+	{
+		// Creates the button from a prefab
+		Button choice = Instantiate(buttonPrefab) as Button;
+		choice.transform.SetParent(choiceCanvasUpper.transform, false);
+		choice.transform.position += new Vector3(0f, 50f, 0);
+
+		// Gets the text from the button prefab
+		Text choiceText = choice.GetComponentInChildren<Text>();
+		choiceText.text = ManageTextFormatting(text, maxCharactersPerButton);
+
+		// Make the button expand to fit the text
+		HorizontalLayoutGroup layoutGroup = choice.GetComponent<HorizontalLayoutGroup>();
+		layoutGroup.childForceExpandHeight = false;
+
+		return choice;
+	}
 
 	void CreateCommentaryView(string text)
 	{
@@ -291,6 +324,7 @@ public class DialogueManager : MonoBehaviour
 		storyText.text = ManageTextFormatting(text, maxCharactersPerCommentary);
 
 		textbox.transform.SetParent(commentaryCanvas.transform, false);
+		textbox.transform.position += new Vector3(0, 200f, 0);
 
 		currentAnim = textbox.GetComponent<Animator>();
 	}
