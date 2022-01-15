@@ -159,7 +159,7 @@ public class DialogueManager : MonoBehaviour
 			string text = story.Continue();
 			// This removes any white space from the text.
 			text = text.Trim();
-			
+
 			if (story.currentTags.Count != 0)
 			{
 				isCommentary = story.currentTags.Contains("Commentary") ? true : false;
@@ -201,6 +201,11 @@ public class DialogueManager : MonoBehaviour
 						GetClipName(currentAnim) == "ConstantDialogue" ||
 						GetClipName(currentAnim) == "ConstantCommentaryText");
 
+					if (isCommentary)
+					{
+						yield return new WaitForSeconds(waitTime * 2f);
+						RemoveChildren(commentaryCanvas);
+					}
 				}
 			}
 		}
@@ -324,7 +329,7 @@ public class DialogueManager : MonoBehaviour
 		storyText.text = ManageTextFormatting(text, maxCharactersPerCommentary);
 
 		textbox.transform.SetParent(commentaryCanvas.transform, false);
-		textbox.transform.position += new Vector3(0, 200f, 0);
+		textbox.transform.localPosition = new Vector3(0, -125f, 0);
 
 		currentAnim = textbox.GetComponent<Animator>();
 	}
@@ -567,10 +572,8 @@ public class DialogueManager : MonoBehaviour
 			StopAllCoroutines();
 
 			// Clear commentary
-			if (story.canContinue)
-			{
-				RemoveChildren(commentaryCanvas);
-			}
+			RemoveChildren(commentaryCanvas);
+			
 
 			if (currentDialogueBoxes != null && currentDialogueBoxes.Count > 0)
 			{

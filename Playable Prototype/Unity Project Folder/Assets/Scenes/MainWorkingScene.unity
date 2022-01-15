@@ -23111,7 +23111,7 @@ MonoBehaviour:
     m_Left: 0
     m_Right: 0
     m_Top: 0
-    m_Bottom: 60
+    m_Bottom: 75
   m_ChildAlignment: 7
   m_Spacing: 50
   m_ChildForceExpandWidth: 0
@@ -51790,32 +51790,6 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
---- !u!114 &5653875620011868419
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5653875620011868429}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 30649d3a9faa99c48a7b1166b86bf2a0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Padding:
-    m_Left: 0
-    m_Right: 0
-    m_Top: 0
-    m_Bottom: 75
-  m_ChildAlignment: 7
-  m_Spacing: 0
-  m_ChildForceExpandWidth: 0
-  m_ChildForceExpandHeight: 0
-  m_ChildControlWidth: 0
-  m_ChildControlHeight: 0
-  m_ChildScaleWidth: 0
-  m_ChildScaleHeight: 0
-  m_ReverseArrangement: 0
 --- !u!224 &5653875620011868428
 RectTransform:
   m_ObjectHideFlags: 0
@@ -51847,7 +51821,6 @@ GameObject:
   - component: {fileID: 5653875620011868416}
   - component: {fileID: 5653875620011868417}
   - component: {fileID: 5653875620011868418}
-  - component: {fileID: 5653875620011868419}
   m_Layer: 5
   m_Name: Canvas - Commentary
   m_TagString: Untagged
