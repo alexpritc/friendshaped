@@ -1,0 +1,64 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &8122547940080541556
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8122547940080541553}
+  - component: {fileID: 8122547940080541558}
+  m_Layer: 0
+  m_Name: GameManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8122547940080541553
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8122547940080541556}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8122547940080541558
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8122547940080541556}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cfabc0643cf79574f8bf54fbf85f2349, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  keySprites:
+    AKey: {fileID: 21300000, guid: f81bc608641915b46bf927c02bb0440a, type: 3}
+    DKey: {fileID: 21300000, guid: 42a9d720c1acd124c9c6e280a9d03e0c, type: 3}
+    EKey: {fileID: 21300000, guid: a1e6b8f251a9e2849a68db68619d2672, type: 3}
+    RightArrow: {fileID: 21300000, guid: cb178a7ac7b2ed44b89264880bd029da, type: 3}
+    LeftArrow: {fileID: 21300000, guid: 7d42c8b79bd956a4e9db86f6e6096108, type: 3}
+  Prompt: {fileID: 1563592478186888474, guid: 034e80e5a82ba874285730706f4151a6, type: 3}
+  OneKeyPrompt: {fileID: 1563592478186888474, guid: 2c07fbdf5206b37469d490709838adac, type: 3}
+  TwoKeyPrompt: {fileID: 4356903949146609778, guid: 0a98f47c6bb09214e946235f08c6b4f5, type: 3}
+  PromptCanvas: {fileID: 0}
+  CurrentPrompt: {fileID: 0}
+  player: {fileID: 0}
+  loopUI: {fileID: 0}
+  foundMurdererTick: {fileID: 0}
+  foundVictimTick: {fileID: 0}
+  foundCatTick: {fileID: 0}
+  foundNapperTick: {fileID: 0}
+  foundTeaDrinkerTick: {fileID: 0}
+  isChatWindowActive: 0

@@ -1,0 +1,359 @@
+#Player
+#Conductor
+===ConductorDescription
+The Conductor is a middle-aged woman who is very proud of this train. #Commentary
+She thinks she is a sea captain, and although you haven't seen her since boarding the train, other passengers say she wears an old sailor's hat on her head. 
+You talk to her through a rusty intercom.
+
+->ConductorIntro
+
+===ConductorIntro
+
+{not ConductorDescription:
+-> ConductorDescription
+}
+
+ * [Ask the Conductor what she was doing last night]
+ -> ConductorWhatHappened
+ * [Ask her who she suspects]
+ -> ConductorWhodunnit
+  *{SandsWhodunnit.SECONDSTOWAWAY} [Ask about the second stowaway theory]
+  -> ConductorSecondStowaway
+   * {StewardWhatHappenedAgain.SeeAnything} [Ask about the person the Steward saw]
+   ->ConductorSomeoneUp
+   * {StoctorSomeoneUp.ABody} [Ask about the stowaway pretending to be the doctor]
+   ->ConductorStoctor
+    * {LadyStoctor} [Tell her someone suspects her]
+    ->ConductorSus
+    *{SandsStoctor}[Tell her that Sands thinks the Lady is hiding something]
+    ->ConductorLadySus
+    *{StewardWhodunnit}[Tell him the Steward suggested the Inspector may be a suspect]
+    ->ConductorInspectorSus
+  + [Walk Away]
+ -> Start
+ * ->
+-> Start
+
+===ConductorWhatHappened
+Hello? #Player
+Is this thing on?
+
+-Bzzt-#Conductor
+Roger! 
+This is the Conductor, at your service!
+How can I help you?
+
+Hello Mrs. Conductor Lady!#Player
+
+Oh please, no need for the formalities!#Conductor
+Call me Captain!
+
+...Like, a boat captain?#Player
+
+Exactly!#Conductor
+Now, what do you want, skipper?
+I'm pretty busy up here!
+
+I wanted to ask you what happened last night as you remember it?#Player
+
+Of course!#Conductor
+Well, naturally, I was stuck in here the whole night
+(I always miss out on the parties)
+But I heard you guests had a...
+Shindig?
+Is that what the kids call it these days?
+
+Shindig is good. #Player
+Or soiree.
+Both are very hip.
+
+Right!#Conductor
+Well all I know is the booze supplies took quite a hit
+Always brings out the worst in people, it seems.
+
+That matches up with what I remember. #Player
+So you were really stuck in there the whole time?
+
+I'm afraid so, skipper#Conductor
+We do get awfully bored
+
+We?#Player
+
+...We as in me!#Conductor
+The royal we!
+
+...That's not a thing.#Player
+
+->ConductorIntro
+===ConductorWhodunnit
+As the head of this fine locomotive-#Player
+
+She's more than fine she is superb!#Conductor
+
+She is indeed!#Player
+Well, do you have any idea who may have done this?
+
+I'm afraid not#Conductor
+Being holed up in here we haven't seen much of the action.
+But rest assured they will be dealt with when we arrive!
+You have my word.
+
+I appreciate that.#Player
+{not StewardWhodunnit:
+-> ConductorSuggestSteward
+-else: 
+->ConductorWhodunnitEnd
+}
+=ConductorSuggestSteward
+One more thing -#Conductor
+You should talk to someone more involved. 
+Maybe the Steward.
+
+Hm?#Player
+
+Yes, she's a good lad.#Conductor
+A bit odd, Perhaps
+But I trust them wholeheartedly.
+->ConductorWhodunnitEnd
+=ConductorWhodunnitEnd
+
+Thank you for all your help.#Player
+
+No problemo, skipper.#Conductor
+
+->ConductorIntro
+
+===ConductorSecondStowaway
+Have you heard the Inspector's latest theory?#Player
+
+Why no, I haven't!#Conductor
+People often forget to update me on these things. 
+Please, tell me!
+
+*['He thinks maybe a second stowaway is on board, and they committed the murder?']
+->ConductorSecondStowawayNice
+*['He reckons you've let a murderer sneak on board.']
+->ConductorSecondStowawayRude
+
+=ConductorSecondStowawayNice
+He thinks maybe a second stowaway is on board, and that they committed the murder?#Player
+
+I guess that could have happened?#Conductor
+I have no clue, I'm afraid.
+Sorry I couldn't be of more help. 
+->ConductorIntro
+
+=ConductorSecondStowawayRude
+He reckons you've let a murderer sneak on board#Player
+
+How dare you suggest that?#Conductor
+
+I didn't suggest it, the inspec-#Player
+
+I run a tight ship here, Skipper!#Conductor
+Nothing goes on without me knowing!
+
+(No-one said you didn't know about it)#Commentary
+Of course not.#Player
+Sorry for bringing it up. 
+
+You'd better be sorry!#Conductor
+Look, I have to go now -
+Turnip needs some comforting
+He doesn't care for accusations either. 
+->ConductorIntro
+
+===ConductorSomeoneUp
+The Steward saw someone up after bedtime last night.#Player
+Dragging something...
+Do you know anything about that?
+
+I'm afraid not, Skipper. #Conductor
+Again -
+I'm stuck in this engine room. 
+Just me.
+Alone. 
+With no one else.
+I don't have a lot of hot goss to share. 
+->ConductorIntro
+
+===ConductorStoctor
+There's an update in the case Conductor! #Player
+The dead body we found is actually the Doctor!
+And the person dressed up as the Doctor is the stowaway in disguise!
+
+WHAT?! #Conductor
+NO!!
+Do you think the stowaway is the murderer??
+
+I'm still working on that, Cap'n. #Player
+
+*['Does this kind of thing happen often?']
+->HappenOften
+*['Did you know about the stowaway?']
+->DidYouKnow
+
+=HappenOften
+Does this kind of thing happen often? #Player
+The people-sneaking-on-board thing
+Not the people-murdering-people things
+
+...Sometimes. #Conductor
+It's not normally an issue!
+There are lots of good people who can't afford a ticket
+Or who the other passengers would look down upon
+They don't have a way to ride this beautiful train without bending the rules a bit!
+
+Have you ever bent the rules, Captain? #Player
+
+...Perhaps once or twice. #Conductor
+Only for close friends. 
+And no passengers have ever found out!
+But please don't tell anyone. 
+
+I won't. #Player
+
+->ConductorIntro
+=DidYouKnow
+Did you know about the Stowaway, Captain? #Player
+Maybe even...
+Let them on board?
+
+NO. #Conductor
+They were found stealing. 
+I would never knowingly let a thief on board my train.
+This job is my life,
+I wouldn't risk my career for something like that.
+->ConductorIntro
+
+===ConductorSus
+Hello again, Captain. #Player
+
+Howdy, Skipper! #Conductor
+Got any updates for us?
+
+{not ConductorStoctor.HappenOften:
+-> Accusation
+-else: 
+->BendTheRules
+}
+
+=Accusation
+Some people are suggesting that you've had something to do with this #Player
+
+WHAT?! #Conductor
+WHO??
+
+The Lady... #Player
+She thinks you helped the stowaway sneak on board
+And then remain hidden
+After the murder
+
+That woman is so quick to judge!#Conductor
+I get the feeling she's eager to blame anything on 'the staff'...
+Thanks for letting me know, Skipper
+->ConductorIntro
+
+=BendTheRules
+Well...#Player
+You know you said you've...
+Bent the rules before?
+
+...Yes? #Conductor
+
+...Have you snuck someone on board before?#Player
+
+...Yes. #Conductor
+
+...Did you sneak someone on board for this journey?#Player
+
+...Maybe. #Conductor
+But not the stowaway!
+No-one nefarious!!
+
+Who is it?#Player
+
+...Come say hello then.#Conductor
+...
+(MEOW)
+
+...Is that a cat? #Player
+
+Yep. #Conductor
+This is Turnip. 
+He's my wife's cat
+When she's at work he rides with me
+
+Ooooh #Player
+
+Yeah.#Conductor
+It's not technically allowed
+ESPECIALLY not when the Lady has Mr. Lionel with her
+But he's not hurting anyone when he's hidden in here. 
+
+That's fair enough.#Player
+Sorry I doubted you.
+Give him a boop from me
+
+You can boop him yourself when we arrive #Conductor
+
+YAY! #Player
+Thanks, Captain
+->ConductorIntro
+
+===ConductorLadySus
+The Inspector thinks Lady Mortimer is hiding anything. #Player
+I don't suppose you have any intel on her?
+
+Ooh I actually do this time!#Conductor
+Since her cabin is the closest to the engine room I can hear things sometimes
+Mainly that dang bird
+
+{ConductorSus.BendTheRules:
+It drives poor Turnip here insane!
+I'm half tempted to let him loose so he can silence that thing...
+}
+
+{LadySomeonesUp || LadySus.LastNight:
+That could actually be very useful! #Player
+Lady Mortimer claims she was in her room all night
+And Mr. Lionel was screeching constantly until the early hours. 
+Does that match up with what you heard?
+
+Oh yes, that bird was a nightmare last night! #Conductor
+Far worse than usual!
+...Apart from a 40-minute window, now you mention it
+
+Really?!#Player
+
+Yes!#Conductor
+He was non-stop until around 11.20 when he suddenly...
+stopped. 
+It was about 40 minutes of absolute bliss!
+I was hoping the old thing had finally croaked
+
+The bird or the bitch?#Player
+
+Oh shush you.#Conductor
+The bird. 
+But it started up again just before midnight.
+She must have taken it for a stroll through the cabin or something.
+
+-else:
+Did you hear anything unusual from her cabin last night?#Player
+
+Nothing of note, I'm afraid.#Conductor
+Not much gets through the walls, just that bloomin birdbrain.
+}
+
+->ConductorIntro
+
+===ConductorInspectorSus
+The Steward thinks Sands may have had a hand in the murder. #Player
+What do you think?
+
+The Inspector?#Conductor
+Eh, I doubt it. 
+He's fiery,
+But he isn't smart, mean, or organised enough to do something like this
+->ConductorIntro

@@ -1,0 +1,222 @@
+#Player
+#Lady
+===LadyDescription
+Lady Mortimer is an elderly lady and quite the character.  #Commentary
+She wears a gold birdcage as a head ornament (which she insists isn't a hat) so she can be close to her dearest pet bird at all times.
+
+->LadyIntro
+
+===LadyIntro
+
+{not LadyDescription:
+-> LadyDescription
+}
+
+ * [Ask Lady Mortimer what she was doing last night]
+ -> LadyWhatHappened
+ * [Ask her who she suspects]
+ -> LadyWhodunnit
+ *{SandsWhodunnit.SECONDSTOWAWAY} [Ask about the second stowaway theory]
+ -> LadySecondStowaway
+ * {StewardWhatHappenedAgain.SeeAnything} [Ask about the person the Steward saw]
+ -> LadySomeonesUp
+ * {StoctorSomeoneUp.ABody} [Ask about the stowaway pretending to be the doctor]
+ ->LadyStoctor
+ *{SandsStoctor}[Tell her Sands thinks she's suspicious]
+ ->LadySus
+ *{StewardWhodunnit}[Tell her the Steward suggested the Inspector may be a suspect]
+    ->LadyInspectorSus
+  + [Walk Away]
+ -> Start
+ * ->
+-> Start
+
+===LadyWhatHappened
+Good morning, Lady Mortimer. #Player
+May I call you Mort for short?
+
+You may certainly not!#Lady
+
+Fair enough. #Player
+Can you describe to me what happened last night?
+
+I suppose. #Lady
+I was trying to enjoy a quiet drink with my dear friend Mr. Lionel. 
+
+I don't think I've met Mr. Lionel, is he another passenger?#Player
+
+Well of course you've met him, he's right here! (she gestures to the bird on her head)#Lady
+
+...Of course. #Player
+Sorry. 
+Do go on. 
+
+Anyway. #Lady
+We were trying to have a quiet drink but the dining cart was awfully loud. 
+Everyone on this train has terrible manners on this train, you know.
+We were about to leave anyway when that dreadful Inspector spilled a drink near me!
+I avoided it, of course
+But gave him a telling off nonetheless. 
+
+I'm sure you did. #Player
+
+Quite. #Lady
+Once he ran off I also retired to my bed chambers. 
+Mr. Lionel was quite shaken up by the whole ordeal so I had to tend to him. 
+
+Are you feeling better now, Mr. Lionel?#Player
+
+...He's a bird. #Lady
+He can't talk. 
+
+Of course, apologies. #Player
+
+...imbecile...#Lady
+->LadyIntro
+===LadyWhodunnit
+I get the sense you're a well-traveled woman, Lady Mortimer. #Player
+
+I've seen some things in my time, yes. #Lady
+
+Who do you think could have murdered that poor man?#Player
+
+Oh I dread to think of it!#Lady
+A woman mustn't think of such horrible things!
+
+I'm sorry I aske-#Player
+
+No! #Lady
+It's too late, I'm devastated!
+
+(she wipes away a tear)
+
+To talk of death this way, it's so crude!
+Some people have no respect for life. 
+We have to go. 
+We don't have time for such vulgar conversation. 
+
+My apologies, Lady Mortimer. #Player
+->LadyIntro
+
+===LadySecondStowaway
+What do you make of the detective's theory?#Player
+That there is a second stowaway on board
+And they committed the murder?
+
+Sands thought of that?#Lady
+...I guess it makes a certain amount of sense.
+
+What makes you say that?#Player
+
+Well the staff on these trains change so frequently#Lady
+
+Oh really?#Player
+
+Oh yes, it seems the Conductor struggles to keep her people in check...#Lady
+So it wouldn't be too hard for one of them to sneak someone on board. 
+Unnoticed. 
+
+Interesting point#Player
+I'll keep that in mind.
+
+You do that.#Lady
+->LadyIntro
+
+===LadySomeonesUp
+The Steward says someone was up late last night. #Player
+After everyone else went to bed. 
+
+Oh really?#Lady
+
+Yes.#Player
+Were you up at all past midnight, Ma'am?
+
+Oh no, dear. #Lady
+I need my sleep. 
+I spent a while comforting Mr. Lionel
+He refused to settle down last night!
+And when he eventually calmed down around 3 am I was out like a light. 
+->LadyIntro
+
+
+===LadyStoctor
+Did you hear about the stowaway disguising themselves as the Doctor? #Player
+
+I most certainly did!#Lady
+Awful news.
+But nice to have this whole ordeal wrapped up and done with. 
+
+Well, not exactly. #Player
+We still don't know who murdered the real Doctor.
+
+Do we not?! #Lady
+Are you seriously believing that thief's story??
+They must be the murderer, it's the only thing that makes sense!
+
+I guess their closet story is a bit far fetched...#Player
+
+And what's more, #Lady
+They probably had an accomplice!
+Someone on the staff to sneak them in!
+
+...Like who? #Player
+
+Someone high up... #Lady
+With connections...
+Doesn't it seem odd to you that you haven't seen the conductor's face since boarding?
+She's been awfully quiet...
+Holed away in the engine room...
+I often hear her talking in there. 
+She's either a lunatic who talks to herself...
+Or she's been hiding someone...
+
+//CONDUCTOR SUS UNLOCKED
+->LadyIntro
+
+===LadySus
+Lady Mortimer, the Inspector thinks you are hiding something #Player
+Care to comment?
+
+Oh that old buffoon thinks I'm suspicious?#Lady
+I wouldn't take his word for it dear 
+He talks the talk but I hear he's been out of work for a long time
+He's not exactly in demand these days 
+
+*[Ask her for a detailed account of last night]
+->LastNight
+*[Agree that Sands is talking rubbish]
+->SandsRubbish
+=LastNight
+Can you clarify exactly what you did last night after you went to bed?#Player
+
+I'VE TOLD YOU ALREADY!#Lady
+Mr. Lionel was being restless
+He wouldn't stop squawking until about 2 in the morning!
+...Not that I mind looking after a dear friend, of course.
+
+Of course not. #Player
+So you just stayed in and looked after him?
+
+Yes! #Lady
+For hours!
+Now please let us be or he'll be just as bad tonight. 
+->LadyIntro
+=SandsRubbish
+You're right, Lady Mortimer #Player
+I don't know why I would consider anything that man suggested
+
+Finally, some sense!#Lady
+I was beginning to think everyone on this train had lost their minds
+Why, just last night the staff forgot to bring me my night-time tea!
+This institution is going to the dogs, I tell you
+->LadyIntro
+
+===LadyInspectorSus
+The Steward thinks the Inspector is to blame. #Player
+What do you think?
+
+Hm… #Lady
+I suppose he was in the cart next to the victim
+and it would explain why such a ‘good PI’ somehow has no clue how the murder occurred under his nose…
+
+->LadyIntro

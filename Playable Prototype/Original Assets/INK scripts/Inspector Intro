@@ -1,0 +1,226 @@
+#Player
+#Inspector
+===SandsDescription
+Inspector Sands is a middle-aged gentleman, a P.I (and a hack one at that).  # Commentary
+He wears a pair of old suspenders and carries a magnifying glass everywhere he goes as though he belongs in a cartoon.
+->SandsIntro
+
+===SandsIntro
+
+{not SandsDescription:
+-> SandsDescription
+}
+
+ * [Ask Sands what he was doing last night]
+ -> SandsWhatHappened
+ * [Ask him who he suspects]
+ -> SandsWhodunnit
+ * {StewardWhatHappenedAgain.SeeAnything} [Ask about the person the Steward saw moving something]
+ ->SandsSomeonesUp
+ * {StoctorSomeoneUp.ABody} [Ask about the stowaway pretending to be the doctor]
+ ->SandsStoctor
+  * {LadyStoctor} [Tell Sands that Lady Mortimer suspects the Conductor]
+  ->SandsConductorSus
+  *{StewardWhodunnit}[Tell him the Steward suggested the Inspector may be a suspect]
+    ->InspectorSus
+ + [Walk Away]
+ -> Start
+ * ->
+-> Start
+
+===SandsWhatHappened
+So, Inspector. #Player
+What were you doing last night?
+
+I was... #Inspector
+indulging...
+at the bar with everyone else.
+I remember having a rousing debate with you about the proper pronunciation of 'scone'
+
+Ah yes, Inspector, I remember that well.#Player
+I guess we're all entitled to our opinions...
+(even if they are wrong)...
+
+Yes quite.#Inspector
+Anyway 
+At some point, Doctor squashed past me on his way back to his bed-chambers...
+Which made me spill my drink on Lady Mortimer
+
+Yikes#Player
+
+Yep.#Inspector
+She was not best pleased so I escaped away to my own bed shortly afterward.
+
+That sounds like a smart move.#Player
+
+Yes, I thought so.#Inspector
+I've seen a lot in my time 
+But that woman is something else
+
+->SandsIntro
+
+===SandsWhodunnit
+So I hear you are something of a detective, Sands?#Player
+
+You heard right! #Inspector
+I'm a professional don't you know 
+And I'm very discreet
+
+I'm sure!#Player
+So what do you make of all of this?
+Who do you think committed this crime?
+
+I was wondering when you'd ask me!#Inspector
+You learn a lot in this line of work
+Namely:
+It's always the spouse. 
+
+(...but the body found was a stowaway?)#Player
+->SECONDSTOWAWAY
+=SECONDSTOWAWAY
+Exactly!#Inspector
+So there must be a SECOND STOWAWAY! 
+A marital murder!
+Case closed. 
+
+* ['That's a ridiculous idea.']
+ -> SandsWhodunnitRidiculous
+ * [Agree with him.]
+ -> SandsWhodunnitAgree
+
+===SandsWhodunnitRidiculous
+Hm. #Player
+Isn't that a bit of a stretch, Inspector?
+
+hsdafgdsa#Inspector
+You wanted my expert opinion!
+How dare you question me!
+
+I'm just sayi-#Player
+
+No!#Inspector
+For all we know it was probably you!
+Why else would you try and discredit a professional like myself??
+I've got my eye on you lad.
+
+I'm not a lad I'm a cyborg. #Player
+
+You're an idiot, that's what you are.#Inspector
+You don't want to be my enemy.
+Trust me. 
+->SandsIntro
+
+===SandsWhodunnitAgree
+Ah of course!#Player
+What a splendid theory, Sands!
+
+Thank you, lass!#Inspector
+This is my job after all!
+
+I'm not a lass I'm a cyborg. #Player
+
+You're a damn genius, that's what you are!#Inspector
+I have your back, no matter what. 
+We detectives gotta stick together, eh?
+->SandsIntro
+===SandsSomeonesUp
+Someone was seen late last night#Player
+After everyone had gone to bed 
+Walking into the dining cart and back again.
+
+Oh really?#Inspector
+How intriguing!
+
+Yes.#Player
+And they seemed to be...
+Dragging something. 
+
+Curious!#Inspector
+But why do you bring this up?
+
+Well, Inspector.#Player
+I suspect they may have been dragging...
+THE BODY! 
+Which would suggest the murder took place in the rear sleeping carriage. 
+
+But that's where I sleep!#Inspector
+
+...#Player
+
+Preposterous suggestion!#Inspector
+You are saying the murder took place in the same carriage I was in?
+I would have been able to stop it!
+
+Even if you were asleep?#Player
+
+CRIME NEVER SLEEPS AND NEITHER DO I!#Inspector
+...and if I did sleep I wouldn't sleep through that!
+
+
+->SandsIntro
+
+===SandsStoctor
+Inspector, have you heard?#Player
+There's been a new lead in the case!
+
+Well don't just babble on, what is it man?! #Inspector
+
+The Doctor is actually the stowaway in disguise! #Player
+And the body found in the dining cart is the real Doctor!
+
+Pfffft #Inspector
+What are you on about?
+That's a load of tripe
+
+It's true, Inspector! #Player
+
+Naaah. #Inspector
+I was talking to the Doctor just earlier this morning!
+They are no imposter!
+Detective work is my job, I can spot a liar.
+
+Oh really?
+Are you sure about that? #Player
+
+Yes! #Inspector
+The Doctor is 100% legitimate!
+That old lady though...
+
+Hm? #Player
+
+There's something not right about that woman... #Inspector
+I think she's hiding something...
+
+//LADY IS SUS UNLOCKED
+
+->SandsIntro
+
+===SandsConductorSus
+ Did you hear the Lady thinks the Conductor is suspicious?#Player
+ 
+ The Conductor? #Inspector
+ Nah I'm pretty sure she needs to drive the train. 
+ I mean, it's not like she can just leave the engine alone, especially on a complicated journey like this! 
+ 
+ (This is a non-stop journey...)#Player
+ (Maybe she did have something to do with this?)
+
+->SandsIntro
+
+===InspectorSus
+The Steward thinks you may have had a hand in this case. #Player
+Care to comment?
+
+What an absurd accusation!#Inspector
+How dare you try and tarnish my stellar reputation?!
+It could have been anyone!
+The Steward is blaming me eh?
+Maybe it was her!
+
+I don't think 'he who smelt it dealt it' applies here, Inspector #Player
+
+TAKE THIS SERIOUSLY!#Inspector
+I AM!
+There is a murderer on this train and the longer you question me the longer they're free!
+
+->SandsIntro
