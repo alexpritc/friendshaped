@@ -11,7 +11,7 @@
 
 **Languages:** English
 
-Website: [www.friendshaped.co.uk](https://friendshaped.co.uk)
+**Website:** [www.friendshaped.co.uk](https://friendshaped.co.uk)
 
 
 ## About the project:
