@@ -233,9 +233,9 @@ public class DialogueManager : MonoBehaviour
 
 	string GetClipName(Animator m_Animator)
 	{
-		//Fetch the current Animation clip information for the base layer
+		// Fetch the current Animation clip information for the base layer
 		AnimatorClipInfo[] m_CurrentClipInfo = m_Animator.GetCurrentAnimatorClipInfo(0);
-		//Access the Animation clip name
+		// Access the Animation clip name
 
 		if (m_CurrentClipInfo.Length >= 1)
 		{
